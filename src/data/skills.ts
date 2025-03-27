@@ -3,6 +3,7 @@ export const skills: string[] = [
   'Node.js',
   'Python',
   'React',
+  'Next.js',
   'Drizzle',
   'MongoDB',
   'Git',
@@ -14,5 +15,7 @@ export const skills: string[] = [
   'TailwindCss',
   'Web Dev',
   'Docker',
+  'Hono',
+  'zustand',
 ];
 
