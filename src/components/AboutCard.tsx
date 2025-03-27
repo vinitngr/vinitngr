@@ -12,7 +12,7 @@ function AboutPrev({ animatedItems, handleMouseEnter, handleMouseLeave, setisope
       onMouseEnter={handleMouseEnter}
       onMouseLeave={handleMouseLeave}
     >
-      <img src={window.innerWidth < 640 ? "./v.jpg" : "./vinit.png"} className=" sm:rotate-y-0 rotate-y-180 w-full h-full brightness-50 opacity-60 absolute top-0 object-cover -z-10 left-0" alt="Vinit Nagar" />
+      <img src={window.innerWidth < 640 ? "./vinit.png" : "./vinit.png"} className=" sm:rotate-y-0 w-full h-full brightness-50 opacity-60 absolute top-0 object-cover -z-10 left-0" alt="Vinit Nagar" />
       <div>
         <div className="backdrop:brightness-200">
           <h3 className="text-7xl sm:text-3xl backdrop:backdrop-blur-3xl text-white font-semibold mb-1 tracking-tight">Vinit Nagar</h3>
