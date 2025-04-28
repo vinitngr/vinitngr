@@ -7,5 +7,5 @@ export const socialLinks = [
   { href: "https://github.com/vinitngr", Icon: Github, label: "GitHub" },
   { href: "https://www.linkedin.com/in/vinit-nagar-264434293", Icon: FaLinkedinIn, label: "LinkedIn" },
   { href: "https://x.com/vinitngr_", Icon: FaTwitter, label: "Twitter" },
-  { href: "https://app.enhancv.com/share/a16b2ada", Icon: Logo, label: "Resume" }
+  { href: "https://drive.google.com/file/d/1F4aGHcWwnTze9c_-7Jh-J18IImuKKtag/view?usp=sharing", Icon: Logo, label: "Resume" }
 ];
