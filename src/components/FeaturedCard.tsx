@@ -54,7 +54,7 @@ function FeaturedCard({ animatedItems, handleMouseEnter, handleMouseLeave }: Abo
           <button
             key={index}
             onClick={() => setCurrentIndex(index)}
-            className={`size-1 rounded-full transition-all duration-300 hover:scale-[3] hover:bg-yellow-600 ${currentIndex === index ? 'bg-[#b1b908] scale-[2]' : 'bg-white'}`}
+            className={`size-1 rounded-full transition-all duration-300 hover:scale-[3] hover:bg-yellow-600 ${currentIndex === index ? 'sm:bg-yellow-700 bg-[#b1b908] scale-[2]' : 'bg-white'}`}
           />
         ))}
       </div>
