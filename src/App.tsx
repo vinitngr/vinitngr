@@ -14,6 +14,7 @@ import Mobile from "./components/Mobile";
 import ProjectCard from "./components/sections/Project";
 import Exp from "./components/sections/Exp";
 import MessageHome from "./components/MessageHome";
+import Education from "./components/sections/Education";
 const App = () => {
   const [isMobile, setIsMobile] = useState(false);
   const [selected, setSelected] = useState<SidebarSection>('about');
@@ -154,6 +155,10 @@ const App = () => {
                   <div className="col-span-3 order-6  mt-5 grid-item transition-all duration-300">
                     <Exp showHead={false}/>
                   </div> 
+
+                  <div className="col-span-3 order-6 text-center mt-5 grid-item transition-all duration-300">
+                    <Education showHead={false}/>
+                  </div>
 
                   <div className="col-span-3 order-6 text-center mt-5 grid-item transition-all duration-300">
                     <MessageHome/>
