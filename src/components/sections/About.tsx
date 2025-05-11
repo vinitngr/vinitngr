@@ -1,11 +1,12 @@
 import { Mail, MapPin, Linkedin, Github, GraduationCap } from 'lucide-react'
 import Highlight from '../Highlight'
+import Mobile from '../Mobile'
 
 function About() {
   return (
     <div className="flex items-center justify-center w-full min-h-screen  ">
       <div className="w-full max-w-4xl pb-10">
-        <div className="grid md:grid-cols-5 gap-2 mb-2">
+        {/* <div className="grid md:grid-cols-5 gap-2 mb-2">
           <div className="bg-[#1A1A22] rounded-md p-3 col-span-3 lg:col-span-5 2xl:col-span-3 flex flex-col justify-center border border-[#2d2d3a]">
             <h1 className="text-4xl font-bold text-white mb-2">
               Vinit Nagar
@@ -24,9 +25,9 @@ function About() {
               className="h-full border scale-200 rounded-md -translate-x-28 translate-y-10 border-[#2d2d3a]  object-cover"
             />
           </div>
-        </div>
+        </div> */}
 
-
+        <Mobile/>
 
         <div className="mb-2 flex flex-wrap gap-2 justify-center">
           {[

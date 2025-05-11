@@ -17,7 +17,7 @@ export const Featured = [
 
 export const projectdetails = [
   {
-    title: "iolib",
+    title: "iolib.ai",
     description: "IOLIB is an AI library that leverages Retrieval-Augmented Generation (RAG) and semantic search to enhance information retrieval and natural language understanding capabilities.",
     extendedDescription: "IOLIB is a digital library that utilizes embeddings and large language models to allow users to search and retrieve relevant information from a vast collection of books and weblogs. Users can ask queries and get answers based on the content of the books and weblogs. Additionally, users can add their own database and LLM API key to create their own custom embeddings.",
     image: "https://upload.wikimedia.org/wikipedia/en/e/e3/Nicio.png",

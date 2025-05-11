@@ -5,23 +5,27 @@ import { projectdetails } from "../../data/project";
 import Highlight from "../Highlight";
 import OneTag from "../OneTag";
 
-const ProjectCard = () => {
+const ProjectCard = ({ showHead = true }: { showHead?: boolean }) => {
   const [projects, setProjects] = useState<Project[]>([...projectdetails]);
 
   return (
     <>
-      <h2 className="text-xl mb-5">Projects</h2>
-      <div className="font-extralight text-gray-500">
-        Here are some of the projects I've worked on, showcasing my skills in various web technologies 🌐 and frameworks. Some were built for learning purposes, while others were created for {<Highlight>hackathons</Highlight>}.
-      </div>
-      <div className="font-extrabold mt-5 mb-3">Following Are The Top</div>
+      <h2 className=" text-center sm:text-left sm:text-xl mb-5">Projects</h2>
+      {showHead && (
+        <>
+          <div className="font-extralight text-gray-500">
+            Here are some of the projects I've worked on, showcasing my skills in various web technologies 🌐 and frameworks. Some were built for learning purposes, while others were created for <Highlight>hackathons</Highlight>.
+          </div>
+          <div className="font-extrabold mt-5 mb-3">Following Are The Top</div>
+        </>
+      )}
 
       <div className="flex flex-col pb-10 gap-4 overflow-auto h-full">
         {projects.map((project, index) => (
           <div
             key={index}
             id={`card-${index}`}
-            className="bg-[#1A1A22]  hover:border-yellow-600 rounded-md p-4 transition-all duration-300 shadow-md cursor-pointer"
+            className="sm:bg-[#1A1A22] border border-[#1a1a22]/80 rounded-md sm:p-4 p-2 transition-all duration-300 shadow-md cursor-pointer"
           >
             <div className="flex gap-4 justify-between">
               <div>
@@ -65,7 +69,7 @@ const ProjectCard = () => {
                   </button>
                 )}
                 <div className="flex items-center gap-2">
-                  <OneTag onetag={project.onetag as string}/>
+                  <OneTag onetag={project.onetag as string} />
                 </div>
 
               </div>

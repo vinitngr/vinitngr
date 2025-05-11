@@ -1,8 +1,14 @@
 @import "tailwindcss";
 
 .bg-pattern {
-  background: radial-gradient(circle, rgba(255,255,255,0.1) 1px, transparent 1px);
-  background-size: 16px 16px;
+  background: transparent;
+}
+
+@media (min-width: 640px) {
+  .bg-pattern {
+    background: radial-gradient(circle, rgba(255,255,255,0.1) 1px, transparent 1px);
+    background-size: 16px 16px; 
+  }
 }
 
 

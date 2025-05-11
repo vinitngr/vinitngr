@@ -10,7 +10,12 @@ import ConnectPrev from "./components/ConnectionCard";
 import { SidebarSection } from "./utils/type";
 import GitHubCalendar from 'react-github-calendar'
 import SkillMeter from "./components/SkillMeter";
+import Mobile from "./components/Mobile";
+import ProjectCard from "./components/sections/Project";
+import Exp from "./components/sections/Exp";
+import MessageHome from "./components/MessageHome";
 const App = () => {
+  const [isMobile, setIsMobile] = useState(false);
   const [selected, setSelected] = useState<SidebarSection>('about');
   const [animatedItems, setAnimatedItems] = useState<string[]>([]);
   const [isOpen, setIsOpen] = useState(false);
@@ -28,28 +33,39 @@ const App = () => {
   }, []);
 
   const handleMouseEnter = (event: React.MouseEvent<HTMLDivElement>) => {
-    const currentItem = event.currentTarget;
-    const siblings = Array.from(document.querySelectorAll('.grid-item')).filter(
-      (item) => item !== currentItem
-    );
-  
-    siblings.forEach((sibling) => {
-      (sibling as HTMLElement).style.opacity = '0.5';
-      (sibling as HTMLElement).style.transform = 'scale(0.98)';
-    });
+    if (!isMobile) {
+      const currentItem = event.currentTarget;
+      const siblings = Array.from(document.querySelectorAll('.grid-item')).filter(
+        (item) => item !== currentItem
+      );
+
+      siblings.forEach((sibling) => {
+        (sibling as HTMLElement).style.opacity = '0.9';
+        (sibling as HTMLElement).style.transform = 'scale(0.99)';
+      });
+    }
   };
-  
+
   const handleMouseLeave = () => {
-    const siblings = Array.from(document.querySelectorAll('.grid-item'));
-    siblings.forEach((sibling) => {
-      (sibling as HTMLElement).style.opacity = '1';
-      (sibling as HTMLElement).style.transform = 'scale(1)';
-    });
+    if (!isMobile) {
+      const siblings = Array.from(document.querySelectorAll('.grid-item'));
+      siblings.forEach((sibling) => {
+        (sibling as HTMLElement).style.opacity = '1';
+        (sibling as HTMLElement).style.transform = 'scale(1)';
+      });
+    }
   };
+
+  useEffect(() => {
+    const checkMobile = () => setIsMobile(window.innerWidth <= 640);
+    checkMobile();
+    window.addEventListener('resize', checkMobile);
+    return () => window.removeEventListener('resize', checkMobile);
+  }, []);
 
   return (
     <div className="flex">
-      <Sidebar isOpen={isOpen} setIsOpen={setIsOpen} selected={selected} setselectfxn={(option) => setSelected(option as SidebarSection)}  />
+      <Sidebar isOpen={isOpen} setIsOpen={setIsOpen} selected={selected} setselectfxn={(option) => setSelected(option as SidebarSection)} />
 
       <div className="h-screen overflow-y-scroll w-full">
         <div className="relative bg-[#121218] text-[#e0e0e0] w-full flex justify-center">
@@ -66,61 +82,103 @@ const App = () => {
             <GridPattern />
           </div>
           <div className="max-w-[700px] py-2 flex flex-col z-10 bg-[#121218]/30 mx-2 font-mono">
-          <Navbar 
-              isopen={isOpen} 
-              setselectfxn={(option) => setSelected(option as SidebarSection)} 
-              setisopen={setIsOpen} 
-            />
+            {
+              !isMobile &&
+              <Navbar
+                isopen={isOpen}
+                setselectfxn={(option) => setSelected(option as SidebarSection)}
+                setisopen={setIsOpen}
+              />
+            }
             <div className="grid grid-cols-3 auto-rows-[minmax(90px,auto)] gap-1 flex-1">
-              <FeaturedCard 
-                animatedItems={animatedItems} 
-                handleMouseEnter={handleMouseEnter} 
-                handleMouseLeave={handleMouseLeave} 
+              <FeaturedCard
+                animatedItems={animatedItems}
+                handleMouseEnter={handleMouseEnter}
+                handleMouseLeave={handleMouseLeave}
               />
-              <AboutPrev 
-                setselectfxn={setSelected} 
-                setisopen={setIsOpen} 
-                animatedItems={animatedItems} 
-                handleMouseEnter={handleMouseEnter} 
-                handleMouseLeave={handleMouseLeave} 
-              />
+              {
+                isMobile ?
+                  <Mobile/>
+                  : <AboutPrev
+                    setselectfxn={setSelected}
+                    setisopen={setIsOpen}
+                    animatedItems={animatedItems}
+                    handleMouseEnter={handleMouseEnter}
+                    handleMouseLeave={handleMouseLeave}
+                  />
+              }
+
               {/* <QuotePrev
                 animatedItems={animatedItems} 
                 handleMouseEnter={handleMouseEnter} 
                 handleMouseLeave={handleMouseLeave} 
               /> */}
-              <SkillMeter
-                animatedItems={animatedItems} 
-                handleMouseEnter={handleMouseEnter} 
-                handleMouseLeave={handleMouseLeave} 
-              />
+              {!isMobile && (
+                <SkillMeter
+                  animatedItems={animatedItems}
+                  handleMouseEnter={handleMouseEnter}
+                  handleMouseLeave={handleMouseLeave}
+                />
+              )}
+
+
               <TechnicalCard
-                animatedItems={animatedItems} 
-                handleMouseEnter={handleMouseEnter} 
-                handleMouseLeave={handleMouseLeave} 
+                animatedItems={animatedItems}
+                handleMouseEnter={handleMouseEnter}
+                handleMouseLeave={handleMouseLeave}
               />
-              <SocialCard
-                animatedItems={animatedItems} 
-                handleMouseEnter={handleMouseEnter} 
-                handleMouseLeave={handleMouseLeave} 
-              />
-              <ConnectPrev
-                setselectfxn={setSelected} 
-                setisopen={setIsOpen} 
-                animatedItems={animatedItems} 
-                handleMouseEnter={handleMouseEnter} 
-                handleMouseLeave={handleMouseLeave} 
-              />
-              <div className="col-span-3 flex justify-center mt-5 grid-item transition-all duration-300">
+              {!isMobile && (
+                <>
+                  <SocialCard
+                    animatedItems={animatedItems}
+                    handleMouseEnter={handleMouseEnter}
+                    handleMouseLeave={handleMouseLeave}
+                  />
+                  <ConnectPrev
+                    setselectfxn={setSelected}
+                    setisopen={setIsOpen}
+                    animatedItems={animatedItems}
+                    handleMouseEnter={handleMouseEnter}
+                    handleMouseLeave={handleMouseLeave}
+                  />
+                </>
+              )}
+
+              {
+                isMobile && (
+                  <>
+                  <div className="col-span-3 order-6  mt-5 grid-item transition-all duration-300">
+                    <ProjectCard showHead={false}/>
+                  </div>
+
+                  <div className="col-span-3 order-6  mt-5 grid-item transition-all duration-300">
+                    <Exp showHead={false}/>
+                  </div> 
+
+                  <div className="col-span-3 order-6 text-center  grid-item transition-all duration-300">
+                    Message me
+                    <MessageHome/>
+                  </div>
+                  </>
+                )
+              }
+              {
+                !isMobile && 
+              <div className="col-span-3 order-7 flex justify-center mt-5 grid-item transition-all duration-300">
                 <GitHubCalendar
-                  hideColorLegend 
-                  blockSize={9.5} 
-                  errorMessage="error fetching github calendar data" 
-                  username="vinitngr" 
-                  style={{ overflow: "hidden" }} 
+                  hideColorLegend
+                  blockSize={9.5}
+                  errorMessage="error fetching github calendar data"
+                  username="vinitngr"
+                  style={{ overflow: "hidden" }}
                 />
               </div>
+              }
+
             </div>
+              <div className="w-full text-center text-xs mt-10 ">all rights resevered 😁 
+                <span className="text-yellow-200 font-extralight"> | nagarvinit56@gmail.com </span>
+              </div>
           </div>
         </div>
       </div>
