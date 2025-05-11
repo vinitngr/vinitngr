@@ -19,7 +19,7 @@ function AboutPrev({ animatedItems, handleMouseEnter, handleMouseLeave, setisope
           <p className="text-sm text-[#a0a0a0]/80 leading-relaxed mb-2">I work with web & ai...</p>
         </div>
         <div className="flex items-center">
-          <span className="font-semibold text-2xl sm:text-text-lg mr-2">1+ yrs</span>
+          <span className="font-semibold text-2xl sm:text-text-lg mr-2">1.5+ yrs</span>
           <span className="text-xs text-[#a0a0a0]">of Learning</span>
         </div>
       </div>
