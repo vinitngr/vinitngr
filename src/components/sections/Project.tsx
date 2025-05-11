@@ -25,7 +25,7 @@ const ProjectCard = ({ showHead = true }: { showHead?: boolean }) => {
           <div
             key={index}
             id={`card-${index}`}
-            className="sm:bg-[#1A1A22] border border-[#1a1a22]/80 rounded-md sm:p-4 p-2 transition-all duration-300 shadow-md cursor-pointer"
+            className="sm:bg-[#1A1A22] border border-[#1a1a22] rounded-md sm:p-4 p-2 transition-all duration-300 shadow-md cursor-pointer"
           >
             <div className="flex gap-4 justify-between">
               <div>

@@ -4,9 +4,6 @@ import { FaJsSquare, FaNodeJs, FaPython, FaReact, FaDocker, FaCss3Alt,  FaLink, 
 import { SiNextdotjs, SiDrizzle, SiMongodb, SiPostgresql, SiExpress, SiRedis, SiHono, SiWebrtc, SiPuppeteer } from 'react-icons/si';
 import { IoLogoWebComponent } from 'react-icons/io5';
 function TechnicalCard({ animatedItems, handleMouseEnter, handleMouseLeave }: AboutPrevProps) {
-
-
-
   const skillIcons: { [key: string]: JSX.Element } = {
     'TypeScript': <FaJsSquare />,
     'Node.js': <FaNodeJs />,
@@ -60,7 +57,7 @@ function TechnicalCard({ animatedItems, handleMouseEnter, handleMouseLeave }: Ab
       onMouseEnter={handleMouseEnter}
       onMouseLeave={handleMouseLeave}
     >
-      <h3 className=" text-center sm:text-left sm:text-lg sm:font-semibold mb-2 tracking-tight">Technical Skills</h3>
+      <h3 className=" text-center sm:text-left sm:text-lg sm:font-semibold mb-5 tracking-tight">Technical Skills</h3>
       <div className="flex flex-wrap mt-2">
         {
           skills.map(skill => (

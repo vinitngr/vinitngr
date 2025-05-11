@@ -155,8 +155,7 @@ const App = () => {
                     <Exp showHead={false}/>
                   </div> 
 
-                  <div className="col-span-3 order-6 text-center  grid-item transition-all duration-300">
-                    Message me
+                  <div className="col-span-3 order-6 text-center mt-5 grid-item transition-all duration-300">
                     <MessageHome/>
                   </div>
                   </>
@@ -176,8 +175,8 @@ const App = () => {
               }
 
             </div>
-              <div className="w-full text-center text-xs mt-10 ">all rights resevered 😁 
-                <span className="text-yellow-200 font-extralight"> | nagarvinit56@gmail.com </span>
+              <div className="w-full text-center text-xs mt-10 ">all rights reserved 😁 
+                <span className="text-yellow-700 font-extralight"> | nagarvinit56@gmail.com </span>
               </div>
           </div>
         </div>

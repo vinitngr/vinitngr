@@ -40,10 +40,10 @@ function Mobile() {
         {socialLinks.map(({ href, label }) => (
           <a key={label} href={href} target="_blank" rel="noopener noreferrer">
             {/* Dynamically render the correct icon based on the label */}
-            {label === "GitHub" && <FaGithub className="size-5 m-1" title={label} />}
-            {label === "LinkedIn" && <FaLinkedin className="size-5 m-1" title={label} />}
-            {label === "Twitter" && <FaTwitter className="size-5 m-1" title={label} />}
-            {label === "Resume" && <HiDownload className="size-5 m-1" title={label} />}
+            {label === "GitHub" && <FaGithub className="size-6 m-1" title={label} />}
+            {label === "LinkedIn" && <FaLinkedin className="size-6 m-1" title={label} />}
+            {label === "Twitter" && <FaTwitter className="size-6 m-1" title={label} />}
+            {label === "Resume" && <HiDownload className="size-6 m-1" title={label} />}
           </a>
         ))}
         <Mail 

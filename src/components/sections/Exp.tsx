@@ -13,7 +13,7 @@ function Exp({ showHead = true }: { showHead?: boolean }) {
             </div>
             <div className="font-extrabold mt-5">Following Are The Few</div>
           </div>
-        ) : <div className="text-center text-[10px]">I'm still in the learning phase, so no major industrial experience yet 😅</div>
+        ) : <div className="text-center text-xs">I'm still in the learning phase, so no major industrial experience yet 😅</div>
         
       }
       <div className="h-full overflow-auto pb-10">

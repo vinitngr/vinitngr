@@ -22,25 +22,21 @@ function FeaturedCard({ animatedItems, handleMouseEnter, handleMouseLeave }: Abo
       <div className="flex transition-transform duration-500 ease-in-out h-[100%]" style={{ transform: `translateX(-${currentIndex * 100}%)` }}>
         {Featured.map(({ id, title, description, tags, link }) => (
           <div key={id} className="w-full flex-shrink-0 px-2 sm:px-5 rounded-md transition-all duration-300 relative overflow-hidden cursor-pointer flex flex-col justify-between">
-            {/* Title */}
             <h3 className="text-lg font-semibold mb-2 tracking-tight text-[#333333] sm:text-white">{title}</h3>
             
-            {/* Description */}
             <p className="text-sm text-[#333333] sm:text-[#b0b0b0] leading-relaxed mb-3 line-clamp-3">{description}</p>
             
-            {/* Tags */}
             <div className="flex flex-wrap mb-2">
               {tags.map(tag => (
                 <span
                   key={tag}
-                  className="inline-block bg-[#444444] text-white text-xs py-1 px-2 rounded mr-1 mb-1"
+                  className="inline-block sm:bg-[#2a2a36]/80 bg-[#9da409] shadow-md text-white  sm:text-[#a0a0a0] text-xs py-1 px-2 rounded mr-1 mb-1"
                 >
                   {tag}
                 </span>
               ))}
             </div>
             
-            {/* Link to view featured */}
             <a
               href={link}
               className="group text-sm text-[#333333]  sm:text-yellow-700 no-underline flex items-center font-medium mt-auto"
@@ -53,13 +49,12 @@ function FeaturedCard({ animatedItems, handleMouseEnter, handleMouseLeave }: Abo
         ))}
       </div>
       
-      {/* Pagination */}
       <div className="absolute bottom-2 left-1/2 transform -translate-x-1/2 flex space-x-2">
         {Featured.map((_, index) => (
           <button
             key={index}
             onClick={() => setCurrentIndex(index)}
-            className={`size-1 rounded-full transition-all duration-300 hover:scale-[3] hover:bg-yellow-600 ${currentIndex === index ? 'bg-yellow-600 scale-[2]' : 'bg-[#2a2a36]'}`}
+            className={`size-1 rounded-full transition-all duration-300 hover:scale-[3] hover:bg-yellow-600 ${currentIndex === index ? 'bg-[#b1b908] scale-[2]' : 'bg-white'}`}
           />
         ))}
       </div>
