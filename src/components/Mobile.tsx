@@ -3,7 +3,7 @@ import { FaGithub, FaLinkedin, FaStar, FaTwitter } from 'react-icons/fa';
 import { HiDownload } from 'react-icons/hi';
 
 import { socialLinks } from '../data/social';
-import { Mail, MessageCircleCode } from 'lucide-react';
+import { Mail } from 'lucide-react';
 function Mobile() {
   const [time, setTime] = useState(new Date().toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' }));
 
