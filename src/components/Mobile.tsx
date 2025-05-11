@@ -16,7 +16,7 @@ function Mobile() {
   }, []);
 
   return (
-    <div className="text-white col-span-3 flex flex-col items-center p-2 rounded-md shadow-md mb-3">
+    <div className="text-white min-h-[93vh] col-span-3 flex flex-col items-center p-2 rounded-md shadow-md">
       <div className="flex justify-between items-center w-full mb-2">
         <span className="text-gray-400">{time}</span>
         <div className="flex gap-3">
