@@ -4,7 +4,7 @@ import { HiDownload } from 'react-icons/hi';
 
 import { socialLinks } from '../data/social';
 import { Mail } from 'lucide-react';
-function Mobile({ onOutOfView }: { onOutOfView: (isOutOfView? : boolean) => void }) {
+function Mobile({ onOutOfView }: { onOutOfView?: (isOutOfView : boolean) => void }) {
   const [time, setTime] = useState(new Date().toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' }));
   const socialRef = useRef(null);
 
@@ -12,7 +12,9 @@ function Mobile({ onOutOfView }: { onOutOfView: (isOutOfView? : boolean) => void
     const observer = new IntersectionObserver(
       ([entry]) => {
         // Pass true if out of view, false if in view
-        onOutOfView(!entry.isIntersecting);
+        if (onOutOfView) {
+          onOutOfView(!entry.isIntersecting);
+        }
       },
       { threshold: 0 }
     );
