@@ -59,7 +59,7 @@ const MobileLayout = () => {
       <div className="col-span-3 fixed text-center mt-5 grid-item flex  z-50 w-full justify-center">
         {
           isOutOfView && (
-            <div className="flex  gap-4 mb-5 items-center fixed bottom-0 w-fit justify-center rounded-full  p-2 bg-[#121218]/60 backdrop-blur-sm">
+            <div className="flex  gap-4 mb-2 items-center fixed bottom-0 w-fit justify-center rounded-full  p-2 bg-[#121218]/60 backdrop-blur-sm">
               {isOutOfView && socialLinks.map(({ href, label }) => (
                 <a key={label} href={href} target="_blank" rel="noopener noreferrer">
                   {label === "GitHub" && <FaGithub className="size-6 m-1" title={label} />}

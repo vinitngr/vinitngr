@@ -19,7 +19,7 @@ export default function SkillMeter({ animatedItems, handleMouseEnter, handleMous
       {skills.map((skill, index) => (
         <div key={index} className="mb-3 group w-full">
           <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between w-full gap-1 sm:gap-4">
-            <p className="text-sm text-[#a0a0a0]/80 tracking-tight sm:w-32">{skill.name}</p>
+            <p className="text-sm text-[#a0a0a0]/80 tracking-tight sm:w-24">{skill.name}</p>
             <div className="w-full sm:w-40 bg-[#2d2d3a]/80 h-2 rounded-full relative overflow-hidden">
               <div
                 title={skill.level}

@@ -14,26 +14,26 @@ function FeaturedCard({ animatedItems, handleMouseEnter, handleMouseLeave }: Abo
   return (
     <div
       id="card1"
-      className={`grid-item order-1 col-span-3 sm:col-span-2 min-h-64 row-span-2 sm:bg-[#1a1a22] bg-[#cddc39] border border-[#2d2d3a] rounded-md p-2 transition-all duration-300 relative overflow-hidden shadow-md cursor-pointer flex flex-col justify-between
+      className={`grid-item order-1 col-span-3 sm:col-span-2 min-h-64 row-span-2 sm:bg-[#1a1a22] bg-[#cddc39] border border-[#2d2d3a] rounded-md p-2 transition-all duration-300 relative overflow-hidden shadow-md  flex flex-col justify-between
          ${animatedItems.includes('card4') ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-2'}`}
       onMouseEnter={handleMouseEnter}
       onMouseLeave={handleMouseLeave}
     >
       <div className="flex transition-transform duration-500 ease-in-out h-[100%]" style={{ transform: `translateX(-${currentIndex * 100}%)` }}>
         {Featured.map(({ id, title, description, tags, link }) => (
-          <div key={id} className="w-full flex-shrink-0 px-2 sm:px-5 rounded-md transition-all duration-300 relative overflow-hidden cursor-pointer flex flex-col justify-between">
+          <div key={id} className="w-full flex-shrink-0 px-2 sm:px-5 rounded-md transition-all duration-300 relative overflow-hidden flex flex-col justify-between">
             <h3 className="text-lg font-semibold mb-2 tracking-tight text-[#333333] sm:text-white">{title}</h3>
             
             <p className="text-sm text-[#333333] sm:text-[#b0b0b0] leading-relaxed mb-3 line-clamp-3">{description}</p>
             
             <div className="flex flex-wrap mb-2">
               {tags.map(tag => (
-                <span
+                <button
                   key={tag}
-                  className="inline-block sm:bg-[#2a2a36]/80 bg-[#9da409] shadow-md text-white  sm:text-[#a0a0a0] text-xs py-1 px-2 rounded mr-1 mb-1"
+                  className="inline-block  cursor-pointer  sm:bg-[#2a2a36]/80 bg-[#9da409] shadow-md text-white  sm:text-[#a0a0a0] text-xs py-1 px-2 rounded mr-1 mb-1"
                 >
                   {tag}
-                </span>
+                </button>
               ))}
             </div>
             
