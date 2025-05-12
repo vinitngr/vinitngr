@@ -76,10 +76,20 @@ const ProjectCard = ({ showHead = true }: { showHead?: boolean }) => {
             </div>
 
             <div
-              className={`overflow-hidden transition-all duration-300 ease-in-out ${project.isExpanded ? "max-h-96 opacity-100 pt-4" : "max-h-0 opacity-0"
+              className={`overflow-hidden transition-all duration-300 ease-in-out ${project.isExpanded ? " opacity-100 pt-4" : "max-h-0 opacity-0"
                 }`}
             >
               <p className="text-sm text-gray-400">{project.extendedDescription}</p>
+                <div className="grid gap-2 mt-3">
+                  {project.extendedImages && project.extendedImages.map((image) => (
+                    <img
+                      key={image}
+                      src={image}
+                      alt={project.title}
+                      className="w-full object-cover"
+                    />
+                  ))}
+                </div>
               <button
                 onClick={() => {
                   const updatedProjects = [...projects];

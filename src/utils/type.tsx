@@ -17,5 +17,6 @@ export interface Project {
   tags: string[];          
   isExpanded: boolean;     
   onetag?: string;
-  link?: string
+  link?: string;
+  extendedImages?: string[];
 }
