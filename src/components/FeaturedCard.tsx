@@ -30,7 +30,7 @@ function FeaturedCard({ animatedItems, handleMouseEnter, handleMouseLeave }: Abo
               {tags.map(tag => (
                 <button
                   key={tag}
-                  className="inline-block  cursor-pointer  sm:bg-[#2a2a36]/80 bg-[#9da409] shadow-md text-white  sm:text-[#a0a0a0] text-xs py-1 px-2 rounded mr-1 mb-1"
+                  className="inline-block  cursor-pointer  sm:bg-[#2a2a36]/80 bg-[#242601]/10 text-white  sm:text-[#a0a0a0] text-xs py-1 px-2 rounded mr-1 mb-1"
                 >
                   {tag}
                 </button>
@@ -41,7 +41,7 @@ function FeaturedCard({ animatedItems, handleMouseEnter, handleMouseLeave }: Abo
               href={link}
               className="group text-sm text-[#333333]  sm:text-yellow-700 no-underline flex items-center font-medium mt-auto"
             >
-              <span className="group-hover:text-yellow-700 font-bold">View Featured</span>
+              <span className="group-hover:text-yellow-700 ">View Featured</span>
               <ArrowRight className="w-4 h-4 ml-1 group-hover:text-yellow-700 transition-transform duration-500 ease-in-out group-hover:-rotate-45" />
             </a>
             <GridPattern />

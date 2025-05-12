@@ -41,7 +41,7 @@ function Mobile({ onOutOfView }: { onOutOfView?: (isOutOfView: boolean) => void 
   const handleMouseEnter = (label: string, e: React.MouseEvent) => {
     const rect = e.currentTarget.getBoundingClientRect();
     setPosition({
-      top: rect.top - 40, 
+      top: rect.top - 40,
       left: rect.left + rect.width / 2
     });
     setHoveredItem(label);
@@ -54,7 +54,7 @@ function Mobile({ onOutOfView }: { onOutOfView?: (isOutOfView: boolean) => void 
   return (
     <div className="text-white mb-3 col-span-3 flex flex-col items-center p-2 rounded-md shadow-md">
       {hoveredItem && (
-        <div 
+        <div
           className="fixed bg-gray-800 text-white text-sm px-3 py-1 rounded-md shadow-lg z-50 transition-opacity duration-300 pointer-events-none"
           style={{
             top: `${position.top}px`,
@@ -73,7 +73,7 @@ function Mobile({ onOutOfView }: { onOutOfView?: (isOutOfView: boolean) => void 
         <span className="text-gray-400">{time}</span>
         <div className="flex gap-3">
           <button className="text-white flex cursor-pointer items-center">
-            <FaStar 
+            <FaStar
               title="Star on GitHub"
               onClick={() => window.open('https://github.com/vinitngr', '_blank')}
             />
@@ -86,10 +86,10 @@ function Mobile({ onOutOfView }: { onOutOfView?: (isOutOfView: boolean) => void 
         Available
       </button>
 
-      <img 
-        src="./vinit.png" 
-        alt="Vinit Nagar" 
-        className="rounded-md w-20 h-20 object-cover mb-2" 
+      <img
+        src="./vinit.png"
+        alt="Vinit Nagar"
+        className="rounded-md w-20 h-20 object-cover mb-2"
       />
       <h2 className="text-2xl font-semibold">Vinit Nagar</h2>
       <p className="text-gray-400 mb-1">Full stack developer</p>
@@ -97,10 +97,10 @@ function Mobile({ onOutOfView }: { onOutOfView?: (isOutOfView: boolean) => void 
 
       <div className="flex gap-4 mb-5 items-center" ref={socialRef}>
         {socialLinks.map(({ href, label }) => (
-          <a 
-            key={label} 
-            href={href} 
-            target="_blank" 
+          <a
+            key={label}
+            href={href}
+            target="_blank"
             rel="noopener noreferrer"
             onMouseEnter={(e) => handleMouseEnter(label, e)}
             onMouseLeave={handleMouseLeave}
@@ -122,14 +122,21 @@ function Mobile({ onOutOfView }: { onOutOfView?: (isOutOfView: boolean) => void 
       <div className="mb-3">
         <h3 className="font-semibold mb-1">About Me.</h3>
         <p className="text-gray-300">
-          Undergraduate developer with 1.5+ years of experience, crafting web & AI products using modern stacks like TypeScript, Next.js. Skilled in WebRTC, Node.js, agentic AI, and video tech, focused on building real-time, innovative solutions.
+          Undergraduate developer with 1.5+ years of experience, crafting web & AI products using modern stacks like TypeScript, Next.js. Skilled in WebRTC, Node.js, agentic AI, and audio-video tech, focused on building real-time, innovative solutions.
         </p>
       </div>
 
-      <div>
+      <div className='mb-3'>
         <h3 className="font-semibold mb-1">Hire Me.</h3>
         <p className="text-gray-300">
           Available for internships, freelance, or part-time work. I'm passionate, fast-learning, and ready to ship.
+        </p>
+      </div>
+
+      <div className="mb-3">
+        <h3 className="font-semibold mb-1">Currently Into.</h3>
+        <p className="text-gray-300">
+          Currently exploring @modelcontextProtocol, @Ai/ML , and @video_streaming — while grinding for semester exams.
         </p>
       </div>
     </div>

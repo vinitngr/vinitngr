@@ -1,7 +1,7 @@
 export const Featured = [
   {
     id: 'card1',
-    title: 'IOLIB | SITE hackathon',
+    title: 'IOLIB.ai | SITE hackathon',
     description: 'IOLIB is an AI library that leverages Retrieval-Augmented Generation (RAG)...',
     link: 'https://github.com/vinitngr/IOLIB',
     tags: ['Hackathon' , 'Langchain', 'Upstash | VS', 'React', 'Node.js', 'zustand', 'gemini', "MongoDB"]

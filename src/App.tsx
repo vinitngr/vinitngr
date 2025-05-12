@@ -16,7 +16,7 @@ import Exp from "./components/sections/Exp";
 import MessageHome from "./components/MessageHome";
 import Education from "./components/sections/Education";
 import { socialLinks } from "./data/social";
-import { FaGithub, FaLinkedin, FaTwitter } from "react-icons/fa";
+import { FaAngleDoubleUp, FaGithub, FaLinkedin, FaTwitter } from "react-icons/fa";
 import { HiDownload } from "react-icons/hi";
 import { Mail } from "lucide-react";
 const App = () => {
@@ -25,14 +25,13 @@ const App = () => {
   const [animatedItems, setAnimatedItems] = useState<string[]>([]);
   const [isOpen, setIsOpen] = useState(false);
   const [isOutOfView, setIsOutOfView] = useState(false);
+
   useEffect(() => {
     const gridItems = document.querySelectorAll('.grid-item');
-    const newAnimatedItems: string[] = [];
 
     gridItems.forEach((item, index) => {
       setTimeout(() => {
-        newAnimatedItems.push(item.id);
-        setAnimatedItems([...newAnimatedItems]);
+        setAnimatedItems((prev) => [...prev, item.id]);
       }, 100 * index);
     });
   }, []);
@@ -90,10 +89,10 @@ const App = () => {
             <GridPattern />
           </div>
           <div className="max-w-[700px] py-2 flex flex-col z-10 bg-[#121218]/30 mx-2 font-mono">
-            <div className="col-span-3 fixed text-center mt-5 grid-item flex  z-50 w-full justify-center">
+            <div className="col-span-3 fixed text-center mt-5 grid-item flex  z-50 w-full justify-center bottom-2">
               {
                 isOutOfView && (
-                  <div className="flex  gap-4 mb-2 items-center fixed bottom-0 w-fit justify-center rounded-full  p-2 bg-[#121218]/60 backdrop-blur-sm">
+                  <div className="flex items-center bg-black/70 z-50 rounded-full text-[#e0e0e0] gap-2 p-2 shadow-md backdrop-blur-sm">
                     {isOutOfView && socialLinks.map(({ href, label }) => (
                       <a key={label} href={href} target="_blank" rel="noopener noreferrer">
                         {label === "GitHub" && <FaGithub className="size-6 m-1" title={label} />}
@@ -104,7 +103,13 @@ const App = () => {
                     ))}
                     <Mail
                       onClick={() => window.open('mailto:vinitnagar56@gmail.com')}
-                      className="size-5 m-1" />
+                      className="size-6  m-1" />
+                    <div className='text-gray-400'
+                      onClick={() => {
+                        const top = document.getElementById('top');
+                        top?.scrollIntoView({ behavior: 'smooth' })
+                      }}>
+                      <FaAngleDoubleUp className="size-6 m-1"/></div>
                   </div>
                 )
               }
@@ -118,7 +123,7 @@ const App = () => {
                 setisopen={setIsOpen}
               />
             }
-            <div className="grid grid-cols-3 auto-rows-[minmax(90px,auto)] gap-1 flex-1">
+            <div className="grid grid-cols-3 auto-rows-[minmax(90px,auto)] gap-1 flex-1" id="top">
               <FeaturedCard
                 animatedItems={animatedItems}
                 handleMouseEnter={handleMouseEnter}
