@@ -20,12 +20,13 @@ function Mobile({ onOutOfView }: { onOutOfView?: (isOutOfView: boolean) => void 
       { threshold: 0 }
     );
 
-    if (socialRef.current) {
-      observer.observe(socialRef.current);
+    const currentRef = socialRef.current;
+    if (currentRef) {
+      observer.observe(currentRef);
     }
 
     return () => {
-      if (socialRef.current) observer.unobserve(socialRef.current);
+      if (currentRef) observer.unobserve(currentRef);
     };
   }, [onOutOfView]);
 
