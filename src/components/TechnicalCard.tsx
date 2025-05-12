@@ -56,7 +56,7 @@ function TechnicalCard({ animatedItems, handleMouseEnter, handleMouseLeave }: Ab
       onMouseEnter={handleMouseEnter}
       onMouseLeave={handleMouseLeave}
     >
-      <h3 className=" text-center sm:text-left sm:text-lg sm:font-semibold tracking-tight">Technical Skills</h3>
+      <h3 className=" text-center sm:text-left sm:text-lg m-4 sm:m-0 sm:font-semibold tracking-tight">Technical Skills</h3>
       <div className="flex flex-wrap mt-2">
         {
           skills.map(skill => (

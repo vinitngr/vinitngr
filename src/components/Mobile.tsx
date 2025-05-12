@@ -1,11 +1,31 @@
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useRef } from 'react';
 import { FaGithub, FaLinkedin, FaStar, FaTwitter } from 'react-icons/fa';
 import { HiDownload } from 'react-icons/hi';
 
 import { socialLinks } from '../data/social';
 import { Mail } from 'lucide-react';
-function Mobile() {
+function Mobile({ onOutOfView }: { onOutOfView: (isOutOfView: boolean) => void }) {
   const [time, setTime] = useState(new Date().toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' }));
+  const socialRef = useRef(null);
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        // Pass true if out of view, false if in view
+        onOutOfView(!entry.isIntersecting);
+      },
+      { threshold: 0 }
+    );
+
+    if (socialRef.current) {
+      observer.observe(socialRef.current);
+    }
+
+    return () => {
+      // eslint-disable-next-line react-hooks/exhaustive-deps
+      if (socialRef.current) observer.unobserve(socialRef.current);
+    };
+  }, [onOutOfView]);
 
   useEffect(() => {
     const interval = setInterval(() => {
@@ -21,9 +41,9 @@ function Mobile() {
         <span className="text-gray-400">{time}</span>
         <div className="flex gap-3">
           <button className="text-white flex cursor-pointer items-center">
-            
-            <FaStar title="Star on GitHub" 
-            onClick={() => window.open('https://github.com/vinitngr', '_blank')}
+
+            <FaStar title="Star on GitHub"
+              onClick={() => window.open('https://github.com/vinitngr', '_blank')}
             />
           </button>
         </div>
@@ -36,7 +56,7 @@ function Mobile() {
       <p className="text-gray-400 mb-1">Full stack developer</p>
       <p className="text-gray-400 mb-3 text-xs">Currently learning AI/ML...</p>
 
-      <div className="flex gap-4 mb-5 items-center">
+      <div className="flex gap-4 mb-5 items-center" ref={socialRef}>
         {socialLinks.map(({ href, label }) => (
           <a key={label} href={href} target="_blank" rel="noopener noreferrer">
             {/* Dynamically render the correct icon based on the label */}
@@ -46,16 +66,15 @@ function Mobile() {
             {label === "Resume" && <HiDownload className="size-6 m-1" title={label} />}
           </a>
         ))}
-        <Mail 
-        onClick={() => window.open('mailto:vinitnagar56@gmail.com')}
-        className="size-5 m-1"  />
-
+        <Mail
+          onClick={() => window.open('mailto:vinitnagar56@gmail.com')}
+          className="size-5 m-1" />
       </div>
 
       <div className="mb-3">
         <h3 className="font-semibold mb-1">About Me.</h3>
         <p className="text-gray-300">
-          Undergraduate developer with 1.5 years of experience, crafting web & AI products using modern stacks like TypeScript, Next.js. Skilled in WebRTC, Node.js, agentic AI, and video tech, focused on building real-time, innovative solutions.
+          Undergraduate developer with 1.5+ years of experience, crafting web & AI products using modern stacks like TypeScript, Next.js. Skilled in WebRTC, Node.js, agentic AI, and video tech, focused on building real-time, innovative solutions.
         </p>
       </div>
 
