@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import Sidebar from "./components/Sidebar";
 import GridPattern from "./components/svg/pattern";
 import Navbar from "./components/Navbar";
@@ -25,7 +25,8 @@ const App = () => {
   const [animatedItems, setAnimatedItems] = useState<string[]>([]);
   const [isOpen, setIsOpen] = useState(false);
   const [isOutOfView, setIsOutOfView] = useState(false);
-
+  const messageHomeRef = useRef(null)
+  const [navup, setNavup] = useState(false);
   useEffect(() => {
     const gridItems = document.querySelectorAll('.grid-item');
 
@@ -59,6 +60,37 @@ const App = () => {
       });
     }
   };
+  useEffect(() => {
+    if (!isMobile) return; // Only observe when in mobile view
+
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            setNavup(true);
+          } else {
+            setNavup(false);
+          }
+        });
+      },
+      {
+        threshold: 0.1,
+        rootMargin: "0px 0px -100px 0px"
+      }
+    );
+
+    const element = messageHomeRef.current;
+    if (element) {
+      observer.observe(element);
+    }
+
+    return () => {
+      if (element) {
+        observer.unobserve(element);
+      }
+    };
+  }, [isMobile]); // Add isMobile as dependency
+
 
   useEffect(() => {
     const checkMobile = () => setIsMobile(window.innerWidth <= 640);
@@ -89,10 +121,10 @@ const App = () => {
             <GridPattern />
           </div>
           <div className="max-w-[700px] py-2 flex flex-col z-10 bg-[#121218]/30 mx-2 font-mono">
-            <div className="col-span-3 fixed text-center mt-5 grid-item flex  z-50 w-full justify-center bottom-2">
+            <div className={`col-span-3 fixed text-center grid-item flex  z-50 w-full justify-center ${navup ? 'top-2' : 'bottom-2'}`}>
               {
                 isOutOfView && (
-                  <div className="flex items-center bg-black/70 z-50 rounded-full text-[#e0e0e0] gap-2 p-2 shadow-md backdrop-blur-sm">
+                  <div className="flex items-center bg-black/50 z-50 rounded-full text-[#e0e0e0] gap-2 p-2 shadow-md backdrop-blur-sm">
                     {isOutOfView && socialLinks.map(({ href, label }) => (
                       <a key={label} href={href} target="_blank" rel="noopener noreferrer">
                         {label === "GitHub" && <FaGithub className="size-6 m-1" title={label} />}
@@ -109,7 +141,7 @@ const App = () => {
                         const top = document.getElementById('top');
                         top?.scrollIntoView({ behavior: 'smooth' })
                       }}>
-                      <FaAngleDoubleUp className="size-6 m-1"/></div>
+                      <FaAngleDoubleUp className="size-6 m-1" /></div>
                   </div>
                 )
               }
@@ -192,7 +224,10 @@ const App = () => {
                       <Education showHead={false} />
                     </div>
 
-                    <div className="col-span-3 order-6 text-center mt-5 grid-item transition-all duration-300">
+                    <div
+                      ref={messageHomeRef}
+                      className="col-span-3 message-home-container order-6 text-center mt-5 grid-item transition-all duration-300"
+                    >
                       <MessageHome />
                     </div>
                   </>
