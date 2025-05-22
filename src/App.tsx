@@ -20,7 +20,7 @@ import { FaAngleDoubleUp, FaGithub, FaLinkedin, FaTwitter } from "react-icons/fa
 import { HiDownload } from "react-icons/hi";
 import { Mail } from "lucide-react";
 const App = () => {
-  const [isMobile, setIsMobile] = useState(false);
+  const [isMobile, setIsMobile] = useState(() => window.innerWidth <= 640);
   const [selected, setSelected] = useState<SidebarSection>('about');
   const [animatedItems, setAnimatedItems] = useState<string[]>([]);
   const [isOpen, setIsOpen] = useState(false);
@@ -124,7 +124,7 @@ const App = () => {
             <div className={`col-span-3 fixed text-center grid-item flex  z-50 w-full justify-center ${navup ? 'top-2' : 'bottom-2'}`}>
               {
                 isOutOfView && (
-                  <div className="flex items-center bg-black/50 z-50 rounded-full text-[#e0e0e0] gap-2 p-2 shadow-md backdrop-blur-sm">
+                  <div className="flex items-center bg-black/50 z-50 rounded-full border border-[#2d2d3a] text-[#e0e0e0] gap-2 p-2 shadow-md backdrop-blur-sm">
                     {isOutOfView && socialLinks.map(({ href, label }) => (
                       <a key={label} href={href} target="_blank" rel="noopener noreferrer">
                         {label === "GitHub" && <FaGithub className="size-6 m-1" title={label} />}
