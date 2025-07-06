@@ -19,4 +19,5 @@ export interface Project {
   onetag?: string;
   link?: string;
   extendedImages?: string[];
+  webUrl?: string
 }

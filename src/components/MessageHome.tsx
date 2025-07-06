@@ -7,7 +7,7 @@ function MessageHome() {
         >
                     <span className="mb-5">Message me</span>
 
-          <div className="mb-3 text-xs">
+          <div className="mb-3 text-xs text-gray-500">
             Feel free to message, I'll try my best for a quick response
           </div>
           <form

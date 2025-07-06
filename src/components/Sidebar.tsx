@@ -14,7 +14,7 @@ const Sidebar = ({ isOpen, setIsOpen, selected , setselectfxn } : { isOpen: bool
 
   
   return (
-    <div className={`bg-[#121218] font-mono lg:relative h-screen fixed top-0 z-20 left-0 border-r-2 overflow-hidden transition-all ease-in-out duration-500 border-[#2d2d3a] ${isOpen ? 'w-full lg:w-[80vw]' : 'w-0'}`}>
+    <div className={`bg-[#121218] font-mono lg:relative h-screen fixed top-0 z-20 left-0 ${isOpen && 'border-r-1'} overflow-hidden transition-all ease-in-out duration-500 border-[#2d2d3a] ${isOpen ? 'w-full lg:w-[80vw]' : 'w-0'}`}>
       <div className='flex text-white justify-between items-center'>
         <div onClick={() => setIsOpen(false)} className='flex justify-center -rotate-90 items-center m-3 text-center cursor-pointer hover:text-yellow-500'>
           <RxVercelLogo size={20} />

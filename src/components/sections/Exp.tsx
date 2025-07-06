@@ -13,7 +13,7 @@ function Exp({ showHead = true }: { showHead?: boolean }) {
             </div>
             <div className="font-extrabold mt-5">Following Are The Few</div>
           </div>
-        ) : <div className="text-center text-xs">I'm still in the learning phase, so no major industrial experience yet 😅</div>
+        ) : <div className="text-center text-xs text-gray-500">I'm still in the learning phase, so no major industrial experience yet 😅</div>
         
       }
       <div className="h-full overflow-auto pb-10">
@@ -26,7 +26,7 @@ function Exp({ showHead = true }: { showHead?: boolean }) {
             <div>
               {exp.title} {exp.source && <span className="text-[#a0a0a0] text-xs align-top">{exp.source}</span>}
             </div>
-            <div className="text-right">{exp.description}</div>
+            <div className="text-right text-gray-500">{exp.description}</div>
           </div>
         ))}
       </div>

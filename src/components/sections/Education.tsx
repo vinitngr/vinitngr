@@ -23,7 +23,7 @@ function Education({showHead = true}: {showHead?: boolean}) {
                         <div className="sm:w-1/2">
                             {edu.degree} {edu.from && <span className="text-[#a0a0a0] text-xs align-top">{edu.span}</span>}
                         </div>
-                        <div className="sm:w-1/2 sm:text-right">{edu.from}</div>
+                        <div className="sm:w-1/2 sm:text-right text-gray-500">{edu.from}</div>
                     </div>
                 ))}
 

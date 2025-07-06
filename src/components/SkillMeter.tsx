@@ -3,7 +3,7 @@ import { AboutPrevProps } from "../utils/type";
 const skills = [
   { name: "FullStack", level: "90%" },
   { name: "python", level: "50%" },
-  { name: "AI/ML", level: "20%" },
+  { name: "AI/ML", level: "40%" },
 ];
 
 export default function SkillMeter({ animatedItems, handleMouseEnter, handleMouseLeave }: AboutPrevProps) {

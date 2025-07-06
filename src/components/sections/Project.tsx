@@ -1,4 +1,4 @@
-import { ArrowRight, ChevronDown, ChevronUp, Github } from "lucide-react";
+import { ArrowRight, ChevronDown, ChevronUp, Github, Globe } from "lucide-react";
 import { useState } from "react";
 import { Project } from "../../utils/type";
 import { projectdetails } from "../../data/project";
@@ -48,11 +48,20 @@ const ProjectCard = ({ showHead = true }: { showHead?: boolean }) => {
             </div>
 
             <div className="flex sm:flex-row flex-col justify-between mt-4 sm:items-center">
-              <a href={project.link} className="group text-xs text-yellow-600 no-underline flex items-center gap-1 font-medium">
-                <Github size={20} />
-                <span >View Project</span>
-                <ArrowRight className="w-4 h-4 ml-1 transition-transform duration-200 group-hover:-rotate-45" />
-              </a>
+              <div className="flex w-full justify-between">
+                <a href={project.link} target="_blank" className="group text-xs text-yellow-600 no-underline flex items-center gap-1 font-medium">
+                  <Github size={20} />
+                  <span >View Project</span>
+                  <ArrowRight className="w-4 h-4 ml-1 transition-transform duration-200 group-hover:-rotate-45" />
+                </a>
+                {
+                  project.webUrl && (
+                    <a href={project.webUrl} target="_blank" className=" mx-2 group text-xs text-zinc-600 no-underline flex items-center gap-1 font-medium">
+                      <Globe size={20} className="hover:text-blue-500" />
+                    </a>
+                  )
+                }
+              </div>
               <div className="flex gap-3 items-center mt-3 sm:mt-0 justify-between sm:justify-end">
 
                 {!project.isExpanded && (
@@ -64,7 +73,7 @@ const ProjectCard = ({ showHead = true }: { showHead?: boolean }) => {
                     }}
                     className="flex items-center gap-2  text-gray-500 text-xs"
                   >
-                    <span>Show more</span>
+                    <span className="text-nowrap">Show more</span>
                     <ChevronDown className="w-3 h-3" />
                   </button>
                 )}
