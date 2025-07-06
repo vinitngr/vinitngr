@@ -1,6 +1,7 @@
 import { Mail, MapPin, Linkedin, Github, GraduationCap } from 'lucide-react'
 import Highlight from '../Highlight'
 import Mobile from '../Mobile'
+// import { LeetCodeStats } from '../Leetcodestats'
 
 function About() {
   return (
@@ -46,6 +47,9 @@ function About() {
             alt="GitHub Contribution Graph"
             className=" w-full h-auto"
           />
+          <img src="https://leetcode-stats.vercel.app/api?username=vinitngr" />
+          {/* <LeetCodeStats username='vinitngr'/> */}
+
 
         </div>
 
