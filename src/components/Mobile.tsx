@@ -120,23 +120,23 @@ function Mobile({ onOutOfView }: { onOutOfView?: (isOutOfView: boolean) => void 
       </div>
 
       <div className="mb-3">
-        <h3 className="font-semibold mb-1 text-sm">About Me.</h3>
-        <p className="text-gray-400 text-sm">
+        <h3 className="font-semibold mb-1">About Me.</h3>
+        <p className="text-gray-400">
           Undergraduate developer with 1.5+ years of experience, crafting web & AI products using modern stacks like TypeScript, Next.js. Skilled in WebRTC, Node.js, agentic AI, and audio-video tech, focused on building real-time, innovative solutions.
         </p>
       </div>
 
       <div className='mb-3'>
-        <h3 className="font-semibold mb-1 text-sm">Hire Me.</h3>
-        <p className="text-gray-400 text-sm">
+        <h3 className="font-semibold mb-1">Hire Me.</h3>
+        <p className="text-gray-400">
           Available for internships, freelance, or part-time work. I'm passionate, fast-learning, and ready to ship.
         </p>
       </div>
 
       <div className="mb-3">
 
-        <h3 className="font-semibold mb-1 text-sm">Currently Into.</h3>
-        <p className="text-gray-400 text-sm">
+        <h3 className="font-semibold mb-1">Currently Into.</h3>
+        <p className="text-gray-400">
           Currently exploring @modelcontextProtocol, @Ai/ML , and @video_streaming
         </p>
       </div>
