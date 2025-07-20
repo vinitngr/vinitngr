@@ -21,3 +21,14 @@ export interface Project {
   extendedImages?: string[];
   webUrl?: string
 }
+
+export interface Experience {
+  logolink: string;
+  jobtitle: string;
+  company: string;
+  date: string;
+  enddate?: string;
+  duration?: string;
+  description: string;
+  companyLink?: string;
+}

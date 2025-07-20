@@ -4,11 +4,13 @@ export const EduAndCert = {
           degree: 'Bachelor of Engineering',
           from: 'MBM University , Jodhpur',
           span: 'in ECE (23-27)',
+          insitituteLogo: 'mbm.png',
         },
         {
           degree: '12th grade',
           from: 'SVGMS, Sumerpur',
           span: 'in PCM',
+          insitituteLogo: 'svgmss.png',
         },
       ],
     certifications: [

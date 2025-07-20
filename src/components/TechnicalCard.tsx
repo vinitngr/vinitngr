@@ -1,51 +1,10 @@
-import { JSX } from 'react';
 import { AboutPrevProps } from '../utils/type'
-import { FaJsSquare, FaNodeJs, FaPython, FaReact, FaDocker, FaCss3Alt,  FaLink, FaGithub, FaRobot } from 'react-icons/fa';
-import { SiNextdotjs, SiDrizzle, SiMongodb, SiPostgresql, SiExpress, SiRedis, SiHono, SiWebrtc, SiPuppeteer } from 'react-icons/si';
-import { IoLogoWebComponent } from 'react-icons/io5';
-function TechnicalCard({ animatedItems, handleMouseEnter, handleMouseLeave }: AboutPrevProps) {
-  const skillIcons: { [key: string]: JSX.Element } = {
-    'TypeScript': <FaJsSquare />,
-    'Node.js': <FaNodeJs />,
-    'Python': <FaPython />,
-    'React': <FaReact />,
-    'Next.js': <SiNextdotjs />,
-    'Drizzle': <SiDrizzle />,
-    'MongoDB': <SiMongodb />,
-    'Git': <FaGithub />,
-    'LangChain': <FaLink />,
-    'PostgreSQL': <SiPostgresql />,
-    'Express': <SiExpress />,
-    'WebRTC': <SiWebrtc />,
-    'Redis': <SiRedis />,
-    'TailwindCss': <FaCss3Alt />,
-    'Web Dev': <IoLogoWebComponent />,
-    'Docker': <FaDocker />,
-    'Hono': <SiHono />,
-    'Ai/ML': <FaRobot /> ,
-    'testing/automation' : <SiPuppeteer/>
-  };
+import icons from '../data/icons';
+import { skills } from '../data/skills';
 
-  const skills: string[] = [
-    'TypeScript',
-    'Node.js',
-    'Python',
-    'React',
-    'Next.js',
-    'Drizzle',
-    'MongoDB',
-    'Git',
-    'LangChain',
-    'PostgreSQL',
-    'Express',
-    'Redis',
-    'WebRTC',
-    'TailwindCss',
-    'Docker',
-    'zustand',
-    'agenticAi',
-    'Ai/ML',
-  ];
+
+function TechnicalCard({ animatedItems, handleMouseEnter, handleMouseLeave }: AboutPrevProps) {
+
   
   return (
     <div
@@ -67,7 +26,7 @@ function TechnicalCard({ animatedItems, handleMouseEnter, handleMouseLeave }: Ab
               className="inline-block hover:bg-[#2a2a36] bg-[#2a2a36]/80 text-[#a0a0a0] text-xs py-1 px-2 rounded mr-1 mb-1"
             >
               <span className="flex items-center gap-1">
-                {skillIcons[skill]} {skill}
+                {icons[skill.toLowerCase()]} {skill}
               </span>
             </a>
           ))

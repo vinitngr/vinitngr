@@ -3,6 +3,7 @@ import { AboutPrevProps } from '../utils/type';
 import { useEffect, useState } from 'react';
 import GridPattern from './svg/pattern';
 import { Featured } from '../data/project';
+import icons from '../data/icons';
 
 function FeaturedCard({ animatedItems, handleMouseEnter, handleMouseLeave }: AboutPrevProps) {
   const [currentIndex, setCurrentIndex] = useState(0);
@@ -32,7 +33,9 @@ function FeaturedCard({ animatedItems, handleMouseEnter, handleMouseLeave }: Abo
                   key={tag}
                   className="inline-block  cursor-pointer  sm:bg-[#2a2a36]/80 bg-[#242601]/10 text-white  sm:text-[#a0a0a0] text-xs py-1 px-2 rounded mr-1 mb-1"
                 >
-                  {tag}
+                  <span className="flex items-center gap-1">
+                    {icons[tag.toLowerCase()]} {tag}
+                  </span>
                 </button>
               ))}
             </div>

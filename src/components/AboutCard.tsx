@@ -33,6 +33,10 @@ function AboutPrev({ animatedItems, handleMouseEnter, handleMouseLeave, setisope
         className="group text-sm text-yellow-700 no-underline flex items-center font-medium mt-auto">
         <span className="group-hover:text-yellow-700">View Details</span>
         <ArrowRight className="w-4 h-4 ml-1 group-hover:text-yellow-700 transition-transform duration-500 ease-in-out group-hover:-rotate-45" />
+        <button className="text-green-400 text-xs border border-green-500 px-1 py-0.3 absolute right-0 rounded-br-md -bottom-2  inline-block mb-2 cursor-pointer">
+          <span className='mr-1 animate-pulse'>•</span>
+          Available
+        </button>
       </button>
     </div>
   )

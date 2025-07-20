@@ -11,17 +11,24 @@ function Education({showHead = true}: {showHead?: boolean}) {
                     <div className="font-extralight text-gray-500">
                         I am currently pursuing a Bachelor of Engineering (B.E.) in Electronics and Communication Engineering (ECE) from <Highlight>MBM University</Highlight>. I completed 12th grade at SVGMS, Sumerpur. Additionally, I have obtained online certifications in Web Development and AI from platforms such as <Highlight>Udemy</Highlight>.
                     </div>
-                    <div className="h-full overflow-auto pb-10"></div>
+                    <div className="h-full overflow-auto pb-5"></div>
                 </>
             )}
-            <div className="sm:font-extrabold mt-5">Education</div>
+            <div className="sm:font-extrabold ">Education</div>
                 {EduAndCert.education.map((edu, index) => (
                     <div
                         key={index}
-                        className={`mt-${index === 0 ? 5 : 2} shadow-md w-full p-4 rounded sm:bg-[#1A1A22] border border-[#1a1a22] text-white flex sm:flex-row flex-col justify-between sm:items-center items-start`}
+                        className={`mt-${index === 0 ? 5 : 2} sm:border sm:border-[#2d2d3a]  shadow-md w-full  sm:p-4 p-2 rounded sm:bg-[#1A1A22] text-white flex sm:flex-row flex-col justify-between sm:items-center items-start`}
                     >
-                        <div className="sm:w-1/2">
-                            {edu.degree} {edu.from && <span className="text-[#a0a0a0] text-xs align-top">{edu.span}</span>}
+                        <div className="sm:w-1/2 flex items-center">
+                            {
+                                showHead && (
+                                    <img src={edu.insitituteLogo} className="rounded-full h-8 w-8 mr-4" alt={edu.from + ' logo'} />
+                                )
+                            }
+                            <div>
+                                {edu.degree} {edu.from && <span className="text-[#a0a0a0] text-xs align-top">{edu.span}</span>}
+                            </div>
                         </div>
                         <div className="sm:w-1/2 sm:text-right text-gray-500">{edu.from}</div>
                     </div>
@@ -31,7 +38,7 @@ function Education({showHead = true}: {showHead?: boolean}) {
                 {EduAndCert.certifications.map((cert, index) => (
                     <div
                         key={index}
-                        className={`mt-${index === 0 ? 5 : 2} shadow-md w-full p-4 rounded sm:bg-[#1A1A22] border border-[#1a1a22] text-white flex sm:flex-row flex-col justify-between sm:items-center items-start`}
+                        className={`mt-${index === 0 ? 5 : 2} sm:border sm:border-[#2d2d3a]   shadow-md w-full  sm:p-4 p-2 rounded sm:bg-[#1A1A22]  text-white flex sm:flex-row flex-col justify-between sm:items-center items-start`}
                     >
                         <div className="sm:w-1/2">
                             {cert.name} {cert.platform && <span className="text-[#a0a0a0] text-xs align-top">{cert.platform}</span>}

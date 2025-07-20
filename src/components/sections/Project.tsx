@@ -1,7 +1,7 @@
-import { ArrowRight, ChevronDown, ChevronUp, Github, Globe } from "lucide-react";
+import { ArrowRight, ChevronDown, ChevronUp, ExternalLink, Github } from "lucide-react";
 import { useState } from "react";
 import { Project } from "../../utils/type";
-import { projectdetails } from "../../data/project";
+import { miniProjects, projectdetails } from "../../data/project";
 import Highlight from "../Highlight";
 import OneTag from "../OneTag";
 
@@ -13,23 +13,36 @@ const ProjectCard = ({ showHead = true }: { showHead?: boolean }) => {
       <h2 className=" text-center sm:text-left sm:text-xl mb-5">Projects</h2>
       {showHead && (
         <>
-          <div className="font-extralight text-gray-500">
-            Here are some of the projects I've worked on, showcasing my skills in various web technologies 🌐 and frameworks. Some were built for learning purposes, while others were created for <Highlight>hackathons</Highlight>.
+          <div className="font-extralight text-gray-500 mb-5">
+            Here are some of the projects I've worked on, showcasing my skills in various web technologies and frameworks. Some were built for learning purposes, while others were created for <Highlight>hackathons</Highlight>.
           </div>
-          <div className="font-extrabold mt-5 mb-3">Following Are The Top</div>
         </>
       )}
 
-      <div className="flex flex-col pb-10 gap-4 overflow-auto h-full">
+      <div className="flex flex-col gap-4 overflow-auto h-full">
         {projects.map((project, index) => (
           <div
             key={index}
             id={`card-${index}`}
-            className="sm:bg-[#1A1A22] border border-[#1a1a22] rounded-md sm:p-4 p-2 transition-all duration-300 shadow-md cursor-pointer"
+            className="sm:bg-[#1A1A22] sm:border sm:border-[#2d2d3a]  rounded-md sm:p-4 p-2 transition-all duration-300 shadow-md cursor-pointer"
           >
             <div className="flex gap-4 justify-between">
               <div>
-                <h3 className="text-lg font-semibold tracking-tight">{project.title}</h3>
+                <div className="flex justify-between">
+                  <h3 className="text-lg font-semibold tracking-tight">{project.title}</h3>
+                  {
+                    project.webUrl && (
+                      <a
+                        href={project.webUrl}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="text-gray-400 hover:text-white transition-colors"
+                      >
+                        <ExternalLink className="w-5 h-5" />
+                      </a>
+                    )
+                  }
+                </div>
                 <p className="text-sm text-gray-500 mb-3 line-clamp-2">{project.description}</p>
               </div>
               {project.image ? (
@@ -54,13 +67,7 @@ const ProjectCard = ({ showHead = true }: { showHead?: boolean }) => {
                   <span >View Project</span>
                   <ArrowRight className="w-4 h-4 ml-1 transition-transform duration-200 group-hover:-rotate-45" />
                 </a>
-                {
-                  project.webUrl && (
-                    <a href={project.webUrl} target="_blank" className=" mx-2 group text-xs text-zinc-600 no-underline flex items-center gap-1 font-medium">
-                      <Globe size={20} className="hover:text-blue-500" />
-                    </a>
-                  )
-                }
+
               </div>
               <div className="flex gap-3 items-center mt-3 sm:mt-0 justify-between sm:justify-end">
 
@@ -88,17 +95,17 @@ const ProjectCard = ({ showHead = true }: { showHead?: boolean }) => {
               className={`overflow-hidden transition-all duration-300 ease-in-out ${project.isExpanded ? " opacity-100 pt-4" : "max-h-0 opacity-0"
                 }`}
             >
-              <p className="text-sm text-gray-400">{project.extendedDescription}</p>
-                <div className="grid gap-2 mt-3">
-                  {project.extendedImages && project.extendedImages.map((image) => (
-                    <img
-                      key={image}
-                      src={image}
-                      alt={project.title}
-                      className="w-full object-cover"
-                    />
-                  ))}
-                </div>
+              <p className="text-sm text-gray-500">{project.extendedDescription}</p>
+              <div className="grid gap-2 mt-3">
+                {project.extendedImages && project.extendedImages.map((image) => (
+                  <img
+                    key={image}
+                    src={image}
+                    alt={project.title}
+                    className="w-full object-cover"
+                  />
+                ))}
+              </div>
               <button
                 onClick={() => {
                   const updatedProjects = [...projects];
@@ -114,6 +121,54 @@ const ProjectCard = ({ showHead = true }: { showHead?: boolean }) => {
           </div>
         ))}
       </div>
+      {
+        showHead && (
+          <div className="w-full">
+            {miniProjects.map((project, index) => (
+              <div
+                key={index}
+                className={`mt-${index === 0 ? 5 : 2} border-[#2d2d3a] shadow-md w-full p-4 rounded sm:bg-[#1A1A22] border text-white flex flex-col gap-2`}
+              >
+                <div className="flex items-center justify-between">
+                  {project.title}
+                  {(project.github || project.link) && (
+                    <div className="flex items-center gap-2">
+                      {project.link && (
+                        <a
+                          href={project.link}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="text-gray-400 hover:text-white transition-colors"
+                        >
+                          <ExternalLink className="w-5 h-5" />
+                        </a>
+                      )}
+                      {project.github && (
+                        <a
+                          href={project.github}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="text-gray-400 hover:text-white transition-colors"
+                        >
+                          <Github className="w-5 h-5" />
+                        </a>
+                      )}
+                    </div>
+                  )}
+                </div>
+
+                <div className="text-sm text-gray-500">{project.description}</div>
+
+              </div>
+            ))}
+            <div className="pb-10 text-center mt-5 w-full">
+              <a href="https://github.com/vinitngr" target="_blank">more + </a>
+
+            </div>
+          </div>
+        )
+      }
+
     </>
   );
 };
