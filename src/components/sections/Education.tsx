@@ -18,7 +18,7 @@ function Education({showHead = true}: {showHead?: boolean}) {
                 {EduAndCert.education.map((edu, index) => (
                     <div
                         key={index}
-                        className={`mt-${index === 0 ? 5 : 2} sm:border sm:border-[#2d2d3a]  shadow-md w-full  sm:p-4 p-2 rounded sm:bg-[#1A1A22] text-white flex sm:flex-row flex-col justify-between sm:items-center items-start`}
+                        className={`mt-${index === 0 ? 5 : 2} border border-[#1a1a22] sm:border-[#2d2d3a]  shadow-md w-full  sm:p-4 p-2 rounded sm:bg-[#1A1A22] text-white flex sm:flex-row flex-col justify-between sm:items-center items-start`}
                     >
                         <div className="sm:w-1/2 flex items-center">
                             {
@@ -38,7 +38,7 @@ function Education({showHead = true}: {showHead?: boolean}) {
                 {EduAndCert.certifications.map((cert, index) => (
                     <div
                         key={index}
-                        className={`mt-${index === 0 ? 5 : 2} sm:border sm:border-[#2d2d3a]   shadow-md w-full  sm:p-4 p-2 rounded sm:bg-[#1A1A22]  text-white flex sm:flex-row flex-col justify-between sm:items-center items-start`}
+                        className={`mt-${index === 0 ? 5 : 2} border border-[#1a1a22] sm:border-[#2d2d3a]   shadow-md w-full  sm:p-4 p-2 rounded sm:bg-[#1A1A22]  text-white flex sm:flex-row flex-col justify-between sm:items-center items-start`}
                     >
                         <div className="sm:w-1/2">
                             {cert.name} {cert.platform && <span className="text-[#a0a0a0] text-xs align-top">{cert.platform}</span>}

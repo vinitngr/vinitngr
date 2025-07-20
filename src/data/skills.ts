@@ -16,9 +16,8 @@ export const skills: string[] = [
   'zustand',
   'webContainer',
   'AWS',
-  'LangChain',
   'cloudflare',
-  'puppeteer',
+  'automation',
   'more +'
 ];
 

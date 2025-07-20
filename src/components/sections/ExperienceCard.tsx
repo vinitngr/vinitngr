@@ -16,7 +16,7 @@ const ExperienceCard: React.FC<Experience> = ({
 
 
     return (
-        <div className="w-full sm:border sm:border-[#2d2d3a]  sm:bg-[#1A1A22] relative rounded-md  sm:p-4 p-2 transition-all duration-300"
+        <div className="w-full border border-[#1a1a22] sm:border-[#2d2d3a]  sm:bg-[#1A1A22] relative rounded-md  sm:p-4 p-2 transition-all duration-300"
             onClick={() => setOpen(!open)}
             aria-expanded={open}
             role="button"

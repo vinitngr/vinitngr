@@ -25,7 +25,7 @@ const icons: { [key: string]: JSX.Element } = {
     'bun': <SiBun />,
     'ai/ml': <FaRobot /> ,
     'cloudflare': <FaCloudflare/>,
-    'puppeteer': <SiPuppeteer/>,
+    'automation': <SiPuppeteer/>,
     'neon': <Database size={10} />,
     'gemini': <SiGooglegemini/>,
     'excalidraw': <SiExcalidraw size={10}/>,

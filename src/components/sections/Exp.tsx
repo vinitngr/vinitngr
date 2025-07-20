@@ -38,7 +38,9 @@ function Exp({ showHead = true }: { showHead?: boolean }) {
             <div>
               {exp.title}{" "}
             </div>
-            <div className="text-right text-gray-500">extend</div>
+            <a href="https://github.com/vinitngr" target="_blank">
+              <div className="text-right text-gray-500">extend</div>
+            </a>
           </div>
         ))}
       </div>

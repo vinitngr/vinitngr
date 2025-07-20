@@ -14,6 +14,7 @@ function ConnectPrev({ animatedItems, handleMouseEnter, handleMouseLeave , setis
         <h3 className="text-xl font-semibold mb-2 tracking-tight">Message me!</h3>
         <p className="text-xs  text-[#a0a0a0]/50 leading-relaxed">Have a project in mind?</p>
         <p className="text-xs  text-[#a0a0a0]/50 leading-relaxed">FreeLance project for me?</p>
+        <p className="text-xs  text-[#a0a0a0]/50 leading-relaxed">hire me?</p>
       </div>
       <button 
       onClick={() => {
