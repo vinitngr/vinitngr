@@ -9,7 +9,7 @@ import { SquareArrowOutUpRight } from "lucide-react";
 const Sidebar = ({ isOpen, setIsOpen, selected , setselectfxn } : { isOpen: boolean, setIsOpen: (option: boolean) => void, selected: string , setselectfxn: (option: string) => void}) => {
 
   const onClick = () => {
-    window.open('https://drive.google.com/file/d/15ZFtkuICHdiYCuN6UFO9wqZ2dCkfD_vV/view', "_blank");
+    window.open('https://drive.google.com/file/d/1B7dMoyX3UMsgdjvI5K7vJc9kT1_eZ0u1/view?usp=sharing', "_blank");
   };
 
   
