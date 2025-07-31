@@ -3,7 +3,7 @@ import About from "./sections/About";
 import Exp from "./sections/Exp";
 import Education from "./sections/Education";
 import ProjectCard from "./sections/Project";
-import { SquareArrowOutUpRight } from "lucide-react";
+import PdfViewer from "./PdfPreview";
 
 
 const Sidebar = ({ isOpen, setIsOpen, selected , setselectfxn } : { isOpen: boolean, setIsOpen: (option: boolean) => void, selected: string , setselectfxn: (option: string) => void}) => {
@@ -24,10 +24,10 @@ const Sidebar = ({ isOpen, setIsOpen, selected , setselectfxn } : { isOpen: bool
             <div
               key={item}
               className={` flex gap-1 items-center cursor-pointer ${selected === item && "underline-offset-4 underline text-yellow-500"}`}
-              onClick={item == 'resume' ?  onClick :() => setselectfxn(item)}
+              onClick={() => setselectfxn(item)}
             >
               {item}
-              {item == 'resume' ? <SquareArrowOutUpRight size={10}/>  : ''}
+              {/* {item == 'resume' ? <SquareArrowOutUpRight size={10}/>  : ''} */}
             </div>
           ))}
 
@@ -39,6 +39,7 @@ const Sidebar = ({ isOpen, setIsOpen, selected , setselectfxn } : { isOpen: bool
         {selected === 'projects' && <ProjectCard />}
         {selected === 'experience' && <Exp />}
         {selected === 'education' && <Education />}
+        { selected === 'resume' && <PdfViewer/>}
       </div>
     </div>
   );
