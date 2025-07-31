@@ -7,12 +7,6 @@ import PdfViewer from "./PdfPreview";
 
 
 const Sidebar = ({ isOpen, setIsOpen, selected , setselectfxn } : { isOpen: boolean, setIsOpen: (option: boolean) => void, selected: string , setselectfxn: (option: string) => void}) => {
-
-  const onClick = () => {
-    window.open('https://drive.google.com/file/d/11RtF0DaTjzu1vsWB20VuXP3SWYvlowec/view?usp=sharing', "_blank");
-  };
-
-  
   return (
     <div className={`bg-[#121218] font-mono lg:relative h-screen fixed top-0 z-20 left-0 ${isOpen && 'border-r-1'} overflow-hidden transition-all ease-in-out duration-500 border-[#2d2d3a] ${isOpen ? 'w-full lg:w-[80vw]' : 'w-0'}`}>
       <div className='flex text-white justify-between items-center'>
