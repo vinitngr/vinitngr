@@ -1,34 +1,40 @@
 
 export const Featured = [
-    {
+  {
     id: 'card1',
+    title: 'TGGStack | @theggs/cli',
+    description: 'AI-powered stack builder that generates tailored prompts or full tech stacks, with seamless options to store, upload, download, and share directly from the platform.',
+    link: 'https://github.com/vinitngr/RTCboard',
+    tags: ['cloudflare','Turborepo', 'CLI','Workers', 'KV', 'Next.js', 'Gemini', 'Vibe'],
+  }
+  ,
+  {
+    id: 'card2',
     title: 'Nodebox | webContainer',
     description: 'Browser based playgound and hosting platform for your Client Side applicatoins.',
     link: 'https://nodebox.vinitngr.xyz',
-    tags: ['Webcontainer' , 'Next.js', 'cloudflare', 'Workers', 'Dns', 'AWS', 'S3', "Cloudfront" , "Drizzle" , "Neon" , "Next-auth"] 
-  },
-  {
-    id: 'card2',
-    title: 'IOLIB.ai | SITE hackathon',
-    description: 'IOLIB is an AI library that leverages Retrieval-Augmented Generation (RAG)...',
-    link: 'https://github.com/vinitngr/IOLIB',
-    tags: ['Hackathon' , 'LangChain', 'Upstash | VS', 'React', 'Node.js', 'zustand', 'gemini', "MongoDB"]
-  },
-  {
-    id: 'card3',
-    title: 'RTCboard | webRTC',
-    description: 'This is a real-time collaboration platform built with WebRTC, Node.js, React, Redis, and Socket.io. It enables users to create and join rooms, establish peer-to-peer (P2P) connections, and collaborate on a shared canvas.',
-    link: 'https://github.com/vinitngr/RTCboard',
-    tags: ['webRTC', 'socketIo', 'Redis' , 'MongoDB' , 'MERN' , "Excalidraw" , "zustand" , "collaboration"]
+    tags: ['Webcontainer', 'Next.js', 'cloudflare', 'Workers', 'Dns', 'AWS', 'S3', "Cloudfront", "Drizzle", "Neon", "Next-auth"]
   }
 ];
 
 export const projectdetails = [
   {
+    title: 'The-Great-G-Stack | @theggs/cli',
+    description: 'AI-powered stack builder that generates tailored prompts or full tech stacks with seamless options to store, upload, download, and share directly from the platform.',
+    extendedDescription: 'TGGStack empowers developers to build and customize tech stacks effortlessly using AI-driven recommendations tailored to diverse project needs. It supports full lifecycle management—including saving, sharing, and collaborative editing—and offers @theggs/cli for seamless stack uploads and management via command line. Architected with modern tools for scalability and performance, TGGStack streamlines development workflows by automating stack generation and configuration.',
+    extendedImages: ['./1tggs.png', './2tggs.png', './3tggs.png' , './4tggs.png'],
+    tags: ['cloudflare','Turborepo', 'CLI','Workers', 'KV', 'Next.js', 'Gemini', 'Vibe'],
+    onetag: 'AI',
+    isExpanded: false,
+    link: 'https://github.com/vinitngr/the-great-g-stack',
+    webUrl: 'https://tggs.vinitngr.xyz'
+  }
+  ,
+  {
     title: "Nodebox",
     description: "A browser-based playground and hosting platform for client-side applications, providing a full Node.js environment directly in your browser.",
     extendedDescription: "NodeBox lets you instantly host or preview any GitHub repository or local project in a secure, browser-based Node.js sandbox—no subscriptions or local setup required. Features include GitHub and folder uploads, instant previews, and support for React Vite projects. Built with WebContainer API, Next.js, and cloud technologies for seamless deployment.",
-    extendedImages: ['./nodebox1.png', 'nodebox2.png' , 'nodebox3.png'],
+    extendedImages: ['./nodebox1.png', 'nodebox2.png', 'nodebox3.png'],
     tags: [
       'WebContainer API', 'Next.js', 'cloudflare', 'Workers', 'DNS', 'AWS', 'S3', 'CloudFront', 'Drizzle', 'Neon', 'NextAuth'
     ],
@@ -66,7 +72,7 @@ export const projectdetails = [
 
 
 
-export const miniProjects : MiniProject[] = [
+export const miniProjects: MiniProject[] = [
   {
     title: "OwnACar",
     stack: ["React", "TailwindCSS", "Clerk"],
