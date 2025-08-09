@@ -2,7 +2,7 @@
 export const Featured = [
   {
     id: 'card1',
-    title: 'TGGStack | @theggs/cli',
+    title: 'The-Great-G-Stack | @theggs/cli',
     description: 'AI-powered stack builder that generates tailored prompts or full tech stacks, with seamless options to store, upload, download, and share directly from the platform.',
     link: 'https://github.com/vinitngr/RTCboard',
     tags: ['cloudflare','Turborepo', 'CLI','Workers', 'KV', 'Next.js', 'Gemini', 'Vibe'],
@@ -66,7 +66,8 @@ export const projectdetails = [
     ],
     onetag: 'WebRTC',
     isExpanded: false,
-    link: "https://github.com/vinitngr/RTCboard"
+    link: "https://github.com/vinitngr/RTCboard",
+    webUrl: "https://rtcboard.vinitngr.xyz"
   }
 ];
 
