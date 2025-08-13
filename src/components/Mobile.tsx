@@ -137,7 +137,7 @@ function Mobile({ onOutOfView }: { onOutOfView?: (isOutOfView: boolean) => void 
 
         <h3 className=" mb-1">Currently Into.</h3>
         <p className="text-gray-500">
-          Currently exploring @modelcontextProtocol, @Ai/ML , and @DSA
+          Currently exploring @RUST , @Ai/ML , and @DSA
         </p>
       </div>
     </div>

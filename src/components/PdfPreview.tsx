@@ -4,7 +4,6 @@ const PdfViewer: FC = (): JSX.Element => {
   const containerRef = useRef<HTMLDivElement>(null);
   const [dimensions, setDimensions] = useState({ width: 0, height: 0 });
 
-  // Typical PDF aspect ratio ~ 1:1.414 (A4 paper)
   const ASPECT_RATIO = 1.414;
 
   useEffect(() => {
