@@ -60,7 +60,7 @@ export const projectdetails = [
     title: "RTCboard",
     description: "A real-time collaboration platform using WebRTC, Node.js, React, MongoDB, and Redis.",
     extendedDescription: "RTCboard enables real-time collaboration with peer-to-peer (P2P) connections, shared canvases, and instant communication. Built with WebRTC, Node.js, React, Redis, and Socket.io, it allows users to create and join rooms for seamless teamwork. The platform demonstrates scalable architecture for live, interactive applications.",
-    extendedImages: ['./webRTC.png'],
+    extendedImages: ['./webRTC.png' , './webRTC2.png'],
     tags: [
       "React", "Zustand", "Node.js", "Express", "WebRTC", "Socket.io", "Redis", "MongoDB"
     ],
