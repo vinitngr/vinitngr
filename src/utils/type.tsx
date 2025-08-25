@@ -19,7 +19,8 @@ export interface Project {
   onetag?: string;
   link?: string;
   extendedImages?: string[];
-  webUrl?: string
+  webUrl?: string;
+  html: string;
 }
 
 export interface Experience {

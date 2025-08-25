@@ -2,7 +2,6 @@ import { ArrowRight, ChevronDown, ChevronUp, ExternalLink, Github } from "lucide
 import { useState } from "react";
 import { Project } from "../../utils/type";
 import { miniProjects, projectdetails } from "../../data/project";
-import OneTag from "../OneTag";
 import UnderlineHighlight from "../UnderLineHighlight";
 
 const ProjectCard = ({ showHead = true }: { showHead?: boolean }) => {
@@ -78,25 +77,39 @@ const ProjectCard = ({ showHead = true }: { showHead?: boolean }) => {
                       updatedProjects[index].isExpanded = true;
                       setProjects(updatedProjects);
                     }}
-                    className="flex items-center gap-2  text-gray-500 text-xs"
+                    className="sm:hidden items-center gap-2 flex text-gray-500 text-xs"
                   >
                     <span className="text-nowrap">Show more</span>
                     <ChevronDown className="w-3 h-3" />
                   </button>
                 )}
-                <div className="flex items-center gap-2">
+                {/* <div className="flex items-center gap-2">
                   <OneTag onetag={project.onetag as string} />
-                </div>
+                </div> */}
 
               </div>
             </div>
+            <div
+              className="w-full flex items-center justify-center bg-black/10 text-white/40 text-xs group-hover:py-3 group-hover:mt-4
+                          max-h-0 opacity-0 overflow-hidden transition-all duration-300
+                          group-hover:max-h-40 border border-white/2 hover:text-white group-hover:opacity-100 cursor-pointer"
+              onClick={() => {
+                const updatedProjects = [...projects];
+                updatedProjects[index].isExpanded = !updatedProjects[index].isExpanded;
+                setProjects(updatedProjects);
+              }}
+            >
+              click here to {project.isExpanded ? "collapse" : "expand"}
+            </div>
+
 
             <div
               className={`overflow-hidden transition-all duration-300 ease-in-out ${project.isExpanded ? " opacity-100 pt-4" : "max-h-0 opacity-0"
                 }`}
             >
-              <p className="text-sm text-gray-500">{project.extendedDescription}</p>
-              <div className="grid gap-2 mt-3">
+              {/* <p className="text-sm text-gray-500">{project.extendedDescription}</p> */}
+              <div className="text-sm text-gray-500" dangerouslySetInnerHTML={{ __html: project.html }} />
+              {/* <div className="grid gap-2 mt-3 ">
                 {project.extendedImages && project.extendedImages.map((image) => (
                   <img
                     key={image}
@@ -105,7 +118,7 @@ const ProjectCard = ({ showHead = true }: { showHead?: boolean }) => {
                     className="w-full object-cover"
                   />
                 ))}
-              </div>
+              </div> */}
               <button
                 onClick={() => {
                   const updatedProjects = [...projects];

@@ -75,7 +75,7 @@ const ExperienceCard: React.FC<Experience> = ({
                 className={`overflow-hidden transition-all duration-300 ${open || hover ? "max-h-96 mt-4" : "max-h-0 mt-0"
                     }`}
             >
-                <p className="text-sm text-gray-400 leading-relaxed">{description}</p>
+                 <p className="text-sm text-gray-500" dangerouslySetInnerHTML={{ __html: description }} />
             </div>
 
         </div>
