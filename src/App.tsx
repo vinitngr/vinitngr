@@ -199,8 +199,6 @@ const App = () => {
                     >
                       <MessageHome />
                     </div>
-
-                    
                   </>
                 )
               }

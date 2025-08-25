@@ -1,5 +1,6 @@
 import { ArrowRight } from 'lucide-react'
 import { AboutPrevProps } from '../utils/type'
+import UnderlineHighlight from './UnderLineHighlight';
 
 function ConnectPrev({ animatedItems, handleMouseEnter, handleMouseLeave , setisopen , setselectfxn }: AboutPrevProps) {
   return (
@@ -13,7 +14,7 @@ function ConnectPrev({ animatedItems, handleMouseEnter, handleMouseLeave , setis
       <div>
         <h3 className="text-xl font-semibold mb-2 tracking-tight">Message me!</h3>
         <p className="text-xs  text-[#a0a0a0]/50 leading-relaxed">Have a project in mind?</p>
-        <p className="text-xs  text-[#a0a0a0]/50 leading-relaxed">FreeLance project for me?</p>
+        <p className="text-xs  text-[#a0a0a0]/50 leading-relaxed">FreeLance project for me? <UnderlineHighlight underlineClassName='border-orange-400' className='text-orange-400' onClick={()=> window.open("https://www.fiverr.com/s/Eg4GpKD" , "_blank")}>Fiverr</UnderlineHighlight></p>
         <p className="text-xs  text-[#a0a0a0]/50 leading-relaxed">hire me?</p>
       </div>
       <button 
