@@ -12,13 +12,16 @@ const ExperienceCard: React.FC<Experience> = ({
     description,
 }) => {
     const [open, setOpen] = useState(false);
+    const [hover, setHover] = useState(false);
     const displayDuration = `${date} - ${enddate}`
 
 
     return (
-        <div className="w-full border border-[#1a1a22] sm:border-[#2d2d3a]  sm:bg-[#1A1A22] relative rounded-md  sm:p-4 p-2 transition-all duration-300"
+        <div className="w-full border border-[#1a1a22] sm:border-[#2d2d3a]  sm:bg-[#1A1A22] relative rounded-xs cursor-pointer group hover:border-orange-400  sm:p-4 p-2 px-3 transition-all duration-300"
             onClick={() => setOpen(!open)}
             aria-expanded={open}
+            onMouseEnter={() => setHover(true)}
+            onMouseLeave={() => setHover(false)}
             role="button"
             tabIndex={0}
             onKeyDown={(e) => { if (e.key === "Enter" || e.key === " ") setOpen(!open); }}
@@ -41,7 +44,7 @@ const ExperienceCard: React.FC<Experience> = ({
                     )}
                     <div>
                         <div className="flex gap-1 items-start">
-                            <h3 className="text-lg font-semibold tracking-tight">{company}</h3>
+                            <h3 className="text-lg font-semibold tracking-tight group-hover:text-orange-400">{company}</h3>
                             {enddate === "Present" && (
                                 <div className="mt-0.5 ml-1 size-1.5 bg-green-400 rounded-full"></div>
                             )}
@@ -56,7 +59,7 @@ const ExperienceCard: React.FC<Experience> = ({
                         href={companyLink}
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="text-gray-400 hover:text-white transition-colors"
+                        className="text-gray-400 group-hover:text-orange-400 hover:text-white transition-colors"
                     >
                         <ExternalLink className="w-5 h-5" />
                     </a>
@@ -68,9 +71,12 @@ const ExperienceCard: React.FC<Experience> = ({
             </div>
 
 
-            {open && (
-                <p className="mt-4 text-sm text-gray-400 leading-relaxed">{description}</p>
-            )}
+            <div
+                className={`overflow-hidden transition-all duration-300 ${open || hover ? "max-h-96 mt-4" : "max-h-0 mt-0"
+                    }`}
+            >
+                <p className="text-sm text-gray-400 leading-relaxed">{description}</p>
+            </div>
 
         </div>
     );

@@ -5,7 +5,7 @@ import { RxVercelLogo } from "react-icons/rx"
 function Navbar({ setselectfxn, setisopen, isopen }: { setselectfxn: (option: string) => void, setisopen: (option: boolean) => void, isopen: boolean }) {
   return (
 
-<nav className="flex justify-between items-center mb-2 py-2 px-4 bg-[#1a1a22] border border-[#2d2d3a] rounded-md shadow-lg">
+<nav className="flex justify-between items-center mb-1 py-2 px-4 bg-[#1a1a22] border border-[#2d2d3a] shadow-lg">
   <div className="flex gap-4 justify-between w-full items-center">
     <div
       onClick={() => {setisopen(!isopen) ; setselectfxn('projects')}}

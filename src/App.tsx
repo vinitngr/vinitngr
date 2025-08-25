@@ -76,7 +76,7 @@ const App = () => {
       <Sidebar isOpen={isOpen} setIsOpen={setIsOpen} selected={selected} setselectfxn={(option) => setSelected(option as SidebarSection)} />
 
       <div className="h-screen overflow-y-scroll w-full">
-        <div className="relative bg-[#121218] text-[#e0e0e0] w-full flex justify-center">
+        <div className="relative  sm:bg-[#121218] bg-[#0C0A09] text-[#e0e0e0] w-full flex justify-center">
           <div
             className="absolute inset-0 blur-3xl opacity-20"
             style={{
@@ -89,7 +89,7 @@ const App = () => {
           <div className="absolute top-0 left-0 w-full h-full">
             <GridPattern />
           </div>
-          <div className="max-w-[700px] py-2 flex flex-col z-10 bg-[#121218]/30 mx-2 font-mono">
+          <div className="max-w-[700px] py-1 flex flex-col z-10 bg-[#121218]/30 mx-2 font-mono">
             <div className={`col-span-3 fixed text-center grid-item flex  z-50 w-full justify-center bottom-2`}>
               {
                 isOutOfView && (
@@ -199,6 +199,8 @@ const App = () => {
                     >
                       <MessageHome />
                     </div>
+
+                    
                   </>
                 )
               }

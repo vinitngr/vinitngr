@@ -5,7 +5,7 @@ function AboutPrev({ animatedItems, handleMouseEnter, handleMouseLeave, setisope
     <div
       id="card2"
       className={`grid-item order-1 sm:order-2 col-span-3 h-[70vh] sm:h-auto sm:col-span-1 row-span-2 
-      text-white border border-[#2d2d3a] rounded-md p-4 transition-all duration-300 
+      text-white border border-[#2d2d3a] rounde p-4 transition-all duration-300 
       relative overflow-hidden shadow-md cursor-pointer flex flex-col justify-between 
       bg-cover bg-left sm:bg-center
       ${animatedItems.includes('card2') ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-2'}`}
@@ -33,7 +33,7 @@ function AboutPrev({ animatedItems, handleMouseEnter, handleMouseLeave, setisope
         className="group text-sm text-yellow-700 no-underline flex items-center font-medium mt-auto">
         <span className="group-hover:text-yellow-700">View Details</span>
         <ArrowRight className="w-4 h-4 ml-1 group-hover:text-yellow-700 transition-transform duration-500 ease-in-out group-hover:-rotate-45" />
-        <button className="text-yellow-400/50 text-xs border border-yellow-500/50 px-1 py-0.3 absolute right-0 rounded-full -bottom-2  inline-block mb-2 cursor-pointer">
+        <button className="text-yellow-400/50 text-xs border border-yellow-500/50 px-1 py-0.3 absolute right-0 -bottom-2  inline-block mb-2 cursor-pointer">
           <span className='mr-1 animate-pulse'>•</span>
           hired
         </button>

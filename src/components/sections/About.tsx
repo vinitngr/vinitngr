@@ -28,7 +28,7 @@ function About() {
           </div>
         </div> */}
 
-        <Mobile/>
+        <Mobile />
 
         <div className="mb-2 flex flex-wrap gap-2 justify-center">
           {[
@@ -112,6 +112,7 @@ function About() {
           <div className="mb-3">
             Feel free to message, I'll try my best for a quick response
           </div>
+
           <form
             action={import.meta.env.VITE_FORMSPREE_URL}
             method="POST"
@@ -122,23 +123,23 @@ function About() {
                 type="text"
                 name="contact"
                 placeholder="Email or Phone"
-                className="w-full p-2 mb-2 bg-[#2d2d3a] text-white rounded-md outline-none"
+                className="w-full p-3 mb-3 bg-[#2d2d3a] text-white rounded-xs outline-none border border-transparent focus:border-orange-400 transition-all duration-300"
                 required
               />
             </div>
 
-            <div className="flex-1 mb-2">
+            <div className="flex-1 mb-3">
               <textarea
                 name="message"
                 placeholder="Message"
-                className="w-full h-full p-2 bg-[#2d2d3a] text-white rounded-md outline-none resize-none"
+                className="w-full h-full p-3 bg-[#2d2d3a] text-white rounded-xs outline-none resize-none border border-transparent focus:border-orange-400 transition-all duration-300"
                 required
               />
             </div>
 
             <button
               type="submit"
-              className="w-full p-2 bg-blue-600 text-white rounded-md hover:bg-blue-700"
+              className="w-full p-3 bg-orange-400 text-black font-semibold rounded-xs hover:bg-orange-500 transition-colors duration-300"
             >
               Submit
             </button>

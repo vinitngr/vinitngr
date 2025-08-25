@@ -10,7 +10,7 @@ export default function SkillMeter({ animatedItems, handleMouseEnter, handleMous
   return (
     <div
       id="card3"
-      className={`grid-item order-3 p-4  col-span-3 sm:col-span-1 cursor-pointer bg-gradient-to-br bg-[#1a1a22] rounded-lg shadow-md border-2 border-[#2d2d3a]/80 transition-all duration-300 
+      className={`grid-item order-3 p-4  col-span-3 sm:col-span-1 cursor-pointer bg-gradient-to-br bg-[#1a1a22] shadow-md border-2 border-[#2d2d3a]/80 transition-all duration-300 
         ${animatedItems.includes('card3') ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-2'}`}
       onMouseEnter={handleMouseEnter}
       onMouseLeave={handleMouseLeave}

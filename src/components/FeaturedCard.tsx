@@ -15,7 +15,7 @@ function FeaturedCard({ animatedItems, handleMouseEnter, handleMouseLeave }: Abo
   return (
     <div
       id="card1"
-      className={`grid-item order-1 col-span-3 sm:col-span-2 min-h-64 row-span-2 sm:bg-[#1a1a22] bg-[#cddc39] border border-[#2d2d3a] rounded-md p-2 sm:p-0 py-6 sm:py-4 transition-all duration-300 relative overflow-hidden shadow-md  flex flex-col justify-between
+      className={`grid-item order-1 col-span-3 sm:col-span-2 min-h-64 row-span-2 sm:bg-[#1a1a22] bg-[#cddc39] border border-[#2d2d3a] p-2 sm:p-0 py-6 sm:py-4 transition-all duration-300 relative overflow-hidden shadow-md  flex flex-col justify-between
         ${animatedItems.includes('card4') ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-2'}`}
         onMouseEnter={handleMouseEnter}
         onMouseLeave={handleMouseLeave}
@@ -31,7 +31,7 @@ function FeaturedCard({ animatedItems, handleMouseEnter, handleMouseLeave }: Abo
               {tags.map(tag => (
                 <button
                   key={tag}
-                  className="inline-block  cursor-pointer  sm:bg-[#2a2a36]/80 bg-[#242601]/10 text-white  sm:text-[#a0a0a0] text-xs py-1 px-2 rounded mr-1 mb-1"
+                  className="inline-block  cursor-pointer  sm:bg-[#191921] bg-[#242601]/10 text-white  sm:text-[#a0a0a0] text-xs py-1 px-1.5 border border-white/10 mr-1 mb-1"
                 >
                   <span className="flex items-center gap-1">
                     {icons[tag.toLowerCase()]} {tag}

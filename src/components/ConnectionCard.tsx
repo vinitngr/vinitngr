@@ -5,7 +5,7 @@ function ConnectPrev({ animatedItems, handleMouseEnter, handleMouseLeave , setis
   return (
     <div
       id="card6"
-      className={`grid-item order-6 sm:bg-[#1a1a22] col-span-3 sm:col-span-1 bg-pattern flex flex-col justify-between sm:border border-[#2d2d3a] rounded-md p-2 sm:p-4 transition-all duration-300 relative overflow-hidden shadow-md cursor-pointer ${animatedItems.includes('card6') ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-2'
+      className={`grid-item order-6 sm:bg-[#1a1a22] col-span-3 sm:col-span-1 bg-pattern flex flex-col justify-between sm:border border-[#2d2d3a] p-2 sm:p-4 transition-all duration-300 relative overflow-hidden shadow-md cursor-pointer ${animatedItems.includes('card6') ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-2'
         }`}
       onMouseEnter={handleMouseEnter}
       onMouseLeave={handleMouseLeave}

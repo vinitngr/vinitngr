@@ -6,7 +6,7 @@ function SocialCard({ animatedItems, handleMouseEnter, handleMouseLeave }: About
   return (
     <div
       id="card5"
-      className={`grid-item order-5 col-span-3 sm:col-span-2 flex flex-col social-bar justify-between bg-[#1a1a22] border border-[#2d2d3a] rounded-md p-4 transition-all duration-300 relative overflow-hidden shadow-md cursor-pointer ${animatedItems.includes('card5') ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-2'
+      className={`grid-item order-5 col-span-3 sm:col-span-2 flex flex-col social-bar justify-between bg-[#1a1a22] border border-[#2d2d3a] p-4 transition-all duration-300 relative overflow-hidden shadow-md cursor-pointer ${animatedItems.includes('card5') ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-2'
         }`}
       onMouseEnter={handleMouseEnter}
       onMouseLeave={handleMouseLeave}

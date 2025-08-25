@@ -1,5 +1,5 @@
 import { experiences, miniexperiences } from "../../data/experience";
-import Highlight from "../Highlight";
+import UnderlineHighlight from "../UnderLineHighlight";
 import ExperienceCard from "./ExperienceCard";
 
 function Exp({ showHead = true }: { showHead?: boolean }) {
@@ -12,8 +12,8 @@ function Exp({ showHead = true }: { showHead?: boolean }) {
           <div className="font-extralight text-gray-500 mb-4">
           I work on a wide range of projects, from web development to
           ai development, and regularly contribute to open source projects.
-          If you want to know more, check out my 
-          {" "}<Highlight>Github</Highlight>
+          If you want to know more, check out my
+          {" "}<UnderlineHighlight underlineClassName='border-yellow-600' className='Github text-yellow-600' onClick={()=>window.open("https://github.com/vinitngr" , "_blank")}>GitHub</UnderlineHighlight>
           .
           </div>
         </div>

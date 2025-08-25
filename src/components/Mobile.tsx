@@ -3,6 +3,7 @@ import { FaGithub, FaLinkedin, FaStar, FaTwitter } from 'react-icons/fa';
 import { HiDownload, HiMail } from 'react-icons/hi';
 
 import { socialLinks } from '../data/social';
+import UnderlineHighlight from './UnderLineHighlight';
 
 function Mobile({ onOutOfView }: { onOutOfView?: (isOutOfView: boolean) => void }) {
   const [time, setTime] = useState(new Date().toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' }));
@@ -52,7 +53,7 @@ function Mobile({ onOutOfView }: { onOutOfView?: (isOutOfView: boolean) => void 
   };
 
   return (
-    <div className="text-white mb-3  col-span-3 flex flex-col items- p-2 rounded-md shadow-md">
+    <div className="text-white mb-3 bg-[#0C0A09] sm:bg-transparent col-span-3 flex flex-col items- p-2 rounded-md shadow-md">
       {hoveredItem && (
         <div
           className="fixed bg-gray-800 text-white text-sm px-3 py-1 rounded-md shadow-lg z-50 transition-opacity duration-300 pointer-events-none"
@@ -92,8 +93,8 @@ function Mobile({ onOutOfView }: { onOutOfView?: (isOutOfView: boolean) => void 
           className="rounded-md w-20 h-20 object-cover mb-2"
         />
         <h2 className="text-2xl font-semibold">Vinit Nagar</h2>
-        <p className="text-gray-500 mb-1">Full-stack developer</p>
-        <p className="text-gray-500 mb-3 text-xs">Currently learning AI/ML...</p>
+        <p className="text-[#737373] mb-1">Full-stack developer</p>
+        <p className="text-[#737373] mb-3 text-xs">Currently learning AI/ML...</p>
         <div className="flex gap-4 mb-5 items-center" ref={socialRef}>
           {socialLinks.map(({ href, label }) => (
             <a
@@ -121,14 +122,14 @@ function Mobile({ onOutOfView }: { onOutOfView?: (isOutOfView: boolean) => void 
 
       <div className="mb-3">
         <h3 className=" mb-1">About Me.</h3>
-        <p className="text-gray-500">
-          Undergraduate developer with 1.5+ years of experience, crafting web & AI products using modern stacks like TypeScript, Next.js. Skilled in WebRTC, Node.js, agentic AI, and audio-video tech, focused on building real-time, innovative solutions.
+        <p className="text-[#737373]">
+          Undergraduate developer with 1.5+ years of experience, crafting web & AI products using modern stacks like TypeScript,{" "}<UnderlineHighlight>Next.js</UnderlineHighlight>. Skilled in WebRTC, <UnderlineHighlight>Node.js</UnderlineHighlight>{" "}, agentic AI, and audio-video tech, focused on building real-time, innovative solutions.
         </p>
       </div>
 
       <div className='mb-3'>
         <h3 className=" mb-1">Hire Me.</h3>
-        <p className="text-gray-500">
+        <p className="text-[#737373]">
           Available for internships, freelance, or part-time work. I'm passionate, fast-learning, and ready to ship.
         </p>
       </div>
@@ -136,8 +137,8 @@ function Mobile({ onOutOfView }: { onOutOfView?: (isOutOfView: boolean) => void 
       <div className="mb-3">
 
         <h3 className=" mb-1">Currently Into.</h3>
-        <p className="text-gray-500">
-          Currently exploring @RUST , @Ai/ML , and @DSA
+        <p className="text-[#737373]">
+          Currently exploring {" "}<UnderlineHighlight>RUST</UnderlineHighlight>{" "}, @Ai/ML , and @DSA
         </p>
       </div>
     </div>

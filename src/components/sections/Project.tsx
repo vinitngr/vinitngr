@@ -2,8 +2,8 @@ import { ArrowRight, ChevronDown, ChevronUp, ExternalLink, Github } from "lucide
 import { useState } from "react";
 import { Project } from "../../utils/type";
 import { miniProjects, projectdetails } from "../../data/project";
-import Highlight from "../Highlight";
 import OneTag from "../OneTag";
+import UnderlineHighlight from "../UnderLineHighlight";
 
 const ProjectCard = ({ showHead = true }: { showHead?: boolean }) => {
   const [projects, setProjects] = useState<Project[]>([...projectdetails]);
@@ -14,7 +14,7 @@ const ProjectCard = ({ showHead = true }: { showHead?: boolean }) => {
       {showHead && (
         <>
           <div className="font-extralight text-gray-500 mb-5">
-            Here are some of the projects I've worked on, showcasing my skills in various web technologies and frameworks. Some were built for learning purposes, while others were created for <Highlight>hackathons</Highlight>.
+            Here are some of the projects I've worked on, showcasing my skills in various web technologies and frameworks. Some were built for learning purposes, while others were created for competitions and <UnderlineHighlight animationVariant="bounceIn" underlineClassName='border-yellow-600' className='text-yellow-600'>hackathons</UnderlineHighlight>.
           </div>
         </>
       )}
@@ -24,26 +24,26 @@ const ProjectCard = ({ showHead = true }: { showHead?: boolean }) => {
           <div
             key={index}
             id={`card-${index}`}
-            className="sm:bg-[#1A1A22] border border-[#1a1a22] sm:border-[#2d2d3a]  rounded-md sm:p-4 p-2 transition-all duration-300 shadow-md cursor-pointer"
+            className="sm:bg-[#1A1A22] group hover:border-orange-400 border border-[#1a1a22] sm:border-[#2d2d3a]  rounded-xs sm:p-4 p-2 px-3 transition-all duration-300 shadow-md cursor-pointer"
           >
-            <div className="flex gap-4 justify-between">
+            <div className="flex w-full justify-between">
               <div>
                 <div className="flex justify-between">
-                  <h3 className="text-lg font-semibold tracking-tight">{project.title}</h3>
+                  <h3 className="text-lg font-semibold tracking-tight mb-1 group-hover:text-orange-400">{project.title}</h3>
                   {
                     project.webUrl && (
                       <a
                         href={project.webUrl}
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="text-gray-400 hover:text-white transition-colors"
+                        className="text-gray-400 group-hover:text-orange-400 transition-colors"
                       >
                         <ExternalLink className="w-5 h-5" />
                       </a>
                     )
                   }
                 </div>
-                <p className="text-sm text-gray-500 mb-3 line-clamp-2">{project.description}</p>
+                <p className="text-sm text-gray-500 mb-1 line-clamp-2">{project.description}</p>
               </div>
               {project.image ? (
                 <img src={project.image} alt={project.title} className="size-16 sm:size-20 rounded-full object-contain" />
@@ -52,9 +52,9 @@ const ProjectCard = ({ showHead = true }: { showHead?: boolean }) => {
               )}
             </div>
 
-            <div className="flex flex-wrap gap-2 mt-3">
+            <div className="flex flex-wrap gap-1 mt-3">
               {project.tags.map((tag) => (
-                <span key={tag} className="bg-[#2a2a36] text-[#a0a0a0] text-xs py-1 px-2 rounded">
+                <span key={tag} className="bg-[#2a2a36]/50 text-[#a0a0a0] text-xs py-1 px-2 border border-white/5">
                   {tag}
                 </span>
               ))}
@@ -62,7 +62,7 @@ const ProjectCard = ({ showHead = true }: { showHead?: boolean }) => {
 
             <div className="flex sm:flex-row flex-col justify-between mt-4 sm:items-center">
               <div className="flex w-full justify-between">
-                <a href={project.link} target="_blank" className="group text-xs text-yellow-600 no-underline flex items-center gap-1 font-medium">
+                <a href={project.link} target="_blank" className="group text-xs group-hover:text-yellow-600 no-underline flex items-center gap-1 font-medium">
                   <Github size={20} />
                   <span >View Project</span>
                   <ArrowRight className="w-4 h-4 ml-1 transition-transform duration-200 group-hover:-rotate-45" />
