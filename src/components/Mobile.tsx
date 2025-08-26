@@ -4,6 +4,7 @@ import { HiDownload, HiMail } from 'react-icons/hi';
 
 import { socialLinks } from '../data/social';
 import UnderlineHighlight from './UnderLineHighlight';
+import ImagePreview from './sections/ImagePreview';
 
 function Mobile({ onOutOfView }: { onOutOfView?: (isOutOfView: boolean) => void }) {
   const [time, setTime] = useState(new Date().toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' }));
@@ -87,7 +88,7 @@ function Mobile({ onOutOfView }: { onOutOfView?: (isOutOfView: boolean) => void 
           <span className='mr-1 animate-pulse'>•</span>
           Available
         </button>
-        <img
+        <ImagePreview
           src="./vinit.png"
           alt="Vinit Nagar"
           className="rounded-md w-20 h-20 object-cover mb-2"

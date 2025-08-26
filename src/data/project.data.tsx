@@ -1,3 +1,4 @@
+import React from "react";
 import ImagePreview from "../components/sections/ImagePreview";
 
 export const Featured = [
@@ -38,7 +39,13 @@ export const projectdetails = [
           <li>Automates stack generation and configuration for scalable projects</li>
           <li>Stack images inline for context:</li>
           <ul className="list-none ml-5 mt-3 space-y-1">
-            <li><ImagePreview src="./1tggs.png" alt="TGGStack 1" className="mt-1 rounded shadow" /></li>
+            <li><ImagePreview
+              project
+              extendedImages={['./1tggs.png', './2tggs.png', './3tggs.png', './4tggs.png']}
+              src="./1tggs.png"
+              alt="TGGStack 1"
+              className="mt-1 rounded shadow"
+            /></li>
             <li><ImagePreview src="./2tggs.png" alt="TGGStack 2" className="mt-1 rounded shadow" /></li>
             <li><ImagePreview src="./3tggs.png" alt="TGGStack 3" className="mt-1 rounded shadow" /></li>
             <li><ImagePreview src="./4tggs.png" alt="TGGStack 4" className="mt-1 rounded shadow" /></li>
@@ -68,7 +75,13 @@ export const projectdetails = [
           <li>Secure <span className="text-yellow-600 underline">sandbox</span> environment with cloud deployment support</li>
           <li>Inline project images:</li>
           <ul className="list-none ml-5 mt-3 space-y-1">
-            <li><ImagePreview src="./nodebox1.png" alt="Nodebox 1" className="mt-1 rounded shadow" /></li>
+            <li><ImagePreview
+              project
+              extendedImages={['./nodebox1.png', './nodebox2.png', './nodebox3.png']}
+              src="./nodebox1.png"
+              alt="Nodebox 1"
+              className="mt-1 rounded shadow"
+            /></li>
             <li><ImagePreview src="./nodebox2.png" alt="Nodebox 2" className="mt-1 rounded shadow" /></li>
             <li><ImagePreview src="./nodebox3.png" alt="Nodebox 3" className="mt-1 rounded shadow" /></li>
           </ul>
@@ -96,7 +109,13 @@ export const projectdetails = [
           <li>Add custom databases and LLM API keys for generating <span className="text-yellow-600 underline">embeddings</span></li>
           <li>Inline screenshots:</li>
           <ul className="list-none ml-5 mt-3 space-y-1">
-            <li><ImagePreview src="./iolib1.png" alt="IOLIB 1" className="mt-1 rounded shadow" /></li>
+            <li><ImagePreview
+              project
+              extendedImages={['./iolib1.png', './iolib2.png']}
+              src="./iolib1.png"
+              alt="IOLIB 1"
+              className="mt-1 rounded shadow"
+            /></li>
             <li><ImagePreview src="./iolib2.png" alt="IOLIB 2" className="mt-1 rounded shadow" /></li>
           </ul>
         </ul>
@@ -125,7 +144,13 @@ export const projectdetails = [
           <li>Optionally record sessions or save canvas snapshots for later reference</li>
           <li>Project views inline:</li>
           <ul className="list-none ml-5 mt-3 space-y-1">
-            <li><ImagePreview src="./webRTC.png" alt="RTCboard 1" className="mt-1 rounded shadow" /></li>
+            <li><ImagePreview
+              project
+              extendedImages={['./webRTC.png', './webRTC2.png']}
+              src="./webRTC.png"
+              alt="RTCboard 1"
+              className="mt-1 rounded shadow"
+            /></li>
             <li><ImagePreview src="./webRTC2.png" alt="RTCboard 2" className="mt-1 rounded shadow" /></li>
           </ul>
         </ul>
@@ -143,29 +168,84 @@ export const miniProjects: MiniProject[] = [
     stack: ["React", "TailwindCSS", "Clerk"],
     tags: [{ color: "text-red-500", content: "Discontinued" }],
     description: "Car booking platform (discontinued).",
-    github: "https://github.com/vinitngr/ownacar"
+    github: "https://github.com/vinitngr/ownacar",
+    content: (
+      <>
+        <p>
+          <span className="text-yellow-600 underline">OwnACar</span> was a car booking platform built with <span className="text-yellow-600 underline">React</span> and <span className="text-yellow-600 underline">TailwindCSS</span>.
+        </p>
+        <ul className="list-disc list-inside text-gray-500 mt-2 space-y-1">
+          <li>Implemented booking and scheduling logic</li>
+          <li>Used Clerk for authentication</li>
+          <li>Responsive UI with TailwindCSS</li>
+          <li>Discontinued project, mainly for learning and experimentation</li>
+        </ul>
+      </>
+    )
   },
   {
     title: "I3STeller",
     stack: ["Three.js"],
     tags: [{ color: "text-white", content: "Hackathon" }],
     description: "Real-time ISS and user position tracker with 3D globe visualization.",
+    github: "https://github.com/vinitngr/I3STeller",
     link: "https://vinitngr.github.io/I3STeller/",
-    github: "https://github.com/vinitngr/I3STeller"
+    content: (
+      <>
+        <p>
+          <span className="text-yellow-600 underline">I3STeller</span> tracks ISS and user positions in real-time with a 3D globe using <span className="text-yellow-600 underline">Three.js</span>.
+        </p>
+        <ul className="list-disc list-inside text-gray-500 mt-2 space-y-1">
+          <li>3D globe visualization of ISS position</li>
+          <li>Real-time updates using object-based code architecture</li>
+          <li>Hackathon project for Devpost submission</li>
+        </ul>
+      </>
+    )
   },
   {
     title: "Rejoice Clone",
     stack: ["plain"],
     description: "Single-page animated website using GSAP (Rejouice clone).",
     github: "https://github.com/vinitngr/rejouice_clone_GSAP",
-    link: "https://vinitngr.github.io/rejouice_clone_GSAP/"
+    link: "https://vinitngr.github.io/rejouice_clone_GSAP/",
+    content: (
+      <>
+        <p>
+          <span className="text-yellow-600 underline">Rejoice Clone</span> is a single-page animated website inspired by Rejouice using <span className="text-yellow-600 underline">GSAP</span>.
+        </p>
+        <ul className="list-disc list-inside text-gray-500 mt-2 space-y-1">
+          <li>Mouse interaction animations</li>
+          <li>GSAP timeline-based animations</li>
+          <li>Responsive layout with plain HTML, CSS, and JS</li>
+          <li>Single-page scrolling animations for enhanced UX</li>
+        </ul>
+      </>
+    )
   },
   {
     title: "MCP Vinit",
     stack: ["Node.js"],
     description: "Minimal clean backend starter kit (MCP).",
-    github: "https://github.com/vinitngr/mcpVinit"
-  },
+    github: "https://github.com/vinitngr/mcpVinit",
+    content: (
+      <>
+        <p>
+          <span className="text-yellow-600 underline">MCP Vinit</span> is a minimal implementation of the Model Context Protocol (MCP) server, designed for practice and experimentation.
+        </p>
+        <ul className="list-disc list-inside text-gray-500 mt-2 space-y-1">
+          <li>Server-side connection setup with lightweight tooling</li>
+          <li>Practice code in <span className="text-yellow-600 underline">/src/prac</span></li>
+          <li><span className="text-yellow-600 underline">m1-index.ts</span>: MCP stdio connection (Method 1)</li>
+          <li><span className="text-yellow-600 underline">m2-index.ts</span>: MCP stdio connection (Method 2)</li>
+          <li><span className="text-yellow-600 underline">sse-server-mcp.ts</span>: SSE (Server-Sent Events) MCP server</li>
+          <li>Simple and minimal setup for MCP integration, no complex tooling</li>
+        </ul>
+        <p className="mt-2 text-gray-400 italic">Note: 🧑🏽‍💻 will be working on soon</p>
+      </>
+    )
+  }
+  ,
   {
     title: "AmzClone",
     stack: ["plain"],
@@ -182,4 +262,5 @@ interface MiniProject {
   description: string;
   link?: string;
   github?: string;
+  content?: React.ReactNode;
 }

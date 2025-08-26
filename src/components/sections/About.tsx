@@ -1,6 +1,7 @@
 import { Mail, MapPin, Linkedin, Github, GraduationCap } from 'lucide-react'
 import Highlight from '../Highlight'
 import Mobile from '../Mobile'
+import ImagePreview from './ImagePreview'
 // import { LeetCodeStats } from '../Leetcodestats'
 
 function About() {
@@ -42,12 +43,12 @@ function About() {
             width={'100%'}
             src="           
             https://github-profile-summary-cards.vercel.app/api/cards/profile-details?username=vinitngr&theme=dark" ></iframe>
-          <img
+          <ImagePreview
             src="https://ghchart.rshah.org/vinitngr"
             alt="GitHub Contribution Graph"
             className=" w-full h-auto"
           />
-          <img src="https://leetcode-stats.vercel.app/api?username=vinitngr" />
+          <ImagePreview src="https://leetcode-stats.vercel.app/api?username=vinitngr" />
           {/* <LeetCodeStats username='vinitngr'/> */}
 
 

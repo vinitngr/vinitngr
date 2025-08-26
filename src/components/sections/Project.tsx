@@ -1,8 +1,10 @@
 import { ArrowRight, ChevronDown, ChevronUp, ExternalLink, Github } from "lucide-react";
 import { useState } from "react";
 import { Project } from "../../utils/type";
-import { miniProjects, projectdetails } from "../../data/project";
+import { miniProjects, projectdetails } from "../../data/project.data";
 import UnderlineHighlight from "../UnderLineHighlight";
+import ImagePreview from "./ImagePreview";
+import icons from "../../data/icons";
 
 const ProjectCard = ({ showHead = true }: { showHead?: boolean }) => {
   const [projects, setProjects] = useState<Project[]>([...projectdetails]);
@@ -21,6 +23,11 @@ const ProjectCard = ({ showHead = true }: { showHead?: boolean }) => {
       <div className="flex flex-col gap-4 overflow-auto h-full">
         {projects.map((project, index) => (
           <div
+            onClick={() => {
+              const updatedProjects = [...projects];
+              updatedProjects[index].isExpanded = !updatedProjects[index].isExpanded;
+              setProjects(updatedProjects);
+            }}
             key={index}
             id={`card-${index}`}
             className="sm:bg-[#1A1A22] group hover:border-orange-400 border border-[#1a1a22] sm:border-[#2d2d3a]  rounded-xs sm:p-4 p-2 px-3 transition-all duration-300 shadow-md cursor-pointer"
@@ -45,7 +52,7 @@ const ProjectCard = ({ showHead = true }: { showHead?: boolean }) => {
                 <p className="text-sm text-gray-500 mb-1 line-clamp-2">{project.description}</p>
               </div>
               {project.image ? (
-                <img src={project.image} alt={project.title} className="size-16 sm:size-20 rounded-full object-contain" />
+                <ImagePreview src={project.image} alt={project.title} className="size-16 sm:size-20 rounded-full object-contain" />
               ) : (
                 <div className="text-3xl font-bold"></div>
               )}
@@ -53,8 +60,8 @@ const ProjectCard = ({ showHead = true }: { showHead?: boolean }) => {
 
             <div className="flex flex-wrap gap-1 mt-3">
               {project.tags.map((tag) => (
-                <span key={tag} className="bg-[#2a2a36]/50 text-[#a0a0a0] text-xs py-1 px-2 border border-white/5">
-                  {tag}
+                <span key={tag} className="bg-[#2a2a36]/50 flex items-center justify-center gap-1 text-[#a0a0a0] text-xs py-1 px-2 border border-white/5">
+                  {icons[tag.toLowerCase()]}{tag}
                 </span>
               ))}
             </div>
@@ -64,7 +71,7 @@ const ProjectCard = ({ showHead = true }: { showHead?: boolean }) => {
                 <a href={project.link} target="_blank" className="group text-xs group-hover:text-yellow-600 no-underline flex items-center gap-1 font-medium">
                   <Github size={20} />
                   <span >View Project</span>
-                  <ArrowRight className="w-4 h-4 ml-1 transition-transform duration-200 group-hover:-rotate-45" />
+                  <ArrowRight className="w-4 h-4 ml-1 transition-transform duration-300 group-hover:-rotate-45" />
                 </a>
 
               </div>
@@ -93,11 +100,11 @@ const ProjectCard = ({ showHead = true }: { showHead?: boolean }) => {
               className="w-full flex items-center justify-center bg-black/10 text-white/40 text-xs group-hover:py-3 group-hover:mt-4
                           max-h-0 opacity-0 overflow-hidden transition-all duration-300
                           group-hover:max-h-40 border border-white/2 hover:text-white group-hover:opacity-100 cursor-pointer"
-              onClick={() => {
-                const updatedProjects = [...projects];
-                updatedProjects[index].isExpanded = !updatedProjects[index].isExpanded;
-                setProjects(updatedProjects);
-              }}
+            // onClick={() => {
+            //   const updatedProjects = [...projects];
+            //   updatedProjects[index].isExpanded = !updatedProjects[index].isExpanded;
+            //   setProjects(updatedProjects);
+            // }}
             >
               click here to {project.isExpanded ? "collapse" : "expand"}
             </div>
@@ -143,7 +150,7 @@ const ProjectCard = ({ showHead = true }: { showHead?: boolean }) => {
             {miniProjects.map((project, index) => (
               <div
                 key={index}
-                className={`mt-${index === 0 ? 5 : 2} border-[#2d2d3a] shadow-md w-full p-4 rounded sm:bg-[#1A1A22] border text-white flex flex-col gap-2`}
+                className={`group hover:border-orange-400 mt-${index === 0 ? 5 : 2} border-[#2d2d3a] shadow-md w-full p-4 rounded sm:bg-[#1A1A22] border text-white flex flex-col gap-2 relative`}
               >
                 <div className="flex items-center justify-between">
                   {project.title}
@@ -174,14 +181,19 @@ const ProjectCard = ({ showHead = true }: { showHead?: boolean }) => {
                 </div>
 
                 <div className="text-sm text-gray-500">{project.description}</div>
-
+                {project.content && (
+                  <div className="w-full bg-[#1A1A22] text-xs text-gray-500 overflow-hidden max-h-0 group-hover:max-h-96 transition-all duration-300 rounded mt-2">
+                    {project.content}
+                  </div>
+                )}
               </div>
             ))}
+
             <div className="pb-10 text-center mt-5 w-full">
               <a href="https://github.com/vinitngr" target="_blank">more + </a>
-
             </div>
           </div>
+
         )
       }
 

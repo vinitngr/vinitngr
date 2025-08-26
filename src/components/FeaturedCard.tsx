@@ -2,7 +2,7 @@ import { ArrowRight } from 'lucide-react';
 import { AboutPrevProps } from '../utils/type';
 import { useEffect, useState } from 'react';
 import GridPattern from './svg/pattern';
-import { Featured } from '../data/project';
+import { Featured } from '../data/project.data';
 import icons from '../data/icons';
 
 function FeaturedCard({ animatedItems, handleMouseEnter, handleMouseLeave }: AboutPrevProps) {
