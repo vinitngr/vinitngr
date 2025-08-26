@@ -108,7 +108,10 @@ const ProjectCard = ({ showHead = true }: { showHead?: boolean }) => {
                 }`}
             >
               {/* <p className="text-sm text-gray-500">{project.extendedDescription}</p> */}
-              <div className="text-sm text-gray-500" dangerouslySetInnerHTML={{ __html: project.html }} />
+              {/* <div className="text-sm text-gray-500" dangerouslySetInnerHTML={{ __html: project.html }} /> */}
+              <div className="text-sm text-gray-500">
+                {project.content}
+              </div>
               {/* <div className="grid gap-2 mt-3 ">
                 {project.extendedImages && project.extendedImages.map((image) => (
                   <img

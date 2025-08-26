@@ -20,7 +20,7 @@ export interface Project {
   link?: string;
   extendedImages?: string[];
   webUrl?: string;
-  html: string;
+  content: React.ReactNode;
 }
 
 export interface Experience {
