@@ -23,11 +23,7 @@ const ProjectCard = ({ showHead = true }: { showHead?: boolean }) => {
       <div className="flex flex-col gap-4 overflow-auto h-full">
         {projects.map((project, index) => (
           <div
-            onClick={() => {
-              const updatedProjects = [...projects];
-              updatedProjects[index].isExpanded = !updatedProjects[index].isExpanded;
-              setProjects(updatedProjects);
-            }}
+            
             key={index}
             id={`card-${index}`}
             className="sm:bg-[#1A1A22] group hover:border-orange-400 border border-[#1a1a22] sm:border-[#2d2d3a]  rounded-xs sm:p-4 p-2 px-3 transition-all duration-300 shadow-md cursor-pointer"
@@ -35,7 +31,7 @@ const ProjectCard = ({ showHead = true }: { showHead?: boolean }) => {
             <div className="flex w-full justify-between">
               <div>
                 <div className="flex justify-between">
-                  <h3 className="text-lg font-semibold tracking-tight mb-1 group-hover:text-orange-400">{project.title}</h3>
+                  <h3 className="text-lg font-semibold tracking-tight mb-1 group-hover:text-yellow-600">{project.title}</h3>
                   {
                     project.webUrl && (
                       <a
@@ -100,11 +96,11 @@ const ProjectCard = ({ showHead = true }: { showHead?: boolean }) => {
               className="w-full flex items-center justify-center bg-black/10 text-white/40 text-xs group-hover:py-3 group-hover:mt-4
                           max-h-0 opacity-0 overflow-hidden transition-all duration-300
                           group-hover:max-h-40 border border-white/2 hover:text-white group-hover:opacity-100 cursor-pointer"
-            // onClick={() => {
-            //   const updatedProjects = [...projects];
-            //   updatedProjects[index].isExpanded = !updatedProjects[index].isExpanded;
-            //   setProjects(updatedProjects);
-            // }}
+            onClick={() => {
+              const updatedProjects = [...projects];
+              updatedProjects[index].isExpanded = !updatedProjects[index].isExpanded;
+              setProjects(updatedProjects);
+            }}
             >
               click here to {project.isExpanded ? "collapse" : "expand"}
             </div>
