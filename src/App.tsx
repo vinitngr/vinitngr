@@ -89,7 +89,7 @@ const App = () => {
           <div className="absolute top-0 left-0 w-full h-full">
             <GridPattern />
           </div>
-          <div className="max-w-[700px] py-1 flex flex-col z-10 mx-2 font-mono">
+          <div className="max-w-[700px] py-1 flex flex-col z-10 font-mono">
             <div className={`col-span-3 fixed text-center grid-item flex  z-50 w-full justify-center bottom-2`}>
               {
                 isOutOfView && (

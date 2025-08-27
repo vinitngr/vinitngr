@@ -3,7 +3,7 @@ function MessageHome() {
   return (
     <div
           id="emailForm contact"
-          className="sm:bg-[#1A1A22] shadow-md rounded-md sm:p-4 p-2 sm:border border-[#2d2d3a] h-[300px] flex flex-col"
+          className="sm:bg-[#1A1A22] shadow-md rounded-md sm:p-4 sm:border border-[#2d2d3a] h-[300px] flex flex-col"
         >
           <span className="mb-5">Message me</span>
 
@@ -20,7 +20,7 @@ function MessageHome() {
                 type="text"
                 name="contact"
                 placeholder="Email or Phone"
-                className="w-full p-2 mb-2 border-y border-white/10 text-white rounded-xs outline-none"
+                className="w-full p-2 mb-2 border-y px-4 border-white/10 text-white rounded-xs outline-none"
                 required
               />
             </div>
@@ -29,7 +29,7 @@ function MessageHome() {
               <textarea
                 name="message"
                 placeholder="Message"
-                className="w-full h-full p-2  border-y border-white/10 text-white rounded-xs outline-none resize-none"
+                className="w-full h-full p-2 px-4  border-y border-white/10 text-white rounded-xs outline-none resize-none"
                 required
               />
             </div>

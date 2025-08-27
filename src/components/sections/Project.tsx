@@ -26,7 +26,7 @@ const ProjectCard = ({ showHead = true }: { showHead?: boolean }) => {
             
             key={index}
             id={`card-${index}`}
-            className="sm:bg-[#1A1A22]/50 bg-[#1A1A22]/20 group hover:border-orange-400 border-y border-[#1a1a22] sm:border-[#2d2d3a]  rounded-xs sm:p-4 p-2 px-3 transition-all duration-300 shadow-md cursor-pointer"
+            className="sm:bg-[#1A1A22]/50 bg-[#1A1A22]/20 group hover:border-orange-400 border-y border-[#1a1a22] sm:border-[#2d2d3a]  rounded-xs sm:p-4 p-2 px-4 transition-all duration-300 shadow-md cursor-pointer"
           >
             <div className="flex w-full justify-between">
               <div>
@@ -86,9 +86,6 @@ const ProjectCard = ({ showHead = true }: { showHead?: boolean }) => {
                     <ChevronDown className="w-3 h-3" />
                   </button>
                 )}
-                {/* <div className="flex items-center gap-2">
-                  <OneTag onetag={project.onetag as string} />
-                </div> */}
 
               </div>
             </div>
@@ -110,21 +107,9 @@ const ProjectCard = ({ showHead = true }: { showHead?: boolean }) => {
               className={`overflow-hidden transition-all duration-300 ease-in-out ${project.isExpanded ? " opacity-100 pt-4" : "max-h-0 opacity-0"
                 }`}
             >
-              {/* <p className="text-sm text-gray-500">{project.extendedDescription}</p> */}
-              {/* <div className="text-sm text-gray-500" dangerouslySetInnerHTML={{ __html: project.html }} /> */}
               <div className="text-sm text-[#737373] sm:text-gray-500">
                 {project.content}
               </div>
-              {/* <div className="grid gap-2 mt-3 ">
-                {project.extendedImages && project.extendedImages.map((image) => (
-                  <img
-                    key={image}
-                    src={image}
-                    alt={project.title}
-                    className="w-full object-cover"
-                  />
-                ))}
-              </div> */}
               <button
                 onClick={() => {
                   const updatedProjects = [...projects];

@@ -54,7 +54,7 @@ function Mobile({ onOutOfView }: { onOutOfView?: (isOutOfView: boolean) => void 
   };
 
   return (
-    <div className="text-white mb-3 bg-[#0C0A09] sm:bg-transparent col-span-3 flex flex-col items- p-2 rounded-md shadow-md">
+    <div className="text-white mb-3 bg-[#0C0A09] sm:bg-transparent col-span-3 flex flex-col p-2 px-4 rounded-md shadow-md">
       {hoveredItem && (
         <div
           className="fixed bg-gray-800 text-white text-sm px-3 py-1 rounded-md shadow-lg z-50 transition-opacity duration-300 pointer-events-none"
