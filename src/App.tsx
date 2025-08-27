@@ -89,13 +89,13 @@ const App = () => {
           <div className="absolute top-0 left-0 w-full h-full">
             <GridPattern />
           </div>
-          <div className="max-w-[700px] py-1 flex flex-col z-10 font-mono">
-            <div className={`col-span-3 fixed text-center grid-item flex  z-50 w-full justify-center bottom-2`}>
+          <div className="max-w-[700px] flex flex-col z-10 font-mono">
+            <div className={`col-span-3 fixed text-center grid-item flex  z-50 w-full justify-center bottom-0`}>
               {
                 isOutOfView && (
-                  <div className="flex items-center bg-black/50 z-50 rounded-full border border-[#2d2d3a] text-[#e0e0e0] gap-2 p-2 shadow-md backdrop-blur-sm">
+                  <div className="items-center bg-black/50 z-50 border-t border-[#2d2d3a] w-full flex justify-evenly text-[#e0e0e0] p-2 shadow-md backdrop-blur-sm">
                     {isOutOfView && socialLinks.map(({ href, label }) => (
-                      <a key={label} href={href} target="_blank" rel="noopener noreferrer">
+                      <a key={label} href={href} target="_blank" rel="noopener noreferrer" className="hover:scale-125">
                         {label === "GitHub" && <FaGithub className="size-6 m-1" title={label} />}
                         {label === "LinkedIn" && <FaLinkedin className="size-6 m-1" title={label} />}
                         {label === "Twitter" && <FaTwitter className="size-6 m-1" title={label} />}
