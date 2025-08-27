@@ -33,7 +33,7 @@ function Exp({ showHead = true }: { showHead?: boolean }) {
         {showHead && miniexperiences.map((exp, index) => (
           <div
             key={index}
-            className={`mt-${index === 0 ? 4 : 2} sm:border-[#2d2d3a]  w-full shadow-md sm:text-lg text-md p-2 sm:p-4 rounded-xs sm:bg-[#1A1A22]/50 border-y  text-white flex justify-between gap-3`}
+            className={`mt-${index === 0 ? 4 : 2} sm:border-[#2d2d3a]  w-full shadow-md sm:text-lg text-md p-2 sm:p-4 rounded-xs sm:bg-[#1A1A22]/50 bg-[#1A1A22]/20 border-y  text-white flex justify-between gap-3`}
           >
             <div>
               {exp.title}{" "}

@@ -26,7 +26,7 @@ const ProjectCard = ({ showHead = true }: { showHead?: boolean }) => {
             
             key={index}
             id={`card-${index}`}
-            className="sm:bg-[#1A1A22]/50 group hover:border-orange-400 border-y border-[#1a1a22] sm:border-[#2d2d3a]  rounded-xs sm:p-4 p-2 px-3 transition-all duration-300 shadow-md cursor-pointer"
+            className="sm:bg-[#1A1A22]/50 bg-[#1A1A22]/20 group hover:border-orange-400 border-y border-[#1a1a22] sm:border-[#2d2d3a]  rounded-xs sm:p-4 p-2 px-3 transition-all duration-300 shadow-md cursor-pointer"
           >
             <div className="flex w-full justify-between">
               <div>
@@ -178,7 +178,7 @@ const ProjectCard = ({ showHead = true }: { showHead?: boolean }) => {
 
                 <div className="text-sm text-gray-500">{project.description}</div>
                 {project.content && (
-                  <div className="w-full bg-[#1A1A22] text-xs text-gray-500 overflow-hidden max-h-0 group-hover:max-h-96 transition-all duration-1000 rounded mt-2">
+                  <div className="w-full text-xs text-gray-500 overflow-hidden max-h-0 group-hover:max-h-96 transition-all duration-1000 rounded mt-2">
                     {project.content}
                   </div>
                 )}

@@ -17,7 +17,7 @@ const ExperienceCard: React.FC<Experience> = ({
 
 
     return (
-        <div className="w-full border-y border-[#1a1a22] sm:border-[#2d2d3a]  bg-[#1A1A22]/50 relative rounded-xs cursor-pointer group hover:border-orange-400  sm:p-4 p-2 px-3 transition-all duration-300"
+        <div className="w-full border-y border-[#1a1a22] sm:border-[#2d2d3a]  sm:bg-[#1A1A22]/50 bg-[#1A1A22]/20 relative rounded-xs cursor-pointer group hover:border-orange-400  sm:p-4 p-2 px-3 transition-all duration-300"
             onClick={() => setOpen(!open)}
             aria-expanded={open}
             onMouseEnter={() => setHover(true)}

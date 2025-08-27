@@ -23,7 +23,7 @@ function TechnicalCard({ animatedItems, handleMouseEnter, handleMouseLeave }: Ab
               href={`https://www.google.com/search?q=${skill}`}
               target="_blank"
               key={skill}
-              className="inline-block hover:bg-[#2a2a36] bg-[#191921] text-[#a0a0a0] text-xs py-1 px-1.5 border border-white/10 mb-1 mr-1"
+              className="inline-block hover:bg-[#2a2a36]  sm:bg-[#191921] bg-[#2a2a36]/20 text-[#a0a0a0] text-xs py-1 px-1.5 border border-white/10 mb-1 mr-1"
             >
               <span className="flex items-center gap-1">
                 {icons[skill.toLowerCase()]} {skill}
