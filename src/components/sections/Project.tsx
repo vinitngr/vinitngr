@@ -38,7 +38,7 @@ const ProjectCard = ({ showHead = true }: { showHead?: boolean }) => {
                         href={project.webUrl}
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="text-gray-400 group-hover:text-orange-400 transition-colors"
+                        className="text-gray-400 flex items-center justify-center group-hover:text-orange-400 transition-colors"
                       >
                         <ExternalLink className="w-5 h-5" />
                       </a>
