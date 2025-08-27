@@ -33,7 +33,7 @@ export const projectdetails = [
         <p>
           <span className="text-yellow-600 underline">the-great-g-stack</span> empowers developers to build and customize tech stacks effortlessly using AI-driven recommendations.
         </p>
-        <ul className="list-disc list-inside text-gray-500 mt-2 space-y-1">
+        <ul className="list-disc list-inside mt-2 space-y-1">
           <li>Supports full lifecycle management: saving, sharing, and collaborative editing</li>
           <li>Includes <span className="text-yellow-600 underline">@theggs/cli</span> for seamless stack uploads and management</li>
           <li>Automates stack generation and configuration for scalable projects</li>
@@ -68,7 +68,7 @@ export const projectdetails = [
         <p>
           <span className="text-yellow-600 underline">Nodebox</span> provides a fully browser-based Node.js environment for instant project hosting and preview.
         </p>
-        <ul className="list-disc list-inside text-gray-500 mt-2 space-y-1">
+        <ul className="list-disc list-inside mt-2 space-y-1">
           <li>Instantly preview and host projects directly from GitHub repositories or local files</li>
           <li>Supports React Vite and other client-side frameworks</li>
           <li>Built with <span className="text-yellow-600 underline">WebContainer API</span> for fully in-browser Node.js execution</li>
@@ -103,7 +103,7 @@ export const projectdetails = [
         <p>
           <span className="text-yellow-600 underline">IOLIB.ai</span> leverages <span className="text-yellow-600 underline">RAG</span> and semantic search for intelligent content retrieval.
         </p>
-        <ul className="list-disc list-inside text-gray-500 mt-2 space-y-1">
+        <ul className="list-disc list-inside mt-2 space-y-1">
           <li>Query books and weblogs for <span className="text-yellow-600 underline">context-aware answers</span></li>
           <li>Support <span className="text-yellow-600 underline">PDFs</span> and <span className="text-yellow-600 underline">Web Pages</span> to extract context from unstructured data</li>
           <li>Add custom databases and LLM API keys for generating <span className="text-yellow-600 underline">embeddings</span></li>
@@ -135,7 +135,7 @@ export const projectdetails = [
         <p>
           <span className="text-yellow-600 underline">RTCboard</span> enables real-time collaboration via <span className="text-yellow-600 underline">WebRTC</span> and P2P connections.
         </p>
-        <ul className="list-disc list-inside text-gray-500 mt-2 space-y-1">
+        <ul className="list-disc list-inside mt-2 space-y-1">
           <li>Create and join dynamic rooms for real-time shared canvas collaboration and drawing</li>
           <li>Built a custom <span className="text-yellow-600 underline">rich text editor</span> and integrated a canvas (<a href="https://excalidraw.com" target="_blank" className="text-yellow-600 underline">Excalidraw</a>) for interactive drawing</li>
           <li>Instant chat, voice, and media communication for seamless teamwork</li>
@@ -174,7 +174,7 @@ export const miniProjects: MiniProject[] = [
         <p>
           <span className="text-yellow-600 underline">OwnACar</span> was a car booking platform built with <span className="text-yellow-600 underline">React</span> and <span className="text-yellow-600 underline">TailwindCSS</span>.
         </p>
-        <ul className="list-disc list-inside text-gray-500 mt-2 space-y-1">
+        <ul className="list-disc list-inside mt-2 space-y-1">
           <li>Implemented booking and scheduling logic</li>
           <li>Used Clerk for authentication</li>
           <li>Responsive UI with TailwindCSS</li>
@@ -195,7 +195,7 @@ export const miniProjects: MiniProject[] = [
         <p>
           <span className="text-yellow-600 underline">I3STeller</span> tracks ISS and user positions in real-time with a 3D globe using <span className="text-yellow-600 underline">Three.js</span>.
         </p>
-        <ul className="list-disc list-inside text-gray-500 mt-2 space-y-1">
+        <ul className="list-disc list-inside mt-2 space-y-1">
           <li>3D globe visualization of ISS position</li>
           <li>Real-time updates using object-based code architecture</li>
           <li>Hackathon project for Devpost submission</li>
@@ -214,7 +214,7 @@ export const miniProjects: MiniProject[] = [
         <p>
           <span className="text-yellow-600 underline">Rejoice Clone</span> is a single-page animated website inspired by Rejouice using <span className="text-yellow-600 underline">GSAP</span>.
         </p>
-        <ul className="list-disc list-inside text-gray-500 mt-2 space-y-1">
+        <ul className="list-disc list-inside mt-2 space-y-1">
           <li>Mouse interaction animations</li>
           <li>GSAP timeline-based animations</li>
           <li>Responsive layout with plain HTML, CSS, and JS</li>
@@ -233,7 +233,7 @@ export const miniProjects: MiniProject[] = [
         <p>
           <span className="text-yellow-600 underline">MCP Vinit</span> is a minimal implementation of the Model Context Protocol (MCP) server, designed for practice and experimentation.
         </p>
-        <ul className="list-disc list-inside text-gray-500 mt-2 space-y-1">
+        <ul className="list-disc list-inside mt-2 space-y-1">
           <li>Server-side connection setup with lightweight tooling</li>
           <li>Practice code in <span className="text-yellow-600 underline">/src/prac</span></li>
           <li><span className="text-yellow-600 underline">m1-index.ts</span>: MCP stdio connection (Method 1)</li>

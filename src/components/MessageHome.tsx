@@ -7,7 +7,7 @@ function MessageHome() {
         >
           <span className="mb-5">Message me</span>
 
-          <div className="mb-3 text-xs text-gray-500">
+          <div className="mb-3 text-xs text-[#737373] sm:text-gray-500">
             Feel free to message, I'll try my best for a quick response
           </div>
           <form
@@ -20,7 +20,7 @@ function MessageHome() {
                 type="text"
                 name="contact"
                 placeholder="Email or Phone"
-                className="w-full p-2 mb-2 bg-[#2d2d3a] text-white rounded-xs outline-none"
+                className="w-full p-2 mb-2 border-y border-white/10 text-white rounded-xs outline-none"
                 required
               />
             </div>
@@ -29,7 +29,7 @@ function MessageHome() {
               <textarea
                 name="message"
                 placeholder="Message"
-                className="w-full h-full p-2 bg-[#2d2d3a] text-white rounded-xs outline-none resize-none"
+                className="w-full h-full p-2  border-y border-white/10 text-white rounded-xs outline-none resize-none"
                 required
               />
             </div>

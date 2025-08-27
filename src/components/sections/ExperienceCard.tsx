@@ -17,7 +17,7 @@ const ExperienceCard: React.FC<Experience> = ({
 
 
     return (
-        <div className="w-full border border-[#1a1a22] sm:border-[#2d2d3a]  sm:bg-[#1A1A22] relative rounded-xs cursor-pointer group hover:border-orange-400  sm:p-4 p-2 px-3 transition-all duration-300"
+        <div className="w-full border-y border-[#1a1a22] sm:border-[#2d2d3a]  bg-[#1A1A22]/50 relative rounded-xs cursor-pointer group hover:border-orange-400  sm:p-4 p-2 px-3 transition-all duration-300"
             onClick={() => setOpen(!open)}
             aria-expanded={open}
             onMouseEnter={() => setHover(true)}
@@ -50,7 +50,7 @@ const ExperienceCard: React.FC<Experience> = ({
                             )}
                         </div>
 
-                        <p className="text-sm text-gray-500  line-clamp-3">{jobtitle}</p>
+                        <p className="text-sm text-[#737373] sm:text-gray-500  line-clamp-3">{jobtitle}</p>
                     </div>
                 </div>
 
@@ -65,17 +65,17 @@ const ExperienceCard: React.FC<Experience> = ({
                     </a>
                 )}
             </div>
-            <div className="mt-4 flex items-center gap-2 text-gray-400">
+            <div className="mt-4 flex items-center gap-2 text-[#737373] sm:text-gray-500">
                 <Calendar className="w-4 h-4" />
                 <span className="text-sm">{displayDuration}</span>
             </div>
 
 
             <div
-                className={`overflow-hidden transition-all duration-300 ${open || hover ? "max-h-96 mt-4" : "max-h-0 mt-0"
+                className={`overflow-hidden  transition-all duration-300 ${open || hover ? "max-h-96 mt-4" : "max-h-0 mt-0"
                     }`}
             >
-                 <p className="text-sm text-gray-500" dangerouslySetInnerHTML={{ __html: description }} />
+                 <p className="text-sm text-[#737373] sm:text-gray-500" dangerouslySetInnerHTML={{ __html: description }} />
             </div>
 
         </div>

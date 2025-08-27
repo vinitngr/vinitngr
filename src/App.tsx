@@ -89,7 +89,7 @@ const App = () => {
           <div className="absolute top-0 left-0 w-full h-full">
             <GridPattern />
           </div>
-          <div className="max-w-[700px] py-1 flex flex-col z-10 bg-[#121218]/30 mx-2 font-mono">
+          <div className="max-w-[700px] py-1 flex flex-col z-10 mx-2 font-mono">
             <div className={`col-span-3 fixed text-center grid-item flex  z-50 w-full justify-center bottom-2`}>
               {
                 isOutOfView && (
@@ -181,7 +181,7 @@ const App = () => {
               {
                 isMobile && (
                   <>
-                    <div className="col-span-3 order-6  mt-5 grid-item transition-all duration-300">
+                    <div className="col-span-3  order-6  mt-5 grid-item transition-all duration-300">
                       <ProjectCard showHead={false} />
                     </div>
 
@@ -216,7 +216,7 @@ const App = () => {
               }
 
             </div>
-            <div className="w-full text-center text-xs mt-10 ">all rights reserved 😁
+            <div className="w-full text-center mb-20 text-xs mt-10 ">all rights reserved 😁
               <span className="text-yellow-700 font-extralight"> | nagarvinit56@gmail.com </span>
             </div>
           </div>

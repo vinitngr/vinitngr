@@ -10,7 +10,7 @@ function TechnicalCard({ animatedItems, handleMouseEnter, handleMouseLeave }: Ab
     <div
       id="card4"
       // style={{ backgroundImage: "url('https://img.freepik.com/free-photo/ultra-detailed-nebula-abstract-wallpaper-4_1562-749.jpg')", backgroundSize: 'cover' }}
-      className={` grid-item order-3 col-span-3 sm:mt-0 mt-1 sm:col-span-2 overflow-y-scroll social-bar bg-pattern flex flex-col justify-between bg-[#1a1a22] sm:border border-[#2d2d3a] py-4 sm:p-4 sm:px-4 transition-all duration-300 relative overflow-hidden shadow-md cursor-pointer ${animatedItems.includes('card4') ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-2'
+      className={` grid-item order-3 col-span-3 sm:mt-0 mt-1 sm:col-span-2 overflow-y-scroll social-bar bg-pattern flex flex-col justify-between sm:bg-[#1a1a22] sm:border border-[#2d2d3a] py-4 sm:p-4 sm:px-4 transition-all duration-300 relative overflow-hidden shadow-md cursor-pointer ${animatedItems.includes('card4') ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-2'
         }`}
       onMouseEnter={handleMouseEnter}
       onMouseLeave={handleMouseLeave}

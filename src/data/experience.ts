@@ -16,7 +16,7 @@ export const experiences: Experience[] = [
     enddate: "Present",
     description: `
        Hired as a <u class="text-yellow-600 underline">full-stack developer</u>, primarily focusing on backend development using Node.js and API integration.
-      <ul class="list-disc list-inside text-gray-500 mt-2">
+      <ul class="list-disc list-inside mt-2">
         <li>
           Developed authentication flow for <u>Klype</u>, <a href="https://WiseMango.io" target="_blank" class="text-yellow-600 underline">WiseMango</a>’s SaaS product
         </li>

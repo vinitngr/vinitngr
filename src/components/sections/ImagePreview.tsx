@@ -4,7 +4,7 @@ interface ImagePreviewProps extends React.ImgHTMLAttributes<HTMLImageElement> {
   src: string;
   alt?: string;
   project?: boolean;
-  extendedImages?: string[]; // required if project=true
+  extendedImages?: string[];
 }
 
 export default function ImagePreview({

@@ -26,7 +26,7 @@ const ProjectCard = ({ showHead = true }: { showHead?: boolean }) => {
             
             key={index}
             id={`card-${index}`}
-            className="sm:bg-[#1A1A22] group hover:border-orange-400 border border-[#1a1a22] sm:border-[#2d2d3a]  rounded-xs sm:p-4 p-2 px-3 transition-all duration-300 shadow-md cursor-pointer"
+            className="sm:bg-[#1A1A22]/50 group hover:border-orange-400 border-y border-[#1a1a22] sm:border-[#2d2d3a]  rounded-xs sm:p-4 p-2 px-3 transition-all duration-300 shadow-md cursor-pointer"
           >
             <div className="flex w-full justify-between">
               <div>
@@ -45,7 +45,7 @@ const ProjectCard = ({ showHead = true }: { showHead?: boolean }) => {
                     )
                   }
                 </div>
-                <p className="text-sm text-gray-500 mb-1 line-clamp-2">{project.description}</p>
+                <p className="text-sm sm:text-gray-500 mb-1 line-clamp-2 text-[#737373]">{project.description}</p>
               </div>
               {project.image ? (
                 <ImagePreview src={project.image} alt={project.title} className="size-16 sm:size-20 rounded-full object-contain" />
@@ -56,7 +56,7 @@ const ProjectCard = ({ showHead = true }: { showHead?: boolean }) => {
 
             <div className="flex flex-wrap gap-1 mt-3">
               {project.tags.map((tag) => (
-                <span key={tag} className="bg-[#2a2a36]/50 flex items-center justify-center gap-1 text-[#a0a0a0] text-xs py-1 px-2 border border-white/5">
+                <span key={tag} className="bg-[#2a2a36]/20 flex items-center justify-center gap-1 text-[#a0a0a0] text-xs py-1 px-2 border border-white/5">
                   {icons[tag.toLowerCase()]}{tag}
                 </span>
               ))}
@@ -80,7 +80,7 @@ const ProjectCard = ({ showHead = true }: { showHead?: boolean }) => {
                       updatedProjects[index].isExpanded = true;
                       setProjects(updatedProjects);
                     }}
-                    className="sm:hidden items-center gap-2 flex text-gray-500 text-xs"
+                    className="sm:hidden items-center gap-2 flex sm:text-gray-500 text-[#737373] text-xs"
                   >
                     <span className="text-nowrap">Show more</span>
                     <ChevronDown className="w-3 h-3" />
@@ -112,7 +112,7 @@ const ProjectCard = ({ showHead = true }: { showHead?: boolean }) => {
             >
               {/* <p className="text-sm text-gray-500">{project.extendedDescription}</p> */}
               {/* <div className="text-sm text-gray-500" dangerouslySetInnerHTML={{ __html: project.html }} /> */}
-              <div className="text-sm text-gray-500">
+              <div className="text-sm text-[#737373] sm:text-gray-500">
                 {project.content}
               </div>
               {/* <div className="grid gap-2 mt-3 ">
@@ -131,7 +131,7 @@ const ProjectCard = ({ showHead = true }: { showHead?: boolean }) => {
                   updatedProjects[index].isExpanded = false;
                   setProjects(updatedProjects);
                 }}
-                className="mt-3 text-xs text-gray-500 hover:text-gray-400 flex items-center gap-1"
+                className="mt-3 text-xs sm:text-gray-500 text-[#737373] hover:text-gray-400 flex items-center gap-1"
               >
                 <span>Show less</span>
                 <ChevronUp className="w-3 h-3" />
@@ -146,7 +146,7 @@ const ProjectCard = ({ showHead = true }: { showHead?: boolean }) => {
             {miniProjects.map((project, index) => (
               <div
                 key={index}
-                className={`group hover:border-orange-400 mt-${index === 0 ? 5 : 2} border-[#2d2d3a] shadow-md w-full p-4 rounded sm:bg-[#1A1A22] border text-white flex flex-col gap-2 relative`}
+              className={`group hover:border-orange-400 mt-${index === 0 ? 5 : 2} border-[#2d2d3a] shadow-md w-full p-4 rounded-xs sm:bg-[#1A1A22]/50 border-y text-white flex flex-col gap-2 relative`}
               >
                 <div className="flex items-center justify-between">
                   {project.title}
@@ -178,7 +178,7 @@ const ProjectCard = ({ showHead = true }: { showHead?: boolean }) => {
 
                 <div className="text-sm text-gray-500">{project.description}</div>
                 {project.content && (
-                  <div className="w-full bg-[#1A1A22] text-xs text-gray-500 overflow-hidden max-h-0 group-hover:max-h-96 transition-all duration-300 rounded mt-2">
+                  <div className="w-full bg-[#1A1A22] text-xs text-gray-500 overflow-hidden max-h-0 group-hover:max-h-96 transition-all duration-1000 rounded mt-2">
                     {project.content}
                   </div>
                 )}
