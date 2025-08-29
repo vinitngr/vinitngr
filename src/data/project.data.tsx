@@ -25,7 +25,7 @@ export const projectdetails = [
     title: 'The-Great-G-Stack | @theggs/cli',
     description: 'AI-powered stack builder that generates tailored prompts or full tech stacks with seamless options to store, upload, download, and share directly from the platform.',
     extendedImages: ['./1tggs.png', './2tggs.png', './3tggs.png', './4tggs.png'],
-    tags: ['cloudflare', 'Turborepo', 'CLI', 'Workers', 'KV', 'Next.js', 'Gemini', 'Vibe'],
+    tags: ['cloudflare', 'Turborepo', 'CLI', 'Workers', 'KV', 'Next.js', 'Gemini', 'Vibe' , 'prompt engineering', 'Vibe'],
     onetag: 'AI',
     isExpanded: false,
     content: (
