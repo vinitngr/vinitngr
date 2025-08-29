@@ -6,7 +6,7 @@ import ImagePreview from './ImagePreview'
 
 function About() {
   return (
-    <div className="flex items-center justify-center w-full min-h-screen  ">
+    <div className="flex items-center justify-center w-full min-h-screen">
       <div className="w-full max-w-4xl pb-10">
         {/* <div className="grid md:grid-cols-5 gap-2 mb-2">
           <div className="bg-[#1A1A22] rounded-md p-3 col-span-3 lg:col-span-5 2xl:col-span-3 flex flex-col justify-center border border-[#2d2d3a]">
@@ -31,7 +31,7 @@ function About() {
 
         <Mobile />
 
-        <div className="mb-2 flex flex-wrap gap-2 justify-center">
+        <div className="mb-2 flex flex-wrap gap-2 justify-center border border-t-0 border-white/10 p-3  mx-5">
           {[
             "https://github-readme-stats.vercel.app/api?username=vinitngr&show_icons=true&theme=dark",
             "https://github-readme-stats.vercel.app/api/top-langs/?username=vinitngr&layout=compact&theme=dark",

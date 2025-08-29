@@ -54,7 +54,7 @@ function Mobile({ onOutOfView }: { onOutOfView?: (isOutOfView: boolean) => void 
   };
 
   return (
-    <div className="text-white mb-3 bg-[#0C0A09] sm:bg-transparent col-span-3 flex flex-col p-2 px-4 rounded-md shadow-md">
+    <div className="text-white bg-[#0C0A09] sm:bg-transparent col-span-3 flex flex-col rounded-md shadow-md">
       {hoveredItem && (
         <div
           className="fixed bg-gray-800 text-white text-sm px-3 py-1 rounded-md shadow-lg z-50 transition-opacity duration-300 pointer-events-none"
@@ -71,8 +71,10 @@ function Mobile({ onOutOfView }: { onOutOfView?: (isOutOfView: boolean) => void 
         </div>
       )}
 
-      <div className="flex justify-between items-center w-full mb-2">
-        <span className="sm:text-gray-500 sm:text-gray-500 text-[#737373]">{time}</span>
+      <div className="flex justify-between relative items-center py-5  px-3 border-2 mx-3 border-white/10 overflow-hidden">
+        <div className="absolute inset-0 bg-[repeating-linear-gradient(45deg,rgba(255,255,255,0.03)_0,rgba(255,255,255,0.03)_8px,transparent_8px,transparent_16px)] pointer-events-none"></div>
+
+        <span className="sm:text-gray-500 text-[#737373]">{time}</span>
         <div className="flex gap-3">
           <button className="text-white flex cursor-pointer items-center">
             <FaStar
@@ -83,20 +85,55 @@ function Mobile({ onOutOfView }: { onOutOfView?: (isOutOfView: boolean) => void 
         </div>
       </div>
 
-      <div className='flex items-center flex-col'>
-        <button className="text-green-400 text-xs border border-green-500 px-2 py-0.5 rounded-full inline-block mb-2 cursor-pointer">
-          <span className='mr-1 animate-pulse'>•</span>
-          Available
-        </button>
-        <ImagePreview
-          src="./vinit.png"
-          alt="Vinit Nagar"
-          className="rounded-md w-20 h-20 object-cover mb-2"
-        />
-        <h2 className="text-2xl font-semibold">Vinit Nagar</h2>
-        <p className="sm:text-gray-500 text-[#737373] mb-1">Full-stack developer</p>
-        <p className="sm:text-gray-500 text-[#737373] mb-3 text-xs">Currently learning AI/ML...</p>
-        <div className="flex gap-4 mb-5 items-center" ref={socialRef}>
+
+      <div className='flex items-center  flex-col border-white/10 border-2 border-y-0   mx-3'>
+        <div className="flex justify-start w-full items-stretch">
+          <div className="relative border-r-2 border-white/10 flex items-center">
+            <span className='absolute text-green-400 -top-1 right-1 animate-pulse '>•</span>
+
+            <ImagePreview
+              src="./vinit.png"
+              alt="Vinit Nagar"
+              className="rounded-full border-2 border-white/10 p-[2px] aspect-square max-h-[120px] object-cover"
+            />
+          </div>
+
+          <div className="flex-1 flex flex-col justify-between">
+            <div className="grid grid-cols-4 gap-[1px] flex-1 overflow-clip">
+              <div className="px-2 flex items-center justify-center bg-white/5 cursor-pointer hover:bg-white/1 text-white/20"
+                onClick={() => {
+                  document.getElementById('edu')?.scrollIntoView({ behavior: 'smooth' })
+                }}
+
+              >Edu.</div>
+              <div className="px-2 flex items-center justify-center bg-white/5 cursor-pointer hover:bg-white/1 text-white/20"
+                onClick={() => {
+                  document.getElementById('exp')?.scrollIntoView({ behavior: 'smooth' })
+                }}
+              >Exp.</div>
+              <div className="relative px-2 flex items-center justify-center">
+                <div className="absolute inset-0 bg-[repeating-linear-gradient(45deg,rgba(255,255,255,0.03)_0,rgba(255,255,255,0.03)_8px,transparent_8px,transparent_16px)] pointer-events-none"></div>
+              </div>
+              <div className="px-2 flex items-center justify-center bg-white/5 cursor-pointer hover:bg-white/1 text-white/20"
+                onClick={() => {
+                  document.getElementById('proj')?.scrollIntoView({ behavior: 'smooth' })
+                }}
+              >Proj.</div>
+            </div>
+
+            <div className="flex flex-col items-start w-full border-t-2 border-white/10">
+              <h2 className="text-2xl font-semibold px-3 py-1 border-b-2 border-white/10 w-full">Vinit Nagar</h2>
+              <p className="sm:text-gray-500 text-sm px-3 py-1 bg-white/10 text-white/40 w-full">
+                Full-stack developer
+              </p>
+            </div>
+          </div>
+        </div>
+
+
+        <div className="flex gap-4 relative items-center  border-t-2 border-b-2 py-1 border-white/10 w-full justify-evenly" ref={socialRef}>
+          <div className="absolute inset-0 bg-[repeating-linear-gradient(45deg,rgba(255,255,255,0.03)_0,rgba(255,255,255,0.03)_8px,transparent_8px,transparent_16px)] pointer-events-none"></div>
+
           {socialLinks.map(({ href, label }) => (
             <a
               key={label}
@@ -121,21 +158,28 @@ function Mobile({ onOutOfView }: { onOutOfView?: (isOutOfView: boolean) => void 
         </div>
       </div>
 
-      <div className="mb-3">
-        <h3 className=" mb-1">About Me.</h3>
+      <div className=" px-3 py-3 mx-3 border-l-2 border-r-2 border-b-2 border-white/10">
+        <h3 className='mb-1'>About Me.</h3>
         <p className="sm:text-gray-500 text-[#737373]">
           Undergraduate developer with 1.5+ years of experience, crafting web & AI products using modern stacks like TypeScript,{" "}<UnderlineHighlight>Next.js</UnderlineHighlight>. Skilled in WebRTC, <UnderlineHighlight>Node.js</UnderlineHighlight>{" "}, agentic AI, and audio-video tech, focused on building real-time, innovative solutions.
         </p>
       </div>
 
-      <div className='mb-3'>
-        <h3 className=" mb-1">Hire Me.</h3>
+      <div className='px-3 py-3 mx-3 border-l-2 border-r-2 border-b-2 border-white/10'>
+        <div className='flex justify-start items-center'>
+          <h3>hire Me.</h3>
+          <button className="text-green-400 h-fit text-[10px] w-fit border m-3 border-green-500 px-2 py-0.5 rounded-full inline-block cursor-pointer">
+            <span className='mr-1 animate-pulse '>•</span>
+            Available
+          </button>
+        </div>
         <p className="sm:text-gray-500 text-[#737373]">
           Available for internships, freelance, or part-time work. I'm passionate, fast-learning, and ready to ship.
         </p>
       </div>
 
-      <div className="mb-3">
+      <div className="py-3 px-3 mx-3 border-l-2 relative border-r-2 border-b-2 border-white/10">
+        <div className="absolute inset-0 bg-[repeating-linear-gradient(45deg,rgba(255,255,255,0.03)_0,rgba(255,255,255,0.03)_8px,transparent_8px,transparent_16px)] pointer-events-none"></div>
 
         <h3 className=" mb-1">Currently Into.</h3>
         <p className="sm:text-gray-500 text-[#737373]">

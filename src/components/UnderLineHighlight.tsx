@@ -5,7 +5,7 @@ interface UnderlineHighlightProps extends HTMLAttributes<HTMLSpanElement> {
   className?: string;
   underlineClassName?: string;
   animationDelay?: number; // ms per letter
-  animationVariant?: "slideIn" | "fadeIn" | "bounceIn" | "scaleUp" | "rotateIn"; // variant
+  animationVariant?: "slideIn" | "fadeIn" | "bounceIn" | "scaleUp" | "rotateIn" | "none"; // variant
 }
 
 const UnderlineHighlight: React.FC<UnderlineHighlightProps> = ({
@@ -23,6 +23,7 @@ const UnderlineHighlight: React.FC<UnderlineHighlightProps> = ({
     bounceIn: "animate-bounceIn",
     scaleUp: "animate-scaleUp",
     rotateIn: "animate-rotateIn",
+    none:""
   };
 
   return (
@@ -30,7 +31,7 @@ const UnderlineHighlight: React.FC<UnderlineHighlightProps> = ({
       {children.split("").map((char, idx) => (
         <span
           key={idx}
-          className={`inline-block opacity-0 ${variantClassMap[animationVariant]}`}
+          className={`inline-block text-white/50 opacity-0 ${variantClassMap[animationVariant]}`}
           style={{
             animationDelay: `${idx * animationDelay}ms`,
             whiteSpace: char === " " ? "pre" : undefined, // preserve spaces

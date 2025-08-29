@@ -124,7 +124,7 @@ const App = () => {
                 setisopen={setIsOpen}
               />
             }
-            <div className="grid grid-cols-3 auto-rows-[minmax(90px,auto)] gap-1 flex-1" id="top">
+            <div className="grid grid-cols-3 auto-rows-[minmax(90px,auto)] sm:gap-1 flex-1" id="top">
               <FeaturedCard
                 animatedItems={animatedItems}
                 handleMouseEnter={handleMouseEnter}
@@ -181,19 +181,22 @@ const App = () => {
               {
                 isMobile && (
                   <>
-                    <div className="col-span-3  order-6  mt-5 grid-item transition-all duration-300">
+                    <div id="proj" className="col-span-3  order-6  mt-5 grid-item transition-all duration-300">
                       <ProjectCard showHead={false} />
                     </div>
 
-                    <div className="col-span-3 order-6  mt-5 grid-item transition-all duration-300">
+                    <div className="col-span-3 order-6  mt-5 grid-item transition-all duration-300"
+                    id="exp"
+                    >
                       <Exp showHead={false} />
                     </div>
 
-                    <div className="col-span-3 order-6 text-center mt-5 grid-item transition-all duration-300">
+                    <div id="edu" className="col-span-3 order-6 text-center mt-5 grid-item transition-all duration-300">
                       <Education showHead={false} />
                     </div>
 
                     <div
+                    
                       ref={messageHomeRef}
                       className="col-span-3 message-home-container order-6 text-center mt-5 grid-item transition-all duration-300"
                     >

@@ -28,7 +28,7 @@ const Sidebar = ({ isOpen, setIsOpen, selected , setselectfxn } : { isOpen: bool
         </div>
         <div></div>
       </div>
-      <div className={`bg-[#121218] text-white max-h-screen p-3 sm:p-5 transition-all ease-in-out duration-150 overflow-y-scroll`}>
+      <div className={`bg-[#121218] text-white p-3 sm:p-5 max-h-screen p- sm:p- transition-all ease-in-out duration-150 overflow-y-scroll`}>
         {selected === 'about' && <About />}
         {selected === 'projects' && <ProjectCard />}
         {selected === 'experience' && <Exp />}

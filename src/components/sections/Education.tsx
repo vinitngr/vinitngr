@@ -18,7 +18,7 @@ function Education({showHead = true}: {showHead?: boolean}) {
                 {EduAndCert.education.map((edu, index) => (
                     <div
                         key={index}
-                        className={`mt-${index === 0 ? 5 : 2} bg-[#1A1A22]/20 border-y border-[#1a1a22] sm:border-[#2d2d3a]  shadow-md w-full  sm:p-4 p-2 px-4 rounded-xs sm:bg-[#1A1A22]/50 text-white flex sm:flex-row flex-col justify-between sm:items-center items-start`}
+                        className={`mt-${index === 0 ? 5 : 2} bg-[#1A1A22]/20  border-y border-[#1a1a22] sm:border-[#2d2d3a]   shadow-md w-full  sm:p-4 p-2 px-4 rounded-xs sm:bg-[#1A1A22]/50 text-white flex sm:flex-row flex-col justify-between sm:items-center items-start`}
                     >
                         <div className="sm:w-1/2 flex items-center">
                             {
