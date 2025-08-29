@@ -31,7 +31,7 @@ const UnderlineHighlight: React.FC<UnderlineHighlightProps> = ({
       {children.split("").map((char, idx) => (
         <span
           key={idx}
-          className={`inline-block text-white/50 opacity-0 ${variantClassMap[animationVariant]}`}
+          className={`inline-block opacity-0 ${variantClassMap[animationVariant]}`}
           style={{
             animationDelay: `${idx * animationDelay}ms`,
             whiteSpace: char === " " ? "pre" : undefined, // preserve spaces

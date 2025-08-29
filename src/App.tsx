@@ -181,24 +181,24 @@ const App = () => {
               {
                 isMobile && (
                   <>
-                    <div id="proj" className="col-span-3  order-6  mt-5 grid-item transition-all duration-300">
+                    <div id="proj" className="col-span-3 border order-6 border-x-2 mx-3 border-white/10 grid-item transition-all duration-300">
                       <ProjectCard showHead={false} />
                     </div>
 
-                    <div className="col-span-3 order-6  mt-5 grid-item transition-all duration-300"
+                    <div className="col-span-3 order-6 border-x-2 mx-3 border-white/10 grid-item transition-all duration-300"
                     id="exp"
                     >
                       <Exp showHead={false} />
                     </div>
 
-                    <div id="edu" className="col-span-3 order-6 text-center mt-5 grid-item transition-all duration-300">
+                    <div id="edu" className="col-span-3 order-6 border-x-2 mx-3 border-white/10 grid-item transition-all duration-300">
                       <Education showHead={false} />
                     </div>
 
                     <div
                     
                       ref={messageHomeRef}
-                      className="col-span-3 message-home-container order-6 text-center mt-5 grid-item transition-all duration-300"
+                      className="col-span-3 mx-3 sm:mx-0 border-x-2 border-white/10 message-home-container order-6 text-center sm:mt-5 grid-item transition-all duration-300"
                     >
                       <MessageHome />
                     </div>

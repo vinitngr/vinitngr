@@ -89,14 +89,14 @@ function Mobile({ onOutOfView }: { onOutOfView?: (isOutOfView: boolean) => void 
       <div className='flex items-center  flex-col border-white/10 border-2 border-y-0   mx-3'>
         <div className="flex justify-start w-full items-stretch">
           <div className="relative border-r-2 border-white/10 flex items-center">
-            <span className='absolute text-green-400 -top-1 right-1 animate-pulse '>•</span>
-
+            <span className="absolute text-green-400 -top-1 right-1 animate-pulse">•</span>
             <ImagePreview
               src="./vinit.png"
               alt="Vinit Nagar"
               className="rounded-full border-2 border-white/10 p-[2px] aspect-square max-h-[120px] object-cover"
             />
           </div>
+
 
           <div className="flex-1 flex flex-col justify-between">
             <div className="grid grid-cols-4 gap-[1px] flex-1 overflow-clip">
@@ -158,12 +158,26 @@ function Mobile({ onOutOfView }: { onOutOfView?: (isOutOfView: boolean) => void 
         </div>
       </div>
 
-      <div className=" px-3 py-3 mx-3 border-l-2 border-r-2 border-b-2 border-white/10">
-        <h3 className='mb-1'>About Me.</h3>
-        <p className="sm:text-gray-500 text-[#737373]">
-          Undergraduate developer with 1.5+ years of experience, crafting web & AI products using modern stacks like TypeScript,{" "}<UnderlineHighlight>Next.js</UnderlineHighlight>. Skilled in WebRTC, <UnderlineHighlight>Node.js</UnderlineHighlight>{" "}, agentic AI, and audio-video tech, focused on building real-time, innovative solutions.
-        </p>
+      <div className="relative mx-3 border-l-2 border-r-2 border-b-2 border-white/10">
+        <div className="absolute top-0 right-0 translate-x-1/2 -translate-y-1/2 text-2xl font-extralight text-white/50">
+          +
+        </div>
+        <div className="absolute bottom-0 right-0 translate-x-1/2 translate-y-1/2 text-2xl font-extralight text-white/50">
+          +
+        </div>
+
+        <div className="px-3 py-3">
+          <h3 className="mb-1">About Me.</h3>
+          <p className="sm:text-gray-500 text-[#737373]">
+            Undergraduate developer with 1.5+ years of experience, crafting web & AI
+            products using modern stacks like TypeScript,{" "}
+            <UnderlineHighlight>Next.js</UnderlineHighlight>. Skilled in WebRTC,{" "}
+            <UnderlineHighlight>Node.js</UnderlineHighlight>, agentic AI, and
+            audio-video tech, focused on building real-time, innovative solutions.
+          </p>
+        </div>
       </div>
+
 
       <div className='px-3 py-3 mx-3 border-l-2 border-r-2 border-b-2 border-white/10'>
         <div className='flex justify-start items-center'>

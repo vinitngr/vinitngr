@@ -31,7 +31,7 @@ function About() {
 
         <Mobile />
 
-        <div className="mb-2 flex flex-wrap gap-2 justify-center border border-t-0 border-white/10 p-3  mx-5">
+        <div className="mb-1 flex flex-wrap gap-2 justify-center border border-t-0 border-white/10 p-3  mx-3">
           {[
             "https://github-readme-stats.vercel.app/api?username=vinitngr&show_icons=true&theme=dark",
             "https://github-readme-stats.vercel.app/api/top-langs/?username=vinitngr&layout=compact&theme=dark",
@@ -55,7 +55,7 @@ function About() {
         </div>
 
 
-        <div className="bg-[#1A1A22] rounded-md p-6 border border-[#2d2d3a]  mb-2">
+        <div className="bg-[#1A1A22] rounded-md p-6 border border-[#2d2d3a]  mb-1 mx-3">
           <h3 className="text-2xl font-bold text-white mb-6">Contact Details</h3>
           <div className="space-y-4">
             <div className="flex items-center text-gray-400">
@@ -86,7 +86,7 @@ function About() {
         </div>
 
 
-        <div className=" bg-[#1A1A22] rounded  border border-[#2d2d3a]  p-6  ">
+        <div className=" bg-[#1A1A22] rounded  border border-[#2d2d3a]  p-6 mx-3 mt-1 ">
           <h3 className="text-2xl font-bold text-white mb-6">Hobbies</h3>
           <div className="space-y-4">
             <div className="  p-4 border border-[#2d2d3a]">
@@ -102,13 +102,13 @@ function About() {
             </div>
           </div>
         </div>
-        <div className='p-2'><iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d12034.312777301564!2d73.0327088684077!3d26.2674253432997!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x39418c5ea67269fb%3A0x93b557732516d6d1!2sM.B.M.%20University!5e0!3m2!1sen!2sin!4v1741095763300!5m2!1sen!2sin" width={'100%'} height="450" loading="lazy"></iframe></div>
+        <div className='mx-3 rounded-md overflow-clip border-4 '><iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d12034.312777301564!2d73.0327088684077!3d26.2674253432997!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x39418c5ea67269fb%3A0x93b557732516d6d1!2sM.B.M.%20University!5e0!3m2!1sen!2sin!4v1741095763300!5m2!1sen!2sin" width={'100%'} height="450" loading="lazy"></iframe></div>
 
 
 
         <div
           id="emailForm"
-          className="bg-[#1A1A22] mt-5 rounded-md p-4 border border-[#2d2d3a] mb-2 h-[300px] flex flex-col"
+          className="bg-[#1A1A22] mt-1 rounded-md p-4 border border-[#2d2d3a] mx-3 h-[300px] flex flex-col"
         >
           <div className="mb-3">
             Feel free to message, I'll try my best for a quick response

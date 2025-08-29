@@ -15,7 +15,7 @@ function FeaturedCard({ animatedItems, handleMouseEnter, handleMouseLeave }: Abo
   return (
     <div
       id="card1"
-      className={`grid-item order-1 col-span-3 sm:col-span-2 min-h-64 row-span-2 sm:bg-[#1a1a22] bg-[#cddc39] border border-[#2d2d3a] p-2 sm:p-0 py-6 sm:py-4 transition-all duration-300 relative overflow-hidden shadow-md  flex flex-col justify-between
+      className={`grid-item order-1 col-span-3 sm:col-span-2 min-h-64 row-span-2 sm:bg-[#1a1a22] bg-[#cddc39] border border-[#2d2d3a] p-2 sm:p-0 py-6 sm:py-4 mx-3 sm:mx-0 transition-all duration-300 relative overflow-hidden shadow-md  flex flex-col justify-between
         ${animatedItems.includes('card4') ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-2'}`}
         onMouseEnter={handleMouseEnter}
         onMouseLeave={handleMouseLeave}

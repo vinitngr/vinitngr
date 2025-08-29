@@ -11,7 +11,10 @@ const ProjectCard = ({ showHead = true }: { showHead?: boolean }) => {
 
   return (
     <>
-      <h2 className=" text-center sm:text-left sm:text-xl mb-5">Projects</h2>
+      <h2 className="relative text-center sm:text-left sm:text-xl mt-4 sm:mb-4 sm:mt-0 py-2 sm:py-0 border-y-2 sm:border-0 border-white/10">
+        <div className="sm:hidden absolute inset-0 bg-[repeating-linear-gradient(45deg,rgba(255,255,255,0.03)_0,rgba(255,255,255,0.03)_8px,transparent_8px,transparent_16px)] pointer-events-none"></div>
+        Projects
+      </h2>
       {showHead && (
         <>
           <div className="font-extralight text-gray-500 mb-5">
@@ -20,7 +23,7 @@ const ProjectCard = ({ showHead = true }: { showHead?: boolean }) => {
         </>
       )}
 
-      <div className="flex flex-col gap-4 overflow-auto h-full">
+      <div className="flex flex-col sm:gap-3 overflow-auto h-full">
         {projects.map((project, index) => (
           <div
             

@@ -5,7 +5,9 @@ import ExperienceCard from "./ExperienceCard";
 function Exp({ showHead = true }: { showHead?: boolean }) {
   return (
     <div>
-      <h2 className="text-center sm:text-left sm:text-xl mb-5">Experience</h2>
+      <h2 className="relative text-center border-y-2 sm:border-y-0 border-white/10 sm:border-0 sm:mt-0 sm:py-0 sm:mb-4 sm:text-left sm:text-xl mt-4 py-2">
+        <div className="sm:hidden absolute inset-0 bg-[repeating-linear-gradient(45deg,rgba(255,255,255,0.03)_0,rgba(255,255,255,0.03)_8px,transparent_8px,transparent_16px)] pointer-events-none"></div>
+        Experience</h2>
 
       {showHead ? (
         <div>
@@ -24,7 +26,7 @@ function Exp({ showHead = true }: { showHead?: boolean }) {
 
       <div className="h-full overflow-auto sm:pb-10">
         {experiences.map((exp, index) => (
-          <div key={index} className="my-3">
+          <div key={index} className="sm:my-3">
             <ExperienceCard {...exp} />
           </div>
         ))}
