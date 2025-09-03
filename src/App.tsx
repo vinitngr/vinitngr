@@ -76,7 +76,7 @@ const App = () => {
       <Sidebar isOpen={isOpen} setIsOpen={setIsOpen} selected={selected} setselectfxn={(option) => setSelected(option as SidebarSection)} />
 
       <div className="h-screen overflow-y-scroll w-full">
-        <div className="relative px-5  sm:bg-[#121218] bg-[#0C0A09] text-[#e0e0e0] w-full flex justify-center">
+        <div className="relative sm:px-5  sm:bg-[#121218] bg-[#0C0A09] text-[#e0e0e0] w-full flex justify-center">
           <div
             className="absolute inset-0 blur-3xl opacity-20"
             style={{
