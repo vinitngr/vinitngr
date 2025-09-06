@@ -2,10 +2,10 @@ import { AboutPrevProps } from '../utils/type'
 import icons from '../data/icons';
 import { skills } from '../data/skills';
 
-
+import { useIsSmallScreen } from '../hooks/smallScreen';
 function TechnicalCard({ animatedItems, handleMouseEnter, handleMouseLeave }: AboutPrevProps) {
+  const isSmallScreen = useIsSmallScreen();
 
-  
   return (
     <div
       id="card4"
@@ -22,7 +22,7 @@ function TechnicalCard({ animatedItems, handleMouseEnter, handleMouseLeave }: Ab
       </h3>
       <div className="flex flex-wrap p-4 sm:p-0 sm:pb-4">
         {
-          skills.map(skill => (
+          skills.slice(0, isSmallScreen ? undefined : 19).map(skill => (
             <a
               href={`https://www.google.com/search?q=${skill}`}
               target="_blank"
@@ -30,11 +30,21 @@ function TechnicalCard({ animatedItems, handleMouseEnter, handleMouseLeave }: Ab
               className="inline-block hover:bg-[#2a2a36]  sm:bg-[#191921] bg-[#2a2a36]/20 text-[#a0a0a0] text-xs py-1 px-1.5 border border-white/10 mb-1 mr-1"
             >
               <span className="flex items-center gap-1">
+                {skill.toLowerCase() == "zustand" ? <img  src="https://user-images.githubusercontent.com/958486/218346783-72be5ae3-b953-4dd7-b239-788a882fdad6.svg" alt="Zustand" className="w-3 h-3 grayscale" /> : null}
                 {icons[skill.toLowerCase()]} {skill}
               </span>
             </a>
           ))
+
         }
+        <a
+          href={`#`}
+          className="inline-block hover:bg-[#2a2a36]  sm:bg-[#191921] bg-[#2a2a36]/20 text-[#a0a0a0] text-xs py-1 px-1.5 border border-white/10 mb-1 mr-1"
+        >
+          <span className="flex items-center gap-1">
+            more++
+          </span>
+        </a>
       </div>
     </div>
   )

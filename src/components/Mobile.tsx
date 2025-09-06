@@ -123,9 +123,13 @@ function Mobile({ onOutOfView }: { onOutOfView?: (isOutOfView: boolean) => void 
 
             <div className="flex flex-col items-start w-full border-t-2 border-white/10">
               <h2 className="text-2xl font-semibold px-3 py-1 border-b-2 border-white/10 w-full">Vinit Nagar</h2>
-              <p className="sm:text-gray-500 text-sm px-3 py-1 bg-white/10 text-white/40 w-full">
-                Full-stack developer
-              </p>
+              <div className="relative w-full overflow-hidden py-1 bg-white/10 text-white/40 group">
+                <div className="flex w-[200%] cursor-pointer transition-transform px-3  duration-500 ease-in-out group-hover:-translate-x-1/2">
+                  <p className="w-1/2 text-sm sm:text-white/30">Software developer</p>
+                  <p className="w-1/2 text-sm sm:text-white/30 px-3 line-clamp-1">Open-source contributor | ai engineer</p>
+                </div>
+              </div>
+
             </div>
           </div>
         </div>
@@ -197,7 +201,7 @@ function Mobile({ onOutOfView }: { onOutOfView?: (isOutOfView: boolean) => void 
 
         <h3 className=" mb-1">Currently Into.</h3>
         <p className="sm:text-gray-500 text-[#737373]">
-          Currently exploring {" "}<UnderlineHighlight>RUST</UnderlineHighlight>{" "}, @Ai/ML , and @DSA
+          <span className='line-through'>Rust</span> <UnderlineHighlight>Go</UnderlineHighlight>{" "}, @AgenticAi , and @DSA
         </p>
       </div>
     </div>
