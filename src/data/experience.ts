@@ -9,11 +9,22 @@ export const miniexperiences = [
 
 export const experiences: Experience[] = [
   {
+    logolink: "HoomandigitalLogo.jpeg",
+    jobtitle: "SDE intern (AI)",
+    company: "Hooman Digital",
+    date: "Sep 2025",
+    enddate: "Present",
+    description: `
+       Hired as a <u class="text-yellow-600 underline">SDE AI Intern</u>, primarily focusing on building AI agent applications and workflow automation.
+    `,
+    companyLink: "https://www.hooman.digital/",
+  },
+  {
     logolink: "wisemangoLogo.png",
     jobtitle: "Full-Stack Developer",
     company: "WiseMango Inc",
     date: "July 2025",
-    enddate: "Present",
+    enddate: "Sep 2025",
     description: `
        Hired as a <u class="text-yellow-600 underline">full-stack developer</u>, primarily focusing on backend development using Node.js and API integration.
       <ul class="list-disc list-inside mt-2">
