@@ -6,23 +6,40 @@ export default function SkillMeter({
   handleMouseEnter,
   handleMouseLeave,
 }: AboutPrevProps) {
-  const SNAKE_SIZE = 10;
+  const SNAKE_SIZE = 10; // pixel size of each snake block
+  const containerRef = useRef<HTMLDivElement | null>(null);
 
   const [snake, setSnake] = useState([{ x: 2, y: 2 }]);
   const [food, setFood] = useState({ x: 5, y: 5 });
   const [dir, setDir] = useState<{ x: number; y: number }>({ x: 0, y: 0 });
   const [running, setRunning] = useState(false);
   const [score, setScore] = useState(0);
-  const [timer, setTimer] = useState(10); // countdown in seconds
+  const [timer, setTimer] = useState(10);
 
-  const gridSize = Math.floor(100 / (SNAKE_SIZE / 2));
+  const [gridCols, setGridCols] = useState(0);
+  const [gridRows, setGridRows] = useState(0);
+
   const intervalRef = useRef<NodeJS.Timeout | null>(null);
   const timerRef = useRef<NodeJS.Timeout | null>(null);
 
+  const updateGrid = useCallback(() => {
+    if (containerRef.current) {
+      const { clientWidth, clientHeight } = containerRef.current;
+      setGridCols(Math.floor(clientWidth / SNAKE_SIZE));
+      setGridRows(Math.floor(clientHeight / SNAKE_SIZE));
+    }
+  }, []);
+
+  useEffect(() => {
+    updateGrid();
+    window.addEventListener("resize", updateGrid);
+    return () => window.removeEventListener("resize", updateGrid);
+  }, [updateGrid]);
+
   const newFood = useCallback(() => ({
-    x: Math.floor(Math.random() * gridSize),
-    y: Math.floor(Math.random() * gridSize),
-  }), [gridSize]);
+    x: Math.floor(Math.random() * gridCols),
+    y: Math.floor(Math.random() * gridRows),
+  }), [gridCols, gridRows]);
 
   // Arrow keys
   useEffect(() => {
@@ -43,18 +60,15 @@ export default function SkillMeter({
   // Game loop
   useEffect(() => {
     if (!running) return;
-
     intervalRef.current = setInterval(() => {
       setSnake(prev => {
         const head = { x: prev[0].x + dir.x, y: prev[0].y + dir.y };
         const newSnake = [head, ...prev];
 
-        // Collision
+        // Collision with walls or self
         if (
-          head.x < 0 ||
-          head.x >= gridSize ||
-          head.y < 0 ||
-          head.y >= gridSize ||
+          head.x < 0 || head.x >= gridCols ||
+          head.y < 0 || head.y >= gridRows ||
           prev.some(s => s.x === head.x && s.y === head.y)
         ) {
           setRunning(false);
@@ -68,22 +82,22 @@ export default function SkillMeter({
         if (head.x === food.x && head.y === food.y) {
           setFood(newFood());
           setScore(s => s + 1);
-          setTimer(10); // reset countdown
+          setTimer(10);
         } else {
           newSnake.pop();
         }
 
         return newSnake;
       });
-    }, 60);
-
-    return () => {
+    }, 100); // slower loop for smoother gameplay
+    return () => { 
       if (intervalRef.current) clearInterval(intervalRef.current);
     };
-  }, [dir, running, food, gridSize, newFood]);
+  }, [dir, running, food, gridCols, gridRows, newFood]);
 
+  // Countdown timer
   useEffect(() => {
-     if (!running) return;
+    if (!running) return;
     timerRef.current = setInterval(() => {
       setTimer(prev => {
         if (prev <= 1) {
@@ -99,7 +113,7 @@ export default function SkillMeter({
     return () => {
       if (timerRef.current) clearInterval(timerRef.current);
     };
-  } , [running])
+  }, [running]);
 
   const startGame = () => {
     setSnake([{ x: 2, y: 2 }]);
@@ -112,6 +126,7 @@ export default function SkillMeter({
 
   return (
     <div
+      ref={containerRef}
       id="card3"
       onMouseEnter={handleMouseEnter}
       onMouseLeave={handleMouseLeave}
@@ -133,9 +148,7 @@ export default function SkillMeter({
           >
             {score > 0 ? "Retry" : "Start"}
           </button>
-          <p className="text-[7px]">Have fun</p>
-          <p className="text-[7px]">Crafter by GPT 🤖</p>
-          <p className="text-[7px]">Had no idea what to Embed</p>
+          <p className="text-[7px]">Have fun</p> <p className="text-[7px]">Crafter by GPT 🤖</p> <p className="text-[7px]">Had no idea what to Embed</p>
         </div>
       ) : (
         <>
