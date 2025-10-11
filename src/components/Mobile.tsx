@@ -186,10 +186,11 @@ function Mobile({ onOutOfView }: { onOutOfView?: (isOutOfView: boolean) => void 
       <div className='px-3 py-3 mx-3 border-l-2 border-r-2 border-b-2 border-white/10'>
         <div className='flex justify-start items-center'>
           <h3>hire Me.</h3>
-          <button className="text-green-400 h-fit text-[10px] w-fit border m-3 border-green-500 px-2 py-0.5 rounded-full inline-block cursor-pointer">
+          {/* <button className="text-green-400 h-fit text-[10px] w-fit border m-3 mr-1 border-green-500 px-2 py-0.5 rounded-full inline-block cursor-pointer">
             <span className='mr-1 animate-pulse '>•</span>
             Available
-          </button>
+          </button> */}
+            <img className="inline-block ml-3 h-6 border rounded border-white/10" src='/HoomandigitalLogo.jpeg'/>
         </div>
         <p className="sm:text-gray-500 text-[#737373]">
           Available for internships, freelance, or part-time work. I'm passionate, fast-learning, and ready to ship.
@@ -201,7 +202,7 @@ function Mobile({ onOutOfView }: { onOutOfView?: (isOutOfView: boolean) => void 
 
         <h3 className=" mb-1">Currently Into.</h3>
         <p className="sm:text-gray-500 text-[#737373]">
-          <span className='line-through'>Rust</span> <UnderlineHighlight>Go</UnderlineHighlight>{" "}, @AgenticAi , and @DSA
+          <span className='line-through'>Rust</span> <UnderlineHighlight>Go</UnderlineHighlight>{" "} , @DevOps, @AgenticAi & @DSA
         </p>
       </div>
     </div>

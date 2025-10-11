@@ -2,7 +2,7 @@
 import { CommandIcon, Database } from 'lucide-react';
 import { JSX } from 'react';
 import { FaJsSquare, FaNodeJs, FaPython, FaReact, FaDocker, FaCss3Alt,  FaLink, FaGithub, FaRobot, FaAws, FaCloudflare, FaJava } from 'react-icons/fa';
-import { SiNextdotjs, SiDrizzle, SiMongodb, SiPostgresql, SiExpress, SiRedis, SiWebrtc, SiStackblitz, SiBun, SiPuppeteer, SiGooglegemini, SiExcalidraw, SiSocketdotio, SiTurborepo, SiPostman, SiTailwindcss } from 'react-icons/si';
+import { SiNextdotjs, SiDrizzle, SiMongodb, SiPostgresql, SiExpress, SiRedis, SiWebrtc, SiStackblitz, SiBun, SiPuppeteer, SiGooglegemini, SiExcalidraw, SiSocketdotio, SiTurborepo, SiPostman, SiTailwindcss, SiN8N } from 'react-icons/si';
 
 const icons: { [key: string]: JSX.Element } = {
     'typescript': <FaJsSquare />,
@@ -35,7 +35,8 @@ const icons: { [key: string]: JSX.Element } = {
     'turborepo': <SiTurborepo/>,
     'cli': <CommandIcon size={12}/>,
     'postman': <SiPostman size={12}/>,
-    'java': <FaJava size={12}/>,
+  'java': <FaJava size={12} />,
+    'n8n' : <SiN8N/>
 };
 
 

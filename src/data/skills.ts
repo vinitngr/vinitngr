@@ -16,7 +16,7 @@ export const skills: string[] = [
   'cloudflare',
   'AWS',
   'python',
-  'automation',
+  'n8n',
   'zustand',
   'Java',
   'Tailwind',
