@@ -6,7 +6,14 @@ export default function SkillMeter({
   handleMouseEnter,
   handleMouseLeave,
 }: AboutPrevProps) {
-  const SNAKE_SIZE = 10; // pixel size of each snake block
+
+  const gameEndedRef = useRef(false);
+
+  const [token, setToken] = useState<string | null>(null);
+  const [sig, setSig] = useState<string | null>(null);
+  const [leaderboard, setLeaderboard] = useState<{ name: string; score: number }[]>([]);
+
+  const SNAKE_SIZE = 10;
   const containerRef = useRef<HTMLDivElement | null>(null);
 
   const [snake, setSnake] = useState([{ x: 2, y: 2 }]);
@@ -30,6 +37,11 @@ export default function SkillMeter({
     }
   }, []);
 
+  // --- Leaderboard fetch ---
+  useEffect(() => {
+    fetch('https://snake.vinitnagar56.workers.dev/api/scores').then(r => r.json()).then(setLeaderboard);
+  }, []);
+
   useEffect(() => {
     updateGrid();
     window.addEventListener("resize", updateGrid);
@@ -41,7 +53,30 @@ export default function SkillMeter({
     y: Math.floor(Math.random() * gridRows),
   }), [gridCols, gridRows]);
 
-  // Arrow keys
+  const endGame = useCallback(async () => {
+    if (gameEndedRef.current) return; // 🧠 prevent double call
+    gameEndedRef.current = true;
+
+    setRunning(false);
+    setDir({ x: 0, y: 0 });
+
+    if (token && sig && score > 0) {
+      const name = prompt("Enter name for leaderboard (optional):") || "anon";
+      await fetch('https://snake.vinitnagar56.workers.dev/api/score', {
+        method: 'POST',
+        headers: { 'content-type': 'application/json' },
+        body: JSON.stringify({ token, sig, score, name }),
+      });
+      const updated = await fetch('https://snake.vinitnagar56.workers.dev/api/scores').then(r => r.json());
+      setLeaderboard(updated);
+    }
+
+    setScore(0);
+    setTimer(10);
+  }, [token, sig, score, setLeaderboard]);
+
+
+  // --- Key Controls ---
   useEffect(() => {
     const handleKey = (e: KeyboardEvent) => {
       if (!running) return;
@@ -57,7 +92,7 @@ export default function SkillMeter({
     return () => window.removeEventListener("keydown", handleKey);
   }, [dir, running]);
 
-  // Game loop
+  // --- Game Loop ---
   useEffect(() => {
     if (!running) return;
     intervalRef.current = setInterval(() => {
@@ -65,16 +100,13 @@ export default function SkillMeter({
         const head = { x: prev[0].x + dir.x, y: prev[0].y + dir.y };
         const newSnake = [head, ...prev];
 
-        // Collision with walls or self
+        // Collision check
         if (
           head.x < 0 || head.x >= gridCols ||
           head.y < 0 || head.y >= gridRows ||
           prev.some(s => s.x === head.x && s.y === head.y)
         ) {
-          setRunning(false);
-          setDir({ x: 0, y: 0 });
-          setScore(0);
-          setTimer(10);
+          endGame();
           return [{ x: 2, y: 2 }];
         }
 
@@ -89,33 +121,37 @@ export default function SkillMeter({
 
         return newSnake;
       });
-    }, 100); // slower loop for smoother gameplay
-    return () => { 
+    }, 100);
+    return () => {
       if (intervalRef.current) clearInterval(intervalRef.current);
     };
-  }, [dir, running, food, gridCols, gridRows, newFood]);
+  }, [dir, running, food, gridCols, gridRows, newFood, endGame]);
 
-  // Countdown timer
+  // --- Timer ---
   useEffect(() => {
     if (!running) return;
     timerRef.current = setInterval(() => {
       setTimer(prev => {
         if (prev <= 1) {
-          setRunning(false);
-          setDir({ x: 0, y: 0 });
-          setScore(0);
+          endGame();
           return 10;
         }
         return prev - 1;
       });
     }, 1000);
-
     return () => {
       if (timerRef.current) clearInterval(timerRef.current);
     };
-  }, [running]);
+  }, [running, endGame]);
 
-  const startGame = () => {
+  // --- Start Game ---
+  const startGame = async () => {
+    gameEndedRef.current = false; // reset guard
+    const res = await fetch('https://snake.vinitnagar56.workers.dev/api/start', { method: 'POST' });
+    const data = await res.json();
+    setToken(data.token);
+    setSig(data.sig);
+
     setSnake([{ x: 2, y: 2 }]);
     setFood(newFood());
     setDir({ x: 1, y: 0 });
@@ -131,10 +167,9 @@ export default function SkillMeter({
       onMouseEnter={handleMouseEnter}
       onMouseLeave={handleMouseLeave}
       className={`grid-item order-3 col-span-3 sm:col-span-1 bg-[#1a1a22] relative overflow-hidden 
-        shadow-md border border-[#2d2d3a]/80 h-full transition-all duration-300 ${
-          animatedItems.includes("card3")
-            ? "opacity-100 translate-y-0"
-            : "opacity-0 translate-y-2"
+        shadow-md border border-[#2d2d3a]/80 h-full transition-all duration-300 ${animatedItems.includes("card3")
+          ? "opacity-100 translate-y-0"
+          : "opacity-0 translate-y-2"
         }`}
     >
       {!running ? (
@@ -148,7 +183,12 @@ export default function SkillMeter({
           >
             {score > 0 ? "Retry" : "Start"}
           </button>
-          <p className="text-[7px]">Have fun</p> <p className="text-[7px]">Crafter by GPT 🤖</p> <p className="text-[7px]">Had no idea what to Embed</p>
+          <div className="mt-2 text-xs  text-gray-300/50">
+            <p>🏆 Top Scores</p>
+            {leaderboard.map((s, i) => (
+              <div key={i}>{i + 1}. {s.name}: {s.score}</div>
+            ))}
+          </div>
         </div>
       ) : (
         <>

@@ -33,10 +33,14 @@ function AboutPrev({ animatedItems, handleMouseEnter, handleMouseLeave, setisope
         className="group text-sm text-yellow-700 no-underline flex items-center font-medium mt-auto">
         <span className="group-hover:text-yellow-700">View Details</span>
         <ArrowRight className="w-4 h-4 ml-1 group-hover:text-yellow-700 transition-transform duration-500 ease-in-out group-hover:-rotate-45" />
-        <button className="text-yellow-400/50 text-xs border border-yellow-500/50 px-1 py-0.3 absolute right-0 -bottom-2  inline-block mb-2 cursor-pointer">
-          <span className='mr-1 animate-pulse'>•</span>
-          hired
-        </button>
+
+        <div className="absolute right-0 bottom-0 h-fit w-fit flex items-center flex-col">
+          <img className="inline-block items-end h-6 border ml-auto rounded border-white/10" src='/HoomandigitalLogo.jpeg' />
+          <button className="text-yellow-400/50 text-xs border border-yellow-500/50 px-1 py-0.3  inline-block cursor-pointer">
+            <span className='mr-1 animate-pulse'>•</span>
+            hired
+          </button>
+        </div>
       </button>
     </div>
   )
