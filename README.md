@@ -60,11 +60,14 @@ These are the technologies I use to build fast, scalable products — from real-
 ---
 
 ### ⌨️ Monkeytype
+Some typing stats, because why not:
+
 <p align="center">
   <a href="https://monkeytype.com/profile/vinitnagar">
     <img src="https://monkeytype-readme.zeabur.app/generate-svg/vinitnagar/nord_dark?pb=true" width="700" />
   </a>
 </p>
+
 
 ---
 
