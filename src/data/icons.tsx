@@ -1,7 +1,7 @@
 
-import { CommandIcon, Database } from 'lucide-react';
+import {  Database, Terminal } from 'lucide-react';
 import { JSX } from 'react';
-import { FaJsSquare, FaNodeJs, FaPython, FaReact, FaDocker, FaCss3Alt,  FaLink, FaGithub, FaRobot, FaAws, FaCloudflare, FaJava } from 'react-icons/fa';
+import { FaJsSquare, FaNodeJs, FaPython, FaReact, FaDocker, FaCss3Alt,  FaLink, FaGithub, FaRobot, FaAws, FaCloudflare, FaJava, FaNpm } from 'react-icons/fa';
 import { SiNextdotjs, SiDrizzle, SiMongodb, SiPostgresql, SiExpress, SiRedis, SiWebrtc, SiStackblitz, SiBun, SiPuppeteer, SiGooglegemini, SiExcalidraw, SiSocketdotio, SiTurborepo, SiPostman, SiTailwindcss, SiN8N } from 'react-icons/si';
 
 const icons: { [key: string]: JSX.Element } = {
@@ -33,10 +33,11 @@ const icons: { [key: string]: JSX.Element } = {
     'tailwind': <SiTailwindcss size={10}/>,
     'socketio' : <SiSocketdotio/>,
     'turborepo': <SiTurborepo/>,
-    'cli': <CommandIcon size={12}/>,
+    'cli': <Terminal size={12}/>,
     'postman': <SiPostman size={12}/>,
-  'java': <FaJava size={12} />,
-    'n8n' : <SiN8N/>
+    'java': <FaJava size={12} />,
+    'n8n' : <SiN8N/>,
+    'npm': <FaNpm size={12} />,
 };
 
 

@@ -4,18 +4,17 @@ import ImagePreview from "../components/sections/ImagePreview";
 export const Featured = [
   {
     id: 'card1',
+    title: 'Codrel | context Engine for agents',
+    description: 'A Context engine designed to enhance AI agents by providing dynamic, relevant context from various data sources for improved decision-making and responses.',
+    link: 'https://github.com/hoomanbuilds/codrel',
+    tags: [ "MCP" ,'RAG', 'vscode-extension', 'kiro', 'context', "Drizzle", "Neon", "Next-auth" , "cli" , "npm"]
+  },
+  {
+    id: 'card2',
     title: 'The-Great-G-Stack | @theggs/cli',
     description: 'AI-powered stack builder that generates tailored prompts or full tech stacks, with seamless options to store, upload, download, and share directly from the platform.',
     link: 'https://github.com/vinitngr/RTCboard',
     tags: ['cloudflare', 'Turborepo', 'CLI', 'Workers', 'KV', 'Next.js', 'Gemini', 'Vibe'],
-  }
-  ,
-  {
-    id: 'card2',
-    title: 'Nodebox | webContainer',
-    description: 'Browser based playgound and hosting platform for your Client Side applicatoins.',
-    link: 'https://nodebox.vinitngr.xyz',
-    tags: ['Webcontainer', 'Next.js', 'cloudflare', 'Workers', 'Dns', 'AWS', 'S3', "Cloudfront", "Drizzle", "Neon", "Next-auth"]
   }
 ];
 
