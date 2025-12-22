@@ -8,7 +8,7 @@ export const Featured = [
     description:
       'A Context engine designed to enhance AI agents by providing dynamic, relevant context from various data sources for improved decision-making and responses.',
     link: 'https://github.com/hoomanbuilds/codrel',
-    tags: ['MCP', 'RAG', 'vscode-extension', 'kiro', 'context', 'Drizzle', 'Neon', 'Next-auth', 'cli', 'npm'],
+    tags: ['MCP', 'RAG', 'vscode-extension', 'kiro', 'context', 'Vector', 'embedding', 'chromaDB', 'cli', 'npm' ,'amazonvibecoding'],
     winner: '2× Track Winner',
   },
   {
