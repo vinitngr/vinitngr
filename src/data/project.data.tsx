@@ -5,17 +5,21 @@ export const Featured = [
   {
     id: 'card1',
     title: 'Codrel | context Engine for agents',
-    description: 'A Context engine designed to enhance AI agents by providing dynamic, relevant context from various data sources for improved decision-making and responses.',
+    description:
+      'A Context engine designed to enhance AI agents by providing dynamic, relevant context from various data sources for improved decision-making and responses.',
     link: 'https://github.com/hoomanbuilds/codrel',
-    tags: [ "MCP" ,'RAG', 'vscode-extension', 'kiro', 'context', "Drizzle", "Neon", "Next-auth" , "cli" , "npm"]
+    tags: ['MCP', 'RAG', 'vscode-extension', 'kiro', 'context', 'Drizzle', 'Neon', 'Next-auth', 'cli', 'npm'],
+    winner: '2× Track Winner',
   },
   {
     id: 'card2',
     title: 'The-Great-G-Stack | @theggs/cli',
-    description: 'AI-powered stack builder that generates tailored prompts or full tech stacks, with seamless options to store, upload, download, and share directly from the platform.',
+    description:
+      'AI-powered stack builder that generates tailored prompts or full tech stacks, with seamless options to store, upload, download, and share directly from the platform.',
     link: 'https://github.com/vinitngr/RTCboard',
     tags: ['cloudflare', 'Turborepo', 'CLI', 'Workers', 'KV', 'Next.js', 'Gemini', 'Vibe'],
-  }
+    winner: null,
+  },
 ];
 
 
