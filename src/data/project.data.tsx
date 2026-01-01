@@ -4,7 +4,7 @@ import ImagePreview from "../components/sections/ImagePreview";
 export const Featured = [
   {
     id: 'card1',
-    title: 'Codrel | AWS Global Wibe',
+    title: 'Codrel | AWS Global Vibe',
     description:
       'A Context engine designed to enhance AI agents by providing dynamic, relevant context from various data sources for improved decision-making and responses.',
     link: 'https://github.com/hoomanbuilds/codrel',
