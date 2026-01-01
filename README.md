@@ -9,7 +9,7 @@
   Making computers do things so I don’t have to.
 </p>
 <p align="center">
-  ~120 WPM. Mostly used to delete bugs faster.
+  ~120 WPM. Mostly to guide the AI fixing my bugs :)
 </p>
 
 
