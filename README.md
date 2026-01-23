@@ -1,6 +1,6 @@
 <h1 align="center">Hi, I'm Vinit 👋</h1>
 <p align="center">
-  I build web things, break them, fix them, and automate the boring parts — and yes, I use AI a lot.<br/>
+  I build web things, break them, fix them, and automate the boring parts - and yes, I use AI a lot.<br/>
   Exploring DevOps, infra, and doing some open-source on the side.
 </p>
 <h3 align="center">Currently messing with ⚙️</h3>
