@@ -27,7 +27,6 @@ These are the technologies I use to build fast, scalable products — from real-
   <img src="https://cdn.jsdelivr.net/gh/tandpfun/skill-icons/icons/TypeScript.svg" width="48" />
   <img src="https://cdn.jsdelivr.net/gh/tandpfun/skill-icons/icons/Python-Dark.svg" width="48" />
   <img src="https://cdn.jsdelivr.net/gh/tandpfun/skill-icons/icons/GoLang.svg" width="48" />
-  <img src="https://cdn.jsdelivr.net/gh/tandpfun/skill-icons/icons/Java-Dark.svg" width="48" />
 
   <!-- Backend -->
   <img src="https://cdn.jsdelivr.net/gh/tandpfun/skill-icons/icons/NodeJS-Dark.svg" width="48" />
