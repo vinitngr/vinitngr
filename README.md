@@ -3,15 +3,6 @@
   I build web things, break them, fix them, and automate the boring parts - and yes, I use AI a lot.<br/>
   Exploring DevOps, infra, and doing some open-source on the side.
 </p>
-<h3 align="center">Currently messing with ⚙️</h3>
-<p align="center">
-  DevOps pipelines · infra automation · AI-powered dev workflows<br/>
-  Making computers do things so I don’t have to.
-</p>
-<p align="center">
-  ~120 WPM. Mostly to guide the AI fixing my bugs :)
-</p>
-
 
 ---
 
