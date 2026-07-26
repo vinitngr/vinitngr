@@ -16,8 +16,16 @@ export const Featured = [
     title: 'The-Great-G-Stack | @theggs/cli',
     description:
       'AI-powered stack builder that generates tailored prompts or full tech stacks, with seamless options to store, upload, download, and share directly from the platform.',
-    link: 'https://github.com/vinitngr/RTCboard',
+    link: 'https://github.com/vinitngr/the-great-g-stack',
     tags: ['cloudflare', 'Turborepo', 'CLI', 'Workers', 'KV', 'Next.js', 'Gemini', 'Vibe'],
+    winner: null,
+  },
+  {
+    id: 'card3',
+    title: 'Nodebox',
+    description: 'A browser-based playground and hosting platform for client-side applications, providing a full Node.js environment directly in your browser.',
+    link: 'https://github.com/vinitngr/nodebox',
+    tags: ['WebContainer API', 'Next.js', 'cloudflare', 'Workers', 'DNS', 'AWS', 'S3', 'CloudFront', 'Drizzle', 'Neon', 'NextAuth'],
     winner: null,
   },
 ];

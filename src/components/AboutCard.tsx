@@ -16,11 +16,11 @@ function AboutPrev({ animatedItems, handleMouseEnter, handleMouseLeave, setisope
       <div>
         <div className="backdrop:brightness-200">
           <h3 className="text-7xl  sm:text-3xl backdrop:backdrop-blur-3xl text-white font-semibold mb-1 tracking-tight">Vinit Nagar</h3>
-          <p className="text-sm text-[#a0a0a0]/80 leading-relaxed mb-2">I work with web & ai...</p>
+          <p className="text-sm text-[#a0a0a0]/80 leading-relaxed mb-2">AI system and infra...</p>
         </div>
         <div className="flex items-center">
-          <span className="font-semibold text-2xl sm:text-text-lg mr-2">1.5+ yrs</span>
-          <span className="text-xs text-[#a0a0a0]">of Learning</span>
+          <span className="font-semibold text-2xl sm:text-text-lg mr-2">~1 year</span>
+          <span className="text-xs text-[#a0a0a0]">of experience</span>
         </div>
       </div>
       <button
@@ -35,10 +35,9 @@ function AboutPrev({ animatedItems, handleMouseEnter, handleMouseLeave, setisope
         <ArrowRight className="w-4 h-4 ml-1 group-hover:text-yellow-700 transition-transform duration-500 ease-in-out group-hover:-rotate-45" />
 
         <div className="absolute right-0 bottom-0 h-fit w-fit flex items-center flex-col">
-          <img className="inline-block items-end h-6 border ml-auto rounded border-white/10" src='/HoomandigitalLogo.jpeg' />
-          <button className="text-yellow-400/50 text-xs border border-yellow-500/50 px-1 py-0.3  inline-block cursor-pointer">
+          <button className="text-green-400/50 text-xs border border-green-500/50 px-1 py-0.3  inline-block cursor-pointer">
             <span className='mr-1 animate-pulse'>•</span>
-            hired
+            Available
           </button>
         </div>
       </button>

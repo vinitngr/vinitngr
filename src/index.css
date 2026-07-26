@@ -20,8 +20,10 @@
   display: none;
 }
 
-html{
+html, body {
   scroll-behavior: smooth;
-
-  background-color: #121218 ;
+  background-color: #121218;
+  color: white;
+  margin: 0;
+  padding: 0;
 }

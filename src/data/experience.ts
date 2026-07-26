@@ -13,9 +13,14 @@ export const experiences: Experience[] = [
     jobtitle: "SDE intern (AI)",
     company: "Hooman Digital",
     date: "Sep 2025",
-    enddate: "Present",
+    enddate: "May 2026",
     description: `
-       Hired as a <u class="text-yellow-600 underline">SDE AI Intern</u>, primarily focusing on building AI agent applications and workflow automation.
+       <ul class="list-disc list-inside mt-2 space-y-1">
+         <li>Engineered a production multi-agent RAG system with dynamic tool execution, streamlining context retrieval.</li>
+         <li>Architected a scalable microservices backend using gRPC and RabbitMQ for asynchronous task distribution.</li>
+         <li>Developed high-performance Go workers for compute-heavy ingestion and summarization pipelines.</li>
+         <li>Automated GPU orchestration using Nosana SDK and MCP for seamless AI model deployment.</li>
+       </ul>
     `,
     companyLink: "https://www.hooman.digital/",
   },

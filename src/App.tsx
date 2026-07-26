@@ -16,7 +16,8 @@ import Exp from "./components/sections/Exp";
 import MessageHome from "./components/MessageHome";
 import Education from "./components/sections/Education";
 import { socialLinks } from "./data/social";
-import { FaAngleDoubleUp, FaGithub, FaLinkedin, FaTwitter } from "react-icons/fa";
+import { FaAngleDoubleUp, FaGithub, FaLinkedin } from "react-icons/fa";
+import { FaXTwitter } from "react-icons/fa6";
 import { HiDownload } from "react-icons/hi";
 import { Mail } from "lucide-react";
 const App = () => {
@@ -98,7 +99,7 @@ const App = () => {
                       <a key={label} href={href} target="_blank" rel="noopener noreferrer" className="hover:scale-125">
                         {label === "GitHub" && <FaGithub className="size-6 m-1" title={label} />}
                         {label === "LinkedIn" && <FaLinkedin className="size-6 m-1" title={label} />}
-                        {label === "Twitter" && <FaTwitter className="size-6 m-1" title={label} />}
+                        {label === "X" && <FaXTwitter className="size-6 m-1" title={label} />}
                         {label === "Resume" && <HiDownload className="size-6 m-1" title={label} />}
                       </a>
                     ))}

@@ -25,7 +25,7 @@ const PdfViewer: FC = (): JSX.Element => {
       className="absolute m-2 top-0 right-0 p-3 cursor-pointer bg-black text-white rounded hover:bg-gray-800"
       onClick={() => {
         const link = document.createElement('a');
-        link.href = '/resume.pdf';
+        link.href = '/resume2.0.pdf';
         link.download = 'vinit_resume.pdf';
         document.body.appendChild(link);
         link.click();
@@ -36,7 +36,7 @@ const PdfViewer: FC = (): JSX.Element => {
     </div>
 
       <iframe
-        src="/resume.pdf#toolbar=0&navpanes=0&scrollbar=0"
+        src="/resume2.0.pdf#toolbar=0&navpanes=0&scrollbar=0"
         width={dimensions.width}
         height={dimensions.height}
         style={{ border: "none", display: dimensions.width ? "block" : "none" }}
