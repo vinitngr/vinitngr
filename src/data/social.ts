@@ -8,5 +8,5 @@ export const socialLinks = [
   { href: "https://github.com/vinitngr", Icon: Github, label: "GitHub" },
   { href: "https://www.linkedin.com/in/vinit-nagar-264434293", Icon: FaLinkedinIn, label: "LinkedIn" },
   { href: "https://x.com/vinitngr_", Icon: FaXTwitter, label: "X" },
-  { href: "https://drive.google.com/file/d/1iz1eYyjVfhMrUld7wKT3eLk7yvY52nZ2/view?usp=sharing", Icon: Logo, label: "Resume" }
+  { href: "https://drive.google.com/file/d/1heHJ3cGkFtgU6zN7_AJbJ4fZYoL567mM/view?usp=sharing", Icon: Logo, label: "Resume" }
 ];
