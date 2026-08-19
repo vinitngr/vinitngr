@@ -59,7 +59,7 @@ These are the technologies I use to build fast, scalable products — from real-
 ---
 
 ## 📫 Contact
-- Portfolio → **https://vinitngr.xyz**  
+- Portfolio → **https://www.itsvinit.me**  
 - Email → **vinitnagar56@gmail.com**  
 
 
