@@ -26,3 +26,10 @@ export const skills: string[] = [
   'devOps'
 ];
 
+export const skillGroups: { label: string; items: string[] }[] = [
+  { label: "languages", items: ["Go", "TypeScript", "Python", "Java"] },
+  { label: "backend & data", items: ["Node.js", "Express", "gRPC", "RabbitMQ", "Redis", "PostgreSQL", "MongoDB", "Drizzle"] },
+  { label: "ai & infra", items: ["RAG Systems", "Agentic AI", "MCP", "n8n", "Docker", "AWS", "Cloudflare", "DevOps"] },
+  { label: "frontend & tooling", items: ["Next.js", "Tailwind", "Zustand", "WebRTC", "Bun", "Turborepo", "Git", "Postman", "DSA"] },
+];
+

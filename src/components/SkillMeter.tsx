@@ -2,10 +2,11 @@ import { useCallback, useEffect, useRef, useState } from "react";
 import { AboutPrevProps } from "../utils/type";
 
 export default function SkillMeter({
-  animatedItems,
+  animatedItems: _animatedItems,
   handleMouseEnter,
   handleMouseLeave,
 }: AboutPrevProps) {
+  void _animatedItems;
 
   const gameEndedRef = useRef(false);
 
@@ -166,40 +167,39 @@ export default function SkillMeter({
       id="card3"
       onMouseEnter={handleMouseEnter}
       onMouseLeave={handleMouseLeave}
-      className={`grid-item order-3 col-span-3 sm:col-span-1 bg-[#1a1a22] relative overflow-hidden 
-        shadow-md border border-[#2d2d3a]/80 h-full transition-all duration-300 ${animatedItems.includes("card3")
-          ? "opacity-100 translate-y-0"
-          : "opacity-0 translate-y-2"
-        }`}
+      className="soft-card relative overflow-hidden min-h-[260px]"
     >
       {!running ? (
-        <div className="absolute inset-0 h-full flex flex-col justify-center items-center gap-3">
-          <h2 className="text-md text-[#e0e0e0] font-semibold tracking-tight">
-            ;) Retro Snake
+        <div className="absolute inset-0 flex flex-col justify-center items-center gap-3 p-5 text-center">
+          <p className="mono-label text-[10px] text-zinc-600">playground</p>
+          <h2 className="text-base text-zinc-100 font-semibold tracking-tight">
+            Retro Snake
           </h2>
+          <p className="text-xs text-zinc-500">a tiny break from shipping</p>
           <button
             onClick={startGame}
-            className="px-3 py-1 text-xs rounded bg-[#191921] text-white border border-white/10 cursor-pointer font-bold shadow-md hover:scale-105 transition-all"
+            className="px-4 py-1.5 text-xs rounded-full bg-amber-400 text-black cursor-pointer font-semibold hover:bg-amber-300 hover:scale-105 transition-all"
           >
             {score > 0 ? "Retry" : "Start"}
           </button>
-          <div className="mt-2 text-xs  text-gray-300/50">
-            <p>🏆 Top Scores</p>
-            {leaderboard.map((s, i) => (
-              <div key={i}>{i + 1}. {s.name}: {s.score}</div>
+          <div className="mt-1 text-[11px] text-zinc-500">
+            <p className="mono-label text-[10px] text-zinc-600 mb-1">top scores</p>
+            {leaderboard.slice(0, 4).map((s, i) => (
+              <div key={i} className="text-zinc-500">{i + 1}. {s.name}: {s.score}</div>
             ))}
+            {leaderboard.length === 0 && <div className="text-zinc-700">no scores yet - be first</div>}
           </div>
         </div>
       ) : (
         <>
-          <span className="absolute top-1 left-2 text-[10px] text-white font-mono">
-            Score: {score} | {timer}s
+          <span className="absolute top-2.5 left-3 text-[11px] text-zinc-400 font-mono z-10 rounded-full bg-black/60 px-2 py-0.5 border border-white/10">
+            Score: {score} · {timer}s
           </span>
-          <div className="absolute inset-0">
+          <div className="absolute inset-0 rounded-[20px] overflow-hidden">
             {snake.map((s, i) => (
               <div
                 key={i}
-                className="absolute bg-green-400"
+                className="absolute bg-emerald-400 rounded-[2px]"
                 style={{
                   left: s.x * SNAKE_SIZE,
                   top: s.y * SNAKE_SIZE,
@@ -209,7 +209,7 @@ export default function SkillMeter({
               />
             ))}
             <div
-              className="absolute bg-pink-500"
+              className="absolute bg-amber-400 rounded-full"
               style={{
                 left: food.x * SNAKE_SIZE,
                 top: food.y * SNAKE_SIZE,

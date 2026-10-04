@@ -2,7 +2,7 @@
 import {  Database, Terminal } from 'lucide-react';
 import { JSX } from 'react';
 import { FaJsSquare, FaNodeJs, FaPython, FaReact, FaDocker, FaCss3Alt,  FaLink, FaGithub, FaRobot, FaAws, FaCloudflare, FaJava, FaNpm } from 'react-icons/fa';
-import { SiNextdotjs, SiDrizzle, SiMongodb, SiPostgresql, SiExpress, SiRedis, SiWebrtc, SiStackblitz, SiBun, SiPuppeteer, SiGooglegemini, SiExcalidraw, SiSocketdotio, SiTurborepo, SiPostman, SiTailwindcss, SiN8N } from 'react-icons/si';
+import { SiNextdotjs, SiDrizzle, SiMongodb, SiPostgresql, SiExpress, SiRedis, SiWebrtc, SiStackblitz, SiBun, SiPuppeteer, SiGooglegemini, SiExcalidraw, SiSocketdotio, SiTurborepo, SiPostman, SiTailwindcss, SiN8N, SiGo } from 'react-icons/si';
 
 const icons: { [key: string]: JSX.Element } = {
     'typescript': <FaJsSquare />,
@@ -38,6 +38,7 @@ const icons: { [key: string]: JSX.Element } = {
     'java': <FaJava size={12} />,
     'n8n' : <SiN8N/>,
     'npm': <FaNpm size={12} />,
+    'go': <SiGo size={12} />,
 };
 
 

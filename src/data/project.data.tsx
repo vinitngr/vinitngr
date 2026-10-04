@@ -33,42 +33,28 @@ export const Featured = [
 
 export const projectdetails = [
   {
-    title: 'The-Great-G-Stack | @theggs/cli',
-    description: 'AI-powered stack builder that generates tailored prompts or full tech stacks with seamless options to store, upload, download, and share directly from the platform.',
-    extendedImages: ['./1tggs.png', './2tggs.png', './3tggs.png', './4tggs.png'],
-    tags: ['cloudflare', 'Turborepo', 'CLI', 'Workers', 'KV', 'Next.js', 'Gemini', 'Vibe' , 'prompt engineering', 'Vibe'],
-    onetag: 'AI',
+    title: 'orcn | OpenResource Compute Network',
+    slug: 'orcn',
+    description: 'Open-source compute orchestration platform for deploying AI models and workloads across heterogeneous infrastructure.',
+    tags: ['Go', 'gRPC', 'Docker', 'Orchestration', 'AI Infra', 'Compute'],
+    onetag: 'Infra',
     isExpanded: false,
     content: (
       <>
         <p>
-          <span className="text-yellow-600 underline">the-great-g-stack</span> empowers developers to build and customize tech stacks effortlessly using AI-driven recommendations.
+          <span className="text-yellow-600 underline">orcn</span> (OpenResource Compute Network) orchestrates AI model deployments and workloads across heterogeneous infrastructure.
         </p>
         <ul className="list-disc list-inside mt-2 space-y-1">
-          <li>Supports full lifecycle management: saving, sharing, and collaborative editing</li>
-          <li>Includes <span className="text-yellow-600 underline">@theggs/cli</span> for seamless stack uploads and management</li>
-          <li>Automates stack generation and configuration for scalable projects</li>
-          <li>Stack images inline for context:</li>
-          <ul className="list-none ml-5 mt-3 space-y-1">
-            <li><ImagePreview
-              project
-              extendedImages={['./1tggs.png', './2tggs.png', './3tggs.png', './4tggs.png']}
-              src="./1tggs.png"
-              alt="TGGStack 1"
-              className="mt-1 rounded shadow"
-            /></li>
-            <li><ImagePreview src="./2tggs.png" alt="TGGStack 2" className="mt-1 rounded shadow" /></li>
-            <li><ImagePreview src="./3tggs.png" alt="TGGStack 3" className="mt-1 rounded shadow" /></li>
-            <li><ImagePreview src="./4tggs.png" alt="TGGStack 4" className="mt-1 rounded shadow" /></li>
-          </ul>
+          <li>Open-source compute orchestration for AI models and batch workloads</li>
+          <li>Built for heterogeneous infra - GPUs, CPUs, edge nodes</li>
         </ul>
       </>
     ),
-    link: 'https://github.com/vinitngr/the-great-g-stack',
-    webUrl: 'https://tggs.vinitngr.xyz'
+    link: 'https://github.com/vinitngr/orcn',
   },
   {
     title: "Nodebox",
+    slug: "nodebox",
     description: "A browser-based playground and hosting platform for client-side applications, providing a full Node.js environment directly in your browser.",
     extendedImages: ['./nodebox1.png', './nodebox2.png', './nodebox3.png'],
     tags: ['WebContainer API', 'Next.js', 'cloudflare', 'Workers', 'DNS', 'AWS', 'S3', 'CloudFront', 'Drizzle', 'Neon', 'NextAuth'],
@@ -100,10 +86,47 @@ export const projectdetails = [
       </>
     ),
     link: "https://github.com/vinitngr/nodebox",
-    webUrl: "https://nodebox.vinitngr.xyz"
+    webUrl: "https://nodebox.itsvinit.me"
+  },
+  {
+    title: 'The-Great-G-Stack | @theggs/cli',
+    slug: 'the-great-g-stack',
+    description: 'AI-powered stack builder that generates tailored prompts or full tech stacks with seamless options to store, upload, download, and share directly from the platform.',
+    extendedImages: ['./1tggs.png', './2tggs.png', './3tggs.png', './4tggs.png'],
+    tags: ['cloudflare', 'Turborepo', 'CLI', 'Workers', 'KV', 'Next.js', 'Gemini', 'Vibe' , 'prompt engineering', 'Vibe'],
+    onetag: 'AI',
+    isExpanded: false,
+    content: (
+      <>
+        <p>
+          <span className="text-yellow-600 underline">the-great-g-stack</span> empowers developers to build and customize tech stacks effortlessly using AI-driven recommendations.
+        </p>
+        <ul className="list-disc list-inside mt-2 space-y-1">
+          <li>Supports full lifecycle management: saving, sharing, and collaborative editing</li>
+          <li>Includes <span className="text-yellow-600 underline">@theggs/cli</span> for seamless stack uploads and management</li>
+          <li>Automates stack generation and configuration for scalable projects</li>
+          <li>Stack images inline for context:</li>
+          <ul className="list-none ml-5 mt-3 space-y-1">
+            <li><ImagePreview
+              project
+              extendedImages={['./1tggs.png', './2tggs.png', './3tggs.png', './4tggs.png']}
+              src="./1tggs.png"
+              alt="TGGStack 1"
+              className="mt-1 rounded shadow"
+            /></li>
+            <li><ImagePreview src="./2tggs.png" alt="TGGStack 2" className="mt-1 rounded shadow" /></li>
+            <li><ImagePreview src="./3tggs.png" alt="TGGStack 3" className="mt-1 rounded shadow" /></li>
+            <li><ImagePreview src="./4tggs.png" alt="TGGStack 4" className="mt-1 rounded shadow" /></li>
+          </ul>
+        </ul>
+      </>
+    ),
+    link: 'https://github.com/vinitngr/the-great-g-stack',
+    webUrl: 'https://tggs.itsvinit.me'
   },
   {
     title: "IOLIB.ai",
+    slug: "iolib-ai",
     description: "An AI-powered library leveraging Retrieval-Augmented Generation (RAG) and semantic search for advanced information retrieval.",
     extendedImages: ['./iolib1.png', './iolib2.png'],
     tags: ["React", "TypeScript", "Tailwind CSS", "LangChain", "Zustand", "Node.js", "MongoDB", "Rate Limiter", "Upstash", "Gemini", "Hackathon", "AI"],
@@ -136,6 +159,7 @@ export const projectdetails = [
   },
   {
     title: "RTCboard",
+    slug: "rtcboard",
     description: "A real-time collaboration platform using WebRTC, Node.js, React, MongoDB, and Redis.",
     extendedImages: ['./webRTC.png', './webRTC2.png'],
     tags: ["React", "Zustand", "Node.js", "Express", "WebRTC", "Socket.io", "Redis", "MongoDB"],
@@ -168,7 +192,7 @@ export const projectdetails = [
       </>
     ),
     link: "https://github.com/vinitngr/RTCboard",
-    webUrl: "https://rtcboard.vinitngr.xyz"
+    webUrl: "https://rtcboard.itsvinit.me"
   }
 ];
 

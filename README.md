@@ -9,7 +9,7 @@
 ## 🛠 Tech Stack
 
 <p align="center">
-These are the technologies I use to build fast, scalable products — from real-time apps to AI-powered systems.
+These are the technologies I use to build fast, scalable products - from real-time apps to AI-powered systems.
 </p>
 
 <p align="center">
@@ -59,7 +59,7 @@ These are the technologies I use to build fast, scalable products — from real-
 ---
 
 ## 📫 Contact
-- Portfolio → **https://vinitngr.xyz**  
+- Portfolio → **https://itsvinit.me**  
 - Email → **vinitnagar56@gmail.com**  
 
 

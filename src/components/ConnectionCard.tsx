@@ -1,33 +1,29 @@
 import { ArrowRight } from 'lucide-react'
 import { AboutPrevProps } from '../utils/type'
-import UnderlineHighlight from './UnderLineHighlight';
 
-function ConnectPrev({ animatedItems, handleMouseEnter, handleMouseLeave , setisopen , setselectfxn }: AboutPrevProps) {
+function ConnectPrev({ setisopen, setselectfxn }: AboutPrevProps) {
   return (
-    <div
-      id="card6"
-      className={`grid-item order-6 sm:bg-[#1a1a22] col-span-3 sm:col-span-1 bg-pattern flex flex-col justify-between sm:border border-[#2d2d3a] p-2 sm:p-4 transition-all duration-300 relative overflow-hidden shadow-md cursor-pointer ${animatedItems.includes('card6') ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-2'
-        }`}
-      onMouseEnter={handleMouseEnter}
-      onMouseLeave={handleMouseLeave}
-    >
-      <div>
-        <h3 className="text-xl font-semibold mb-2 tracking-tight">Message me!</h3>
-        <p className="text-xs  text-[#a0a0a0]/50 leading-relaxed">Have a project in mind?</p>
-        <p className="text-xs  text-[#a0a0a0]/50 leading-relaxed">FreeLance project for me? <UnderlineHighlight underlineClassName='border-orange-400' className='text-orange-400' onClick={()=> window.open("https://www.fiverr.com/s/Eg4GpKD" , "_blank")}>Fiverr</UnderlineHighlight></p>
-        <p className="text-xs  text-[#a0a0a0]/50 leading-relaxed">hire me?</p>
-      </div>
-      <button 
-      onClick={() => {
-        if (setisopen && setselectfxn) {
-          setisopen(true);
-          setselectfxn('about');
-            document.getElementById('emailForm')?.scrollIntoView({ behavior: 'smooth' });
-        }
-      }}
-      className="group text-sm text-yellow-700 no-underline flex items-center font-medium mt-auto">
-        <span className="group-hover:text-yellow-700">Message Me</span>
-        <ArrowRight className="w-4 h-4 ml-1 group-hover:text-yellow-700 transition-transform duration-500 ease-in-out group-hover:-rotate-45" />
+    <div className="soft-card p-5 flex flex-col gap-3 h-full">
+      <p className="mono-label text-[11px] text-zinc-500">contact</p>
+      <h3 className="text-lg font-semibold tracking-tight text-zinc-100">Have something in mind?</h3>
+      <p className="text-[13px] text-zinc-500 leading-relaxed">
+        Freelance, internships or part-time - I reply fast.
+        Also on <button onClick={() => window.open("https://www.fiverr.com/s/Eg4GpKD", "_blank")} className="text-amber-400 hover:text-amber-300 underline underline-offset-4 decoration-amber-400/40">Fiverr</button>.
+      </p>
+      <button
+        onClick={() => {
+          if (setisopen && setselectfxn) {
+            setisopen(true);
+            setselectfxn('about');
+            setTimeout(() => document.getElementById('emailForm')?.scrollIntoView({ behavior: 'smooth' }), 100);
+          } else {
+            document.getElementById('contact-form')?.scrollIntoView({ behavior: 'smooth' });
+          }
+        }}
+        className="group mt-auto inline-flex items-center justify-center gap-1.5 text-sm font-medium bg-white/[0.06] border border-white/10 rounded-xl px-4 py-2.5 hover:bg-white/[0.1] hover:border-amber-400/30 transition"
+      >
+        Message me
+        <ArrowRight className="size-4 transition-transform duration-300 group-hover:-rotate-45" />
       </button>
     </div>
   )

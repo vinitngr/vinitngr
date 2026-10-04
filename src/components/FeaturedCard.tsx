@@ -1,130 +1,90 @@
-import { ArrowRight } from "lucide-react";
-import { AboutPrevProps } from "../utils/type";
 import { useEffect, useState } from "react";
-import GridPattern from "./svg/pattern";
 import { Featured } from "../data/project.data";
+import { AboutPrevProps } from "../utils/type";
 import icons from "../data/icons";
 
-function FeaturedCard({
-  animatedItems,
-  handleMouseEnter,
-  handleMouseLeave,
-}: AboutPrevProps) {
+function FeaturedCard({ }: AboutPrevProps) {
   const [currentIndex, setCurrentIndex] = useState(0);
 
   useEffect(() => {
     const interval = setInterval(
       () => setCurrentIndex((i) => (i + 1) % Featured.length),
-      5000
+      6000
     );
     return () => clearInterval(interval);
   }, []);
 
+  const item = Featured[currentIndex];
+
   return (
-    <div
-      id="card1"
-      className={`grid-item order-1 col-span-3 sm:col-span-2 min-h-64 row-span-2
-        sm:bg-[#1a1a22] bg-[#cddc39] border border-[#2d2d3a]
-        p-2 sm:p-0 py-6 sm:py-4 mx-3 sm:mx-0
-        transition-all duration-300 relative overflow-hidden shadow-md
-        flex flex-col justify-between
-        ${
-          animatedItems.includes("card4")
-            ? "opacity-100 translate-y-0"
-            : "opacity-0 translate-y-2"
-        }`}
-      onMouseEnter={handleMouseEnter}
-      onMouseLeave={handleMouseLeave}
-    >
-      {Featured[currentIndex]?.winner && (
-            <div
-              className="pointer-events-none absolute top-10  right-[-70px] rotate-45
-        bg-yellow-500 text-black text-[11px] font-semibold
-        px-16 py-1
-        flex items-center justify-center
-        leading-none
-        z-30 shadow-md"
-            >
-              {Featured[currentIndex].winner}
-            </div>
-      //   <div className="pointer-events-none absolute top-0 right-0 h-28 w-28 overflow">
-      //     <div
-      //       className="absolute top-1/2 left-1/2
-      // -translate-x-1/2 -translate-y-1/2
-      // rotate-45
-      // bgYou get the limit though z-50 bg-yellow-500 text-black
-      // whitespace-nowrap font-semibold text-[11px]
-      // px-20 py-1
-      // shadow-md"
-      //     >
-      //       {Featured[currentIndex].winner}
-      //     </div>
-      //   </div>
-      )}
-
+    <div className="featured-box px-5 py-5 sm:px-6">
+      {/* faint diagonal glow patches - warm top-right, cool bottom-left */}
       <div
-        className="flex transition-transform duration-500 ease-in-out h-full"
-        style={{ transform: `translateX(-${currentIndex * 100}%)` }}
-      >
-        {Featured.map(({ id, title, description, tags, link }) => (
-          <div
-            key={id}
-            className="w-full flex-shrink-0 px-2 sm:px-5 rounded-md
-              transition-all duration-300 relative overflow-hidden
-              flex flex-col justify-between"
-          >
-            <h3 className="text-lg font-semibold mb-2 tracking-tight text-[#333333] sm:text-white">
-              {title}
-            </h3>
-
-            <p className="text-sm text-[#333333] sm:text-[#b0b0b0] leading-relaxed mb-3 line-clamp-3">
-              {description}
-            </p>
-
-            <div className="flex flex-wrap mb-2">
-              {tags.map((tag) => (
-                <button
-                  key={tag}
-                  className="inline-block cursor-pointer
-                    sm:bg-[#191921] bg-[#242601]/10
-                    text-white sm:text-[#a0a0a0]
-                    text-xs py-1 px-1.5 border border-white/10 mr-1 mb-1"
-                >
-                  <span className="flex items-center gap-1">
-                    {icons[tag.toLowerCase()]} {tag}
-                  </span>
-                </button>
-              ))}
-            </div>
-
-            <a
-              href={link}
-              className="group text-sm text-[#333333] sm:text-yellow-700
-                no-underline flex items-center font-medium mt-auto"
-            >
-              <span className="group-hover:text-yellow-700">View Featured</span>
-              <ArrowRight className="w-4 h-4 ml-1 group-hover:text-yellow-700 transition-transform duration-500 ease-in-out group-hover:-rotate-45" />
-            </a>
-
-            <GridPattern />
-          </div>
-        ))}
+        aria-hidden
+        className="pointer-events-none absolute -top-20 -right-20 h-40 w-40 rounded-full blur-3xl"
+        style={{ background: "radial-gradient(circle, rgba(251,146,60,0.13) 0%, transparent 70%)" }}
+      />
+      <div
+        aria-hidden
+        className="pointer-events-none absolute -bottom-20 -left-20 h-40 w-40 rounded-full blur-3xl"
+        style={{ background: "radial-gradient(circle, rgba(56,189,248,0.11) 0%, transparent 70%)" }}
+      />
+      <div className="relative flex items-center justify-between">
+        <p className="lbl">featured - {String(currentIndex + 1).padStart(2, '0')} / {String(Featured.length).padStart(2, '0')}</p>
+        {item?.winner && (
+          <span className="num inline-flex items-center gap-1.5 text-[10px] tracking-wide text-amber-200/90 bg-amber-400/10 border border-amber-400/25 rounded-none px-2.5 py-1">
+            ★ {item.winner}
+          </span>
+        )}
       </div>
 
-      <div className="absolute bottom-2 left-1/2 -translate-x-1/2 flex space-x-2">
-        {Featured.map((_, index) => (
-          <button
-            key={index}
-            onClick={() => setCurrentIndex(index)}
-            className={`size-1 rounded-full transition-all duration-300
-              hover:scale-[3] hover:bg-yellow-600
-              ${
-                currentIndex === index
-                  ? "sm:bg-yellow-700 bg-[#b1b908] scale-[2]"
-                  : "bg-white"
-              }`}
-          />
-        ))}
+      <div className="relative mt-4" key={currentIndex}>
+        <div className="fade-up">
+          <h3 className="truncate text-[22px] font-semibold leading-tight tracking-tight text-neutral-100">
+            {item?.title}
+          </h3>
+          <p className="mt-2 min-h-[68px] max-w-[64ch] text-[14px] leading-relaxed text-neutral-400 line-clamp-3">
+            {item?.description}
+          </p>
+
+          <div className="mt-4 flex flex-nowrap gap-1.5 overflow-hidden">
+            {item?.tags.slice(0, 7).map((tag) => (
+              <span key={tag} className="badge-pill">
+                {icons[tag.toLowerCase()]} {tag}
+              </span>
+            ))}
+          </div>
+
+          <div className="mt-5 flex items-center justify-between">
+            <a
+              href={item?.link}
+              target="_blank"
+              rel="noreferrer"
+              className="group inline-flex items-center gap-1.5 text-[13.5px] font-semibold text-amber-300/90 hover:text-amber-200"
+            >
+              View project
+              <span className="transition-transform duration-300 group-hover:translate-x-0.5 group-hover:-translate-y-0.5">↗</span>
+            </a>
+            <div className="flex items-center gap-3">
+              <div className="flex items-center gap-1.5">
+                {Featured.map((_, index) => (
+                  <button
+                    key={index}
+                    onClick={() => setCurrentIndex(index)}
+                    aria-label={`go to ${index}`}
+                    className={`h-1.5 rounded-none transition-all duration-300 ${currentIndex === index ? "w-8 bg-amber-400/90" : "w-3 bg-white/15 hover:bg-white/30"}`}
+                  />
+                ))}
+              </div>
+              <button
+                onClick={() => setCurrentIndex((i) => (i + 1) % Featured.length)}
+                className="num text-[11px] text-neutral-500 hover:text-neutral-200"
+              >
+                next →
+              </button>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
   );

@@ -18,7 +18,12 @@ export default function ImagePreview({
   const [open, setOpen] = useState(false);
   const [currentIndex, setCurrentIndex] = useState(0);
 
-  const images = project ? extendedImages : [src];
+  // data uses "./x.png" relative paths - normalize to root-absolute
+  // so images resolve on nested routes like /project/:slug
+  const norm = (s: string) => s.replace(/^\.\//, "/");
+  const resolvedSrc = norm(src);
+
+  const images = (project ? extendedImages : [src]).map(norm);
 
   const nextImage = () => setCurrentIndex((prev) => (prev + 1) % images.length);
   const prevImage = () =>
@@ -27,7 +32,7 @@ export default function ImagePreview({
   return (
     <>
       <img
-        src={src}
+        src={resolvedSrc}
         alt={alt}
         className={className}
         onClick={() => {

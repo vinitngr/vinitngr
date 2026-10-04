@@ -92,7 +92,7 @@ function Mobile({ onOutOfView }: { onOutOfView?: (isOutOfView: boolean) => void 
           <div className="relative border-r border-[#2d2d3a] flex items-center">
             <span className="absolute text-green-400 -top-1 right-1 animate-pulse">•</span>
             <ImagePreview
-              src="./vinit.png"
+              src="/vinit.png"
               alt="Vinit Nagar"
               className="rounded-full border border-[#2d2d3a] p-[2px] aspect-square max-h-[120px] object-cover"
             />

@@ -6,7 +6,7 @@ import { Logo } from "../components/Logo";
 
 export const socialLinks = [
   { href: "https://github.com/vinitngr", Icon: Github, label: "GitHub" },
-  { href: "https://www.linkedin.com/in/vinit-nagar-264434293", Icon: FaLinkedinIn, label: "LinkedIn" },
+  { href: "https://www.linkedin.com/in/vinitngr", Icon: FaLinkedinIn, label: "LinkedIn" },
   { href: "https://x.com/vinitngr_", Icon: FaXTwitter, label: "X" },
   { href: "https://drive.google.com/file/d/1heHJ3cGkFtgU6zN7_AJbJ4fZYoL567mM/view?usp=sharing", Icon: Logo, label: "Resume" }
 ];

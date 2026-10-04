@@ -7,7 +7,7 @@ export type AboutPrevProps = {
     setselectfxn?: (option: SidebarSection) => void
   };
 
-export type SidebarSection = "home" | "about" | "projects" | "experience" | "education" | "featured";
+export type SidebarSection = "home" | "about" | "projects" | "experience" | "education" | "featured" | "journal" | "blogs";
 
 export interface Project {
   title: string;           
@@ -30,6 +30,7 @@ export interface Experience {
   date: string;
   enddate?: string;
   duration?: string;
+  summary: string;
   description: string;
   companyLink?: string;
 }

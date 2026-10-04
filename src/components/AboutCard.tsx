@@ -1,46 +1,77 @@
-import { ArrowRight } from "lucide-react"
 import { AboutPrevProps } from "../utils/type"
-function AboutPrev({ animatedItems, handleMouseEnter, handleMouseLeave, setisopen, setselectfxn }: AboutPrevProps) {
+import icons from "../data/icons"
+import { socialLinks } from "../data/social"
+import { FaGithub, FaLinkedin } from "react-icons/fa"
+import { FaXTwitter } from "react-icons/fa6"
+import { HiDownload } from "react-icons/hi"
+import { Mail } from "lucide-react"
+
+function Badge({ k, label, color }: { k: string, label: string, color: string }) {
   return (
-    <div
-      id="card2"
-      className={`grid-item order-1 sm:order-2 col-span-3 h-[70vh] sm:h-auto sm:col-span-1 row-span-2 
-      text-white border border-[#2d2d3a] rounde p-4 transition-all duration-300 
-      relative overflow-hidden shadow-md cursor-pointer flex flex-col justify-between 
-      bg-cover bg-left sm:bg-center
-      ${animatedItems.includes('card2') ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-2'}`}
-      onMouseEnter={handleMouseEnter}
-      onMouseLeave={handleMouseLeave}
-    >
-      <img src={window.innerWidth < 640 ? "./vinit.png" : "./vinit.png"} className=" sm:rotate-y-0 w-full h-full brightness-50 opacity-60 absolute top-0 object-cover -z-10 left-0" alt="Vinit Nagar" />
-      <div>
-        <div className="backdrop:brightness-200">
-          <h3 className="text-7xl  sm:text-3xl backdrop:backdrop-blur-3xl text-white font-semibold mb-1 tracking-tight">Vinit Nagar</h3>
-          <p className="text-sm text-[#a0a0a0]/80 leading-relaxed mb-2">AI system and infra...</p>
-        </div>
-        <div className="flex items-center">
-          <span className="font-semibold text-2xl sm:text-text-lg mr-2">~1 year</span>
-          <span className="text-xs text-[#a0a0a0]">of experience</span>
+    <span className="mx-[1px] inline-flex items-center gap-1.5 rounded-full border border-[#2e2f36] bg-white/[0.04] px-2.5 py-[2px] align-[-3px] text-[12.5px] font-medium whitespace-nowrap text-neutral-100">
+      <span className="text-[13px]" style={{ color }}>{icons[k]}</span> {label}
+    </span>
+  );
+}
+
+function AboutPrev({ }: AboutPrevProps) {
+  return (
+    <div className="py-8">
+      <div className="flex items-center gap-5">
+        <img
+          src="/vinit.png"
+          alt="Vinit Nagar"
+          className="size-20 shrink-0 rounded-full border border-black object-cover"
+          style={{ boxShadow: "0 0 0 1px #2b2c33" }}
+        />
+        <div className="min-w-0">
+          <h1 className="text-[28px] font-semibold tracking-tight text-neutral-100 leading-tight">
+            Hi, I'm Vinit
+          </h1>
+          <p className="mt-1 text-[17px] font-medium tracking-tight text-neutral-400 leading-snug">
+            Backend &amp; AI Systems Engineer
+          </p>
         </div>
       </div>
-      <button
-        onClick={() => {
-          if (setisopen && setselectfxn) {
-            setisopen(true);
-            setselectfxn('about');
-          }
-        }}
-        className="group text-sm text-yellow-700 no-underline flex items-center font-medium mt-auto">
-        <span className="group-hover:text-yellow-700">View Details</span>
-        <ArrowRight className="w-4 h-4 ml-1 group-hover:text-yellow-700 transition-transform duration-500 ease-in-out group-hover:-rotate-45" />
-
-        <div className="absolute right-0 bottom-0 h-fit w-fit flex items-center flex-col">
-          <button className="text-green-400/50 text-xs border border-green-500/50 px-1 py-0.3  inline-block cursor-pointer">
-            <span className='mr-1 animate-pulse'>•</span>
-            Available
-          </button>
-        </div>
-      </button>
+      <p className="mt-6 text-[15px] leading-[1.9] text-neutral-400">
+        Final-year student at MBM University working on backend engineering, AI systems, and
+        inference optimization. I build distributed, production-grade applications - from multi-agent{" "}
+        <span className="font-semibold text-neutral-100">RAG pipelines</span> across{" "}
+        <Badge k="langchain" label="LangChain" color="#8abf9e" />{" "}
+        <Badge k="gemini" label="Gemini" color="#6b9dff" /> to{" "}
+        <span className="font-semibold text-neutral-100">event-driven microservices</span> in{" "}
+        <Badge k="typescript" label="TypeScript" color="#61a5e8" />{" "}
+        <Badge k="go" label="Go" color="#00ADD8" /> and{" "}
+        <Badge k="node.js" label="Node.js" color="#6cc24a" /> - systems that stay fast,
+        maintainable, and alive under real production constraints.
+      </p>
+      <p className="num mt-4 text-[12px] tracking-wide text-neutral-500">
+        currently into - <span className="text-neutral-300">go · ai infra · agentic ai · dsa</span>
+      </p>
+      <div className="mt-3 flex items-center gap-0.5">
+        {socialLinks.map(({ href, label }) => (
+          <a
+            key={label}
+            href={href}
+            target="_blank"
+            rel="noopener noreferrer"
+            title={label}
+            className="p-1.5 text-zinc-500 transition-colors hover:text-zinc-100"
+          >
+            {label === "GitHub" && <FaGithub className="size-4" />}
+            {label === "LinkedIn" && <FaLinkedin className="size-4" />}
+            {label === "X" && <FaXTwitter className="size-4" />}
+            {label === "Resume" && <HiDownload className="size-4" />}
+          </a>
+        ))}
+        <a
+          href="mailto:vinitnagar56@gmail.com"
+          title="Email"
+          className="p-1.5 text-zinc-500 transition-colors hover:text-zinc-100"
+        >
+          <Mail className="size-4" />
+        </a>
+      </div>
     </div>
   )
 }

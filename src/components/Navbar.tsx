@@ -1,51 +1,60 @@
-import { Briefcase, Folder, Home, PersonStandingIcon } from "lucide-react"
-import { HiMenu } from "react-icons/hi";
-import { RxVercelLogo } from "react-icons/rx"
+import { Sun, Moon } from "lucide-react";
 
-function Navbar({ setselectfxn, setisopen, isopen }: { setselectfxn: (option: string) => void, setisopen: (option: boolean) => void, isopen: boolean }) {
+function Navbar({
+  selected,
+  setselectfxn,
+  theme,
+  onToggleTheme,
+}: {
+  selected: string;
+  setselectfxn: (option: string) => void;
+  theme: "dark" | "light";
+  onToggleTheme: () => void;
+}) {
+  const links = [
+    { name: "about", label: "overview" },
+    { name: "projects", label: "projects" },
+    { name: "experience", label: "experience" },
+  ];
+  const writingActive = selected === "journal" || selected === "blogs";
   return (
-
-<nav className="flex justify-between items-center mb-1 py-2 px-4 bg-[#1a1a22] border border-[#2d2d3a] shadow-lg">
-  <div className="flex gap-4 justify-between w-full items-center">
-    <div
-      onClick={() => {setisopen(!isopen) ; setselectfxn('projects')}}
-      className={`font-bold text-4xl text-gray-500 transition-transform duration-300 ${isopen ? 'hover:-rotate-90' : 'hover:rotate-90'} tracking-tight`}
-    >
-      <RxVercelLogo size={30}/>
-    </div>
-    
-    <div className="md:hidden flex items-center text-gray-500 cursor-pointer"
-      onClick={() => setisopen(!isopen)}
-    >
-      <HiMenu size={35}
-      />
-    </div>
-  </div>
-
-  <div className={`hidden gap-1 md:flex`}>
-    {[
-      { name: "home", label: "Home", Icon: Home },
-      { name: "projects", label: "Project", Icon: Folder },
-      { name: "experience", label: "Experience", Icon: Briefcase },
-      { name: "about", label: "Me", Icon: PersonStandingIcon },
-    ].map(({ name, label, Icon }) => (
-      <button
-        key={name}
-        className="text-sm font-semibold px-4 hover:text-yellow-600 text-gray-500 py-2 rounded transition-all"
-        onClick={() => {
-          setselectfxn(name);
-          setisopen(name !== "home");
-        }}
-      >
-        <p className="hidden sm:flex items-center gap-2">
-          <Icon className="size-4" />
-          {label}
-        </p>
-      </button>
-    ))}
-  </div>
-</nav>
-
+    <nav className="groove-tb grid grid-cols-[1fr_1fr_1fr_auto] sm:grid-cols-4">
+      {links.map(({ name, label }, i) => {
+        const active = selected === name;
+        return (
+          <button
+            key={name}
+            onClick={() => setselectfxn(name)}
+            className={`num min-w-0 px-1 py-2.5 text-[10px] tracking-wide transition-colors sm:text-[11px] ${i > 0 ? "groove-l" : ""} ${active ? "text-zinc-100 bg-white/[0.04]" : "text-zinc-600 hover:text-zinc-300"}`}
+          >
+            <span className={`${active ? "text-amber-400/90" : "text-zinc-700"} mr-1.5 hidden min-[480px]:inline`}>0{i + 1}</span>{label}
+          </button>
+        );
+      })}
+      <div className={`num flex min-w-0 items-center justify-center gap-1 px-2 py-2.5 text-[10px] tracking-wide groove-l sm:gap-2 sm:text-[11px] ${writingActive ? "bg-white/[0.04]" : ""}`}>
+        <a
+          href="/journal"
+          className={`transition-colors ${selected === "journal" ? "text-zinc-100" : "text-zinc-600 hover:text-zinc-300"}`}
+        >
+          journal
+        </a>
+        <span className="text-zinc-700">|</span>
+        <a
+          href="/blogs"
+          className={`transition-colors ${selected === "blogs" ? "text-zinc-100" : "text-zinc-600 hover:text-zinc-300"}`}
+        >
+          blogs
+        </a>
+        <span className="text-zinc-700">|</span>
+        <button
+          onClick={onToggleTheme}
+          aria-label={theme === "dark" ? "switch to light mode" : "switch to dark mode"}
+          className="text-zinc-600 transition-colors hover:text-zinc-100"
+        >
+          {theme === "dark" ? <Sun className="size-[14px]" /> : <Moon className="size-[14px]" />}
+        </button>
+      </div>
+    </nav>
   )
 }
 

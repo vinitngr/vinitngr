@@ -1,37 +1,26 @@
+import { ArrowUpRight } from 'lucide-react'
 import { socialLinks } from '../data/social'
 import { AboutPrevProps } from '../utils/type'
 
-
-function SocialCard({ animatedItems, handleMouseEnter, handleMouseLeave }: AboutPrevProps) {
+function SocialCard({ }: AboutPrevProps) {
   return (
-    <div
-      id="card5"
-      className={`grid-item order-5 col-span-3 sm:col-span-2 flex flex-col social-bar justify-between bg-[#1a1a22] border border-[#2d2d3a] p-4 transition-all duration-300 relative overflow-hidden shadow-md cursor-pointer ${animatedItems.includes('card5') ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-2'
-        }`}
-      onMouseEnter={handleMouseEnter}
-      onMouseLeave={handleMouseLeave}
-    >
-      <div className="flex flex-col justify-between">
-        <h3 className="text-lg font-semibold tracking-tight">Socials</h3>
-        <h3 className="text-xs text-[#a0a0a0]/50 mb-2 tracking-tight">Connect with me on my socials...</h3>
-      </div>
+    <div className="soft-card p-5 sm:p-6">
+      <p className="mono-label text-[11px] text-zinc-500 mb-1">elsewhere</p>
+      <h3 className="text-lg font-semibold tracking-tight text-zinc-100">Socials</h3>
+      <p className="text-[13px] text-zinc-500 mb-4">Connect with me around the web</p>
 
-      <div>
-        <div className="grid grid-cols-[repeat(auto-fit,minmax(110px,1fr))] sm:grid-cols-4 gap-2">
-          {socialLinks.map(({ href, Icon, label }) => (
-            <a key={label} href={href} target="_blank" rel="noopener noreferrer" className="no-underline text-[#e0e0e0]">
-              <div className="group relative h-24 flex flex-col items-start bg-pattern justify-center border-2 border-[#2d2d3a]/80 hover:border-amber-400 rounded-md p-2 transition-all duration-200 hover:-translate-y-1 hover:shadow-lg">
-                <Icon className="absolute top-2 left-2 w-8 h-8 group-hover:text-amber-400 text-[#a0a0a0]" />
-                <span className="absolute bottom-2 left-2 group-hover:text-amber-400">{label}</span>
-                <span className="absolute bottom-2 right-2 text-base transition-transform duration-200 ease-in-out group-hover:-rotate-45 group-hover:text-amber-400">
-                  →
-                </span>
+      <div className="grid grid-cols-2 sm:grid-cols-4 gap-2">
+        {socialLinks.map(({ href, Icon, label }) => (
+          <a key={label} href={href} target="_blank" rel="noopener noreferrer" className="group">
+            <div className="soft-card-flat p-3 flex flex-col gap-4 hover:border-amber-400/40 hover:-translate-y-0.5 transition-all duration-200">
+              <Icon className="size-5 text-zinc-400 group-hover:text-amber-400 transition" />
+              <div className="flex items-center justify-between">
+                <span className="text-[13px] font-medium text-zinc-300">{label}</span>
+                <ArrowUpRight className="size-3.5 text-zinc-600 group-hover:text-amber-400 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-all" />
               </div>
-            </a>
-          ))}
-        </div>
-
-
+            </div>
+          </a>
+        ))}
       </div>
     </div>
   )
