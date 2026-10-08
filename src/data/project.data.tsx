@@ -3,6 +3,15 @@ import ImagePreview from "../components/sections/ImagePreview";
 
 export const Featured = [
   {
+    id: 'card0',
+    title: 'Orcn | OpenResource Compute Network',
+    description:
+      'Open-source compute orchestration platform for deploying AI models and workloads across heterogeneous infrastructure.',
+    link: 'https://github.com/vinitngr/orcn',
+    tags: ['Go', 'AI', 'inference', 'governance', 'gateway', 'adaptive', 'vLLM', 'Nosana', 'GPU', 'Compute'],
+    winner: null,
+  },
+  {
     id: 'card1',
     title: 'Codrel | AWS Global Vibe',
     description:
@@ -10,15 +19,6 @@ export const Featured = [
     link: 'https://github.com/hoomanbuilds/codrel',
     tags: ['MCP', 'RAG', 'vscode-extension', 'kiro', 'context', 'Vector', 'embedding', 'chromaDB', 'cli', 'npm' ,'amazonvibecoding'],
     winner: '#1 @doraHacks',
-  },
-  {
-    id: 'card2',
-    title: 'The-Great-G-Stack | @theggs/cli',
-    description:
-      'AI-powered stack builder that generates tailored prompts or full tech stacks, with seamless options to store, upload, download, and share directly from the platform.',
-    link: 'https://github.com/vinitngr/the-great-g-stack',
-    tags: ['cloudflare', 'Turborepo', 'CLI', 'Workers', 'KV', 'Next.js', 'Gemini', 'Vibe'],
-    winner: null,
   },
   {
     id: 'card3',
@@ -33,16 +33,16 @@ export const Featured = [
 
 export const projectdetails = [
   {
-    title: 'orcn | OpenResource Compute Network',
+    title: 'Orcn | OpenResource Compute Network',
     slug: 'orcn',
     description: 'Open-source compute orchestration platform for deploying AI models and workloads across heterogeneous infrastructure.',
-    tags: ['Go', 'gRPC', 'Docker', 'Orchestration', 'AI Infra', 'Compute'],
+    tags: ['Go', 'AI', 'inference', 'governance', 'gateway', 'adaptive', 'vLLM', 'Nosana', 'GPU', 'Compute'],
     onetag: 'Infra',
     isExpanded: false,
     content: (
       <>
         <p>
-          <span className="text-yellow-600 underline">orcn</span> (OpenResource Compute Network) orchestrates AI model deployments and workloads across heterogeneous infrastructure.
+          <span className="text-yellow-600 underline">Orcn</span> (OpenResource Compute Network) orchestrates AI model deployments and workloads across heterogeneous infrastructure.
         </p>
         <ul className="list-disc list-inside mt-2 space-y-1">
           <li>Open-source compute orchestration for AI models and batch workloads</li>

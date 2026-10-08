@@ -11,6 +11,7 @@ import ProjectDetailPage from "./components/ProjectDetailPage";
 import { JournalPage, BlogsPage } from "./components/StubPage";
 import AboutPrev from "./components/AboutCard";
 import { SidebarSection } from "./utils/type";
+import { Mail } from "lucide-react";
 
 const App = () => {
   const [selected, setSelected] = useState<SidebarSection>('about');
@@ -126,11 +127,20 @@ const App = () => {
                   <p className="num text-[11px] text-zinc-500 mt-2">+ doraHacks · codrel</p>
                 </div>
                 <div className="py-4 pl-4 groove-l">
-                  <p className="lbl">Status</p>
+                  <div className="flex items-center justify-between">
+                    <p className="lbl">Status</p>
+                    <a
+                      href="mailto:vinitnagar56@gmail.com"
+                      title="Email me at vinitnagar56@gmail.com"
+                      className="text-zinc-600 transition-colors hover:text-zinc-100"
+                    >
+                      <Mail className="size-3.5" />
+                    </a>
+                  </div>
                   <p className="num text-[26px] leading-none text-zinc-100 mt-2.5 flex items-center gap-2">
                     <span className="inline-block size-2 rounded-full bg-emerald-500" /> Open
                   </p>
-                  <p className="num text-[11px] text-zinc-500 mt-2">intern · freelance</p>
+                  <p className="num text-[11px] text-zinc-500 mt-2">full-time · intern · freelance</p>
                 </div>
               </div>
 

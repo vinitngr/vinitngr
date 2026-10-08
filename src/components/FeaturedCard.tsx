@@ -3,6 +3,13 @@ import { Featured } from "../data/project.data";
 import { AboutPrevProps } from "../utils/type";
 import icons from "../data/icons";
 
+// colored only where it matters - rest stay muted gray
+const tagColors: Record<string, string> = {
+  go: "#00ADD8",
+  ai: "#c084fc",
+  inference: "#6b9dff",
+};
+
 function FeaturedCard({ }: AboutPrevProps) {
   const [currentIndex, setCurrentIndex] = useState(0);
 
@@ -32,7 +39,7 @@ function FeaturedCard({ }: AboutPrevProps) {
       <div className="relative flex items-center justify-between">
         <p className="lbl">featured - {String(currentIndex + 1).padStart(2, '0')} / {String(Featured.length).padStart(2, '0')}</p>
         {item?.winner && (
-          <span className="num inline-flex items-center gap-1.5 text-[10px] tracking-wide text-amber-200/90 bg-amber-400/10 border border-amber-400/25 rounded-none px-2.5 py-1">
+          <span className="winner-badge num inline-flex items-center gap-1.5 text-[10px] tracking-wide text-amber-200/90 bg-amber-400/10 border border-amber-400/25 rounded-none px-2.5 py-1">
             ★ {item.winner}
           </span>
         )}
@@ -47,12 +54,20 @@ function FeaturedCard({ }: AboutPrevProps) {
             {item?.description}
           </p>
 
-          <div className="mt-4 flex flex-nowrap gap-1.5 overflow-hidden">
-            {item?.tags.slice(0, 7).map((tag) => (
-              <span key={tag} className="badge-pill">
-                {icons[tag.toLowerCase()]} {tag}
-              </span>
-            ))}
+          <div className="mt-4 flex max-w-[80%] flex-wrap gap-1.5">
+            {item?.tags.map((tag) => {
+              const c = tagColors[tag.toLowerCase()];
+              return (
+                <span key={tag} className="badge-pill">
+                  {c ? (
+                    <span style={{ color: c, display: "inline-flex" }}>{icons[tag.toLowerCase()]}</span>
+                  ) : (
+                    icons[tag.toLowerCase()]
+                  )}{" "}
+                  {tag}
+                </span>
+              );
+            })}
           </div>
 
           <div className="mt-5 flex items-center justify-between">

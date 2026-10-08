@@ -34,19 +34,24 @@ function AboutPrev({ }: AboutPrevProps) {
         </div>
       </div>
       <p className="mt-6 text-[15px] leading-[1.9] text-neutral-400">
-        Final-year student at MBM University working on backend engineering, AI systems, and
-        inference optimization. I build distributed, production-grade applications - from multi-agent{" "}
-        <span className="font-semibold text-neutral-100">RAG pipelines</span> across{" "}
-        <Badge k="langchain" label="LangChain" color="#8abf9e" />{" "}
-        <Badge k="gemini" label="Gemini" color="#6b9dff" /> to{" "}
-        <span className="font-semibold text-neutral-100">event-driven microservices</span> in{" "}
-        <Badge k="typescript" label="TypeScript" color="#61a5e8" />{" "}
-        <Badge k="go" label="Go" color="#00ADD8" /> and{" "}
-        <Badge k="node.js" label="Node.js" color="#6cc24a" /> - systems that stay fast,
-        maintainable, and alive under real production constraints.
+        Currently chasing the <span className="text-neutral-300 underline decoration-dashed decoration-1 underline-offset-[3px] decoration-neutral-600">full AI stack</span>{" "}
+        - especially everything around the model -{" "}
+        <Badge k="inference" label="inference" color="#6b9dff" />{" "}
+        <Badge k="ai infra" label="AI infra" color="#8abf9e" /> and{" "}
+        <Badge k="governance" label="governance" color="#e8c468" /> - systems that make AI work{" "}
+        <span className="text-neutral-300 underline decoration-dashed decoration-1 underline-offset-[3px] decoration-neutral-600">reliably in production</span>.
+      </p>
+      <p className="mt-4 text-[15px] leading-[1.9] text-neutral-400">
+        I&apos;ve explored quite a few areas of computer science, from{" "}
+        <span className="text-neutral-300 underline decoration-dashed decoration-1 underline-offset-[3px] decoration-neutral-600">low-level systems and embedded</span> to{" "}
+        <span className="text-neutral-300 underline decoration-dashed decoration-1 underline-offset-[3px] decoration-neutral-600">backend and DevOps</span>, and that breadth
+        has become one of my biggest strengths when solving unfamiliar problems. I enjoy connecting
+        ideas across layers, understanding the trade-offs, and finding approaches that are practical,
+        reliable, and sometimes a little unconventional. Currently building{" "}
+        <Badge k="orcn" label="Orcn" color="#f0883e" />
       </p>
       <p className="num mt-4 text-[12px] tracking-wide text-neutral-500">
-        currently into - <span className="text-neutral-300">go · ai infra · agentic ai · dsa</span>
+        currently into - <span className="text-neutral-300">go · ai infra · agentic ai · &quot;Orcn&quot;</span>
       </p>
       <div className="mt-3 flex items-center gap-0.5">
         {socialLinks.map(({ href, label }) => (
